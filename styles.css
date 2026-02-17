@@ -1,6 +1,6 @@
-@layer base, layout, components, utilities;
+@layer reset, tokens, base, layout, components, utilities;
 
-@layer base {
+@layer tokens {
   :root {
     color-scheme: light;
     --color-bg: #f4f7fb;
@@ -50,8 +50,8 @@
     --radius-s: 0.5rem;
     --radius-m: 0.875rem;
     --radius-l: 1.2rem;
-    --shadow-s: 0 2px 8px rgb(15 23 42 / 0.08);
-    --shadow-m: 0 8px 20px rgb(15 23 42 / 0.10);
+    --shadow-s: 0 1px 3px rgb(15 23 42 / 0.08);
+    --shadow-m: 0 4px 12px rgb(15 23 42 / 0.1);
 
     --container-max-width: 68.75rem;
     --section-scroll-offset: 6rem;
@@ -73,7 +73,9 @@
       --color-focus: #93c5fd;
     }
   }
+}
 
+@layer reset {
   *,
   *::before,
   *::after {
@@ -116,7 +118,9 @@
   ol {
     padding-left: 1.2em;
   }
+}
 
+@layer base {
   a {
     color: var(--color-theme-primary);
     text-decoration-thickness: 0.08em;
@@ -324,6 +328,7 @@
     border: 1px solid var(--color-theme-border);
     border-radius: var(--radius-m);
     background: var(--color-theme-surface);
+    box-shadow: var(--shadow-s);
     padding: var(--space-3);
   }
 
@@ -446,6 +451,7 @@
     border: 1px solid var(--color-theme-border);
     border-radius: var(--radius-m);
     background: color-mix(in srgb, var(--color-theme-surface) 94%, white 6%);
+    box-shadow: var(--shadow-s);
     padding: var(--space-4);
   }
 
@@ -540,7 +546,8 @@
     scroll-snap-align: center;
     scroll-snap-stop: always;
     min-inline-size: 100%;
-    transition: transform 160ms ease;
+    transition: transform 160ms ease, opacity 160ms ease;
+    will-change: transform;
   }
 
   .project-card:hover {
