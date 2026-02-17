@@ -82,6 +82,7 @@
           <ul class="cv-nav__list">
             <li><a class="cv-nav__link" href="#hero" aria-current="page">Resumen</a></li>
             <li><a class="cv-nav__link" href="#enfoque-tecnico">Enfoque técnico</a></li>
+            <li><a class="cv-nav__link" href="#engineering-principles">Cómo trabajo</a></li>
             <li><a class="cv-nav__link" href="#impacto">Valor</a></li>
             <li><a class="cv-nav__link" href="#experiencia">Experiencia</a></li>
             <li><a class="cv-nav__link" href="#proyectos">Proyectos</a></li>
@@ -127,6 +128,46 @@
               <li>Logging estructurado y trazabilidad de flujos para diagnosticar fallos sin fricción operativa.</li>
               <li>Diseño escalable: mismo núcleo de negocio expuesto por CLI, UI o APIs según contexto.</li>
             </ul>
+          </section>
+
+          <section id="engineering-principles" class="section engineering-principles" aria-labelledby="engineering-principles-title">
+            <header class="section__header">
+              <p class="section__eyebrow">Cómo Trabajo · Engineering Principles</p>
+              <h2 id="engineering-principles-title">Arquitectura y metodología de ejecución</h2>
+              <p>Trabajo con un enfoque de software architecture orientado a reducir riesgo técnico, preservar velocidad de evolución y mantener consistencia entre decisiones de diseño e implementación.</p>
+            </header>
+
+            <div class="principles-grid" role="list" aria-label="Bloques de principios de ingeniería">
+              <article class="card principle-card" role="listitem">
+                <h3><span class="principle-icon" aria-hidden="true">◼</span> Filosofía técnica</h3>
+                <ul class="list-grid">
+                  <li>Clean Architecture como base de diseño para mantener independencia tecnológica en el core.</li>
+                  <li>Separación estricta entre dominio e infraestructura para evitar efectos colaterales al cambiar integraciones.</li>
+                  <li>Prioridad a código mantenible y legible antes que optimizaciones prematuras de corto plazo.</li>
+                  <li>Diseño orientado a casos de uso: primero flujo de negocio, después detalle técnico.</li>
+                </ul>
+              </article>
+
+              <article class="card principle-card" role="listitem">
+                <h3><span class="principle-icon" aria-hidden="true">◼</span> Prácticas concretas</h3>
+                <ul class="list-grid">
+                  <li>Tests automatizados por riesgo (unitarios, integración y contratos en puntos críticos).</li>
+                  <li>Logging estructurado con contexto operativo para diagnóstico y observabilidad real.</li>
+                  <li>CLI desacoplada de UI, ambas consumiendo el mismo núcleo de dominio.</li>
+                  <li>Validación en la capa de dominio para blindar invariantes de negocio.</li>
+                  <li>Configuración desacoplada (entorno/adaptadores) sin contaminar reglas funcionales.</li>
+                </ul>
+              </article>
+
+              <article class="card principle-card" role="listitem">
+                <h3><span class="principle-icon" aria-hidden="true">◼</span> Decisiones técnicas reales</h3>
+                <ul class="list-grid">
+                  <li><strong>No acoplar lógica a frameworks:</strong> evita deuda accidental y facilita migraciones sin reescribir negocio.</li>
+                  <li><strong>Diseñar primero el dominio:</strong> permite alinear modelo, lenguaje y reglas con el problema real.</li>
+                  <li><strong>Priorizar mantenibilidad:</strong> mejora lead time sostenible, onboarding técnico y capacidad de cambio del equipo.</li>
+                </ul>
+              </article>
+            </div>
           </section>
 
           <section id="impacto" class="section">

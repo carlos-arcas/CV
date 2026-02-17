@@ -447,6 +447,23 @@
     margin-bottom: var(--space-2);
   }
 
+  .section__header {
+    display: grid;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+
+  .section__eyebrow {
+    width: fit-content;
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 25%, var(--color-theme-border));
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-theme-primary) 8%, var(--color-theme-surface) 92%);
+    color: var(--color-theme-primary);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-1) var(--space-3);
+  }
+
   .card {
     border: 1px solid var(--color-theme-border);
     border-radius: var(--radius-m);
@@ -474,6 +491,34 @@
   .project-case-study section:last-child {
     border-bottom: 0;
     padding-bottom: 0;
+  }
+
+  .principles-grid {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .principle-card {
+    border-left: 4px solid color-mix(in srgb, var(--color-theme-primary) 70%, var(--color-theme-border));
+  }
+
+  .principle-card h3 {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .principle-icon {
+    color: var(--color-theme-primary);
+    font-size: 0.7rem;
+    transform: translateY(-1px);
+  }
+
+  @media (min-width: 60rem) {
+    .principles-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: start;
+    }
   }
 
   .architecture-block {
