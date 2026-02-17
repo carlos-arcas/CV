@@ -25,7 +25,6 @@
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Legacy Edge/IE */
   border-radius: var(--radius-l);
-  outline: none;
 }
 
 .carousel-track::-webkit-scrollbar {
@@ -110,5 +109,19 @@
     background: var(--color-theme-primary);
     border-color: var(--color-theme-primary);
     box-shadow: inset 0 0 0 2px color-mix(in srgb, #fff 85%, transparent);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .carousel-dot {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .carousel-dot:hover,
+  .carousel-dot:active {
+    transform: none;
   }
 }

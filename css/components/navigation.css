@@ -49,3 +49,10 @@
   font-size: var(--font-size--1);
   font-weight: var(--font-weight-medium);
 }
+
+
+.cv-nav__link:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-color: var(--color-theme-primary);
+}
