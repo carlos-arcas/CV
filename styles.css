@@ -378,6 +378,156 @@ main > section ul,
   min-height: 100%;
 }
 
+
+#experiencia {
+  display: grid;
+  gap: 1rem;
+}
+
+.flip-wrapper {
+  perspective: 1200px;
+}
+
+.flip-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.flip-card {
+  min-height: 22rem;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  transform-style: preserve-3d;
+  transition: transform 560ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.flip-front,
+.flip-back {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 22rem;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-front {
+  position: relative;
+}
+
+.flip-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+.flip-toggle:checked + .flip-card .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  width: fit-content;
+  min-height: 2.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: min(0.7rem, var(--radius));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+  background: color-mix(in srgb, var(--accent) 14%, var(--card) 86%);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--anim), background-color var(--anim), border-color var(--anim), box-shadow var(--anim);
+}
+
+.flip-btn:hover {
+  background: color-mix(in srgb, var(--accent) 24%, var(--card) 76%);
+  transform: translateY(-1px);
+}
+
+.flip-btn:focus-visible,
+.flip-toggle:focus-visible + .flip-card .flip-btn {
+  outline: 3px solid color-mix(in srgb, var(--accent) 75%, white 25%);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  body:has(#mode-cyber:checked) .flip-wrapper:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  body:has(#mode-cyber:checked) .flip-wrapper:hover .flip-front,
+  body:has(#mode-cyber:checked) .flip-wrapper:hover .flip-back {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 55%, transparent 45%),
+      0 20px 36px color-mix(in srgb, #7b5cff 42%, transparent 58%),
+      0 0 18px color-mix(in srgb, var(--accent) 26%, transparent 74%);
+  }
+}
+
+#mode-cyber:checked ~ .app .flip-wrapper:hover .flip-front,
+#mode-cyber:checked ~ .app .flip-wrapper:hover .flip-back {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent 55%),
+    0 18px 34px color-mix(in srgb, #7b5cff 38%, transparent 62%);
+}
+
+#mode-brutal:checked ~ .app .flip-inner {
+  transition-duration: 40ms;
+  transition-timing-function: linear;
+}
+
+#mode-brutal:checked ~ .app .flip-front,
+#mode-brutal:checked ~ .app .flip-back {
+  border-width: 3px;
+  box-shadow: none;
+}
+
+#mode-brutal:checked ~ .app .flip-btn {
+  border-width: 3px;
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+}
+
+@supports not (transform-style: preserve-3d) {
+  .flip-card {
+    min-height: auto;
+  }
+
+  .flip-inner {
+    display: grid;
+    gap: 0.85rem;
+    transform: none !important;
+  }
+
+  .flip-back {
+    position: static;
+    transform: none;
+  }
+
+  .flip-front,
+  .flip-back {
+    min-height: auto;
+  }
+}
+
 .wrap {
   width: min(100% - 2rem, var(--maxw));
   margin-inline: auto;
@@ -731,4 +881,13 @@ Checklist:
 - [ ] Nav usable con teclado
 - [ ] Bottom nav no tapa contenido
 - [ ] Cyberpunk y Brutal tienen variantes visuales coherentes
+*/
+
+/*
+Checklist flip cards:
+- [ ] Flip funciona con click
+- [ ] Flip funciona con teclado
+- [ ] Hover flip solo en Cyberpunk
+- [ ] Contenido visible en DOM
+- [ ] No rompe layout móvil
 */
