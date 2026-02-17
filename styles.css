@@ -1,1 +1,436 @@
-/* Placeholder: estilos CSS del CV de Carlos Arcas (se completarán en siguientes pasos). */
+:root {
+  --bg: #f5f7fb;
+  --text: #111827;
+  --muted: #4b5563;
+  --card: #ffffff;
+  --border: #d6deea;
+  --accent: #1d4ed8;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --radius: 1rem;
+  --maxw: 72rem;
+  --gap: clamp(1rem, 0.75rem + 1vw, 1.75rem);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --step--1: clamp(0.85rem, 0.82rem + 0.18vw, 0.95rem);
+  --step-0: clamp(1rem, 0.96rem + 0.24vw, 1.1rem);
+  --step-1: clamp(1.2rem, 1.08rem + 0.6vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.2rem + 1vw, 1.95rem);
+  --step-3: clamp(1.9rem, 1.45rem + 1.5vw, 2.55rem);
+
+  --nav-height-mobile: 4.25rem;
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin: 0;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--text);
+  background: linear-gradient(180deg, #f8faff 0%, var(--bg) 35%, #eef3fb 100%);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: calc(var(--nav-height-mobile) + env(safe-area-inset-bottom, 0px) + var(--gap));
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.08em;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--accent) 80%, black 20%);
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 75%, white 25%);
+  outline-offset: 3px;
+  border-radius: 0.35rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+p,
+li {
+  color: var(--text);
+}
+
+header,
+main,
+nav {
+  width: min(100% - 2rem, var(--maxw));
+  margin-inline: auto;
+}
+
+header {
+  padding-top: clamp(1.5rem, 1rem + 2vw, 3rem);
+}
+
+header > p {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: var(--step-1);
+}
+
+header > ul {
+  margin-top: var(--gap);
+  padding-left: 1.2rem;
+  color: var(--muted);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 0.2rem);
+  background: color-mix(in srgb, var(--card) 85%, white 15%);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.65rem;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background: color-mix(in srgb, var(--accent) 12%, white 88%);
+  color: var(--text);
+}
+
+main {
+  display: grid;
+  gap: var(--gap);
+  padding-block: 0.35rem calc(2rem + env(safe-area-inset-bottom, 0px));
+}
+
+main > section,
+main > article,
+.card,
+.section,
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 0.9rem + 0.8vw, 1.6rem);
+}
+
+main > section > h2,
+main > section > h3,
+article > h3 {
+  margin-bottom: 0.6rem;
+}
+
+main > section > * + * {
+  margin-top: 0.75rem;
+}
+
+main > section ul,
+.list {
+  padding-left: 1.2rem;
+}
+
+#hero,
+#impacto {
+  min-height: 100%;
+}
+
+.wrap {
+  width: min(100% - 2rem, var(--maxw));
+  margin-inline: auto;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+  color: var(--muted);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.btn,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 0.7rem;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border-color: color-mix(in srgb, var(--accent) 85%, black 15%);
+}
+
+.btn:hover {
+  background: color-mix(in srgb, var(--accent) 88%, black 12%);
+}
+
+.btn-secondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border) 60%);
+  background: color-mix(in srgb, var(--accent) 8%, white 92%);
+}
+
+.meta,
+.small {
+  color: var(--muted);
+}
+
+.meta {
+  font-size: var(--step--1);
+}
+
+.small {
+  font-size: 0.9em;
+}
+
+.divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin-block: var(--gap);
+}
+
+.kpi {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 52rem) {
+  body {
+    padding-bottom: var(--gap);
+  }
+
+  main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #hero,
+  #impacto {
+    grid-column: span 1;
+  }
+
+  #experiencia,
+  #proyectos,
+  #skills,
+  #formacion,
+  #idiomas,
+  #contacto {
+    grid-column: span 1;
+  }
+
+  #experiencia,
+  #proyectos,
+  #contacto {
+    grid-column: 1 / -1;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 51.99rem) {
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    margin: 0;
+    width: 100%;
+    padding: 0.35rem 0.5rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in srgb, var(--bg) 45%, white 55%);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -6px 20px rgba(15, 23, 42, 0.12);
+  }
+
+  nav ul {
+    width: min(100% - 1rem, var(--maxw));
+    margin-inline: auto;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  nav li {
+    flex: 1 0 auto;
+  }
+
+  nav a {
+    min-height: 2.75rem;
+    padding-inline: 0.8rem;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+}
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --card: #ffffff;
+    --text: #000000;
+    --muted: #222222;
+    --border: #c8c8c8;
+    --shadow: none;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    padding: 0;
+  }
+
+  nav {
+    display: none;
+  }
+
+  main,
+  header,
+  section,
+  article {
+    width: 100%;
+    margin: 0;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+/*
+Checklist:
+- [ ] Responsive ok (móvil/desktop)
+- [ ] Foco visible
+- [ ] Texto legible y contraste correcto
+- [ ] .sr-only correcto (sin display:none)
+- [ ] Nav no tapa contenido en móvil
+*/
