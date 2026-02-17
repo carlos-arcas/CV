@@ -206,95 +206,113 @@
         </section>
 
         <section id="proyectos">
-          <h2>Proyectos</h2>
-
-          <nav class="projects-nav" aria-label="Ir a proyecto">
-            <a class="dot" href="#proj-horas"><span class="sr-only">Horas Sindicales</span></a>
-            <a class="dot" href="#proj-clinicdesk"><span class="sr-only">ClinicDesk</span></a>
-            <a class="dot" href="#proj-bateria"><span class="sr-only">Batería Fotovoltaica</span></a>
-          </nav>
+          <header class="section-header">
+            <h2>Proyectos</h2>
+            <p class="muted">Apps desktop en Python (PySide6), arquitectura por capas, persistencia y testing.</p>
+          </header>
 
           <div class="projects-carousel-wrap">
             <div class="projects-carousel" aria-label="Carrusel de proyectos">
-              <article class="project-card" id="proj-horas" tabindex="-1">
-                <h3>Horas_Sindicales</h3>
-                <ul>
-                  <li>Diseñé la solución con enfoque de puertos y adaptadores para desacoplar dominio, UI e infraestructura.</li>
-                  <li>Implementé persistencia con SQLite y gestioné cambios de esquema mediante migraciones SQL versionadas.</li>
-                  <li>Integré Google Sheets para entrada y sincronización de datos operativos desde hojas compartidas.</li>
-                  <li>Automatizé generación de PDF para formalizar documentación y facilitar distribución administrativa.</li>
-                  <li>Empaqueté la aplicación para Windows con PyInstaller y preparé instalador con Inno Setup.</li>
-                  <li>Construí pruebas con pytest por capa para validar reglas de negocio, adaptadores y flujo de aplicación.</li>
-                  <li>Documenté configuración y despliegue para simplificar mantenimiento y soporte a usuarios finales.</li>
-                </ul>
-                <p>
-                  <strong>Tech Highlights</strong><br />
-                  Python + PySide6 + SQLite con migraciones.<br />
-                  Integración Google Sheets y exportación PDF.<br />
-                  Packaging Windows (PyInstaller + Inno Setup) y testing por capas.
-                </p>
-                <p>Este proyecto demuestra capacidad para entregar producto instalable para usuarios finales.</p>
-                <div class="project-cta">
+              <article class="project-card card" id="proj-horas">
+                <header class="project-head">
+                  <h3>Horas Sindicales</h3>
+                  <div class="project-tags">
+                    <span class="chip">Python</span>
+                    <span class="chip">PySide6</span>
+                    <span class="chip">SQLite</span>
+                    <span class="chip">PyInstaller</span>
+                  </div>
+                </header>
+
+                <div class="project-body">
+                  <ul>
+                    <li>Diseñé la solución con enfoque de puertos y adaptadores para desacoplar dominio, UI e infraestructura.</li>
+                    <li>Implementé persistencia con SQLite y gestioné cambios de esquema mediante migraciones SQL versionadas.</li>
+                    <li>Integré Google Sheets para entrada y sincronización de datos operativos desde hojas compartidas.</li>
+                    <li>Automatizé generación de PDF para formalizar documentación y facilitar distribución administrativa.</li>
+                    <li>Empaqueté la aplicación para Windows con PyInstaller y preparé instalador con Inno Setup.</li>
+                    <li>Construí pruebas con pytest por capa para validar reglas de negocio, adaptadores y flujo de aplicación.</li>
+                    <li>Documenté configuración y despliegue para simplificar mantenimiento y soporte a usuarios finales.</li>
+                  </ul>
+                  <ul>
+                    <li><strong>Tech Highlights:</strong> Python + PySide6 + SQLite con migraciones.</li>
+                    <li>Integración Google Sheets y exportación PDF.</li>
+                    <li>Packaging Windows (PyInstaller + Inno Setup) y testing por capas.</li>
+                    <li>Este proyecto demuestra capacidad para entregar producto instalable para usuarios finales.</li>
+                  </ul>
+                </div>
+
+                <footer class="project-foot">
                   <a class="btn" href="https://github.com/carlos-arcas/Horas_Sindicales" target="_blank" rel="noopener">Ver repo</a>
-                  <div class="project-pager">
-                    <a class="btn ghost" href="#proj-bateria">← Prev</a>
-                    <a class="btn ghost" href="#proj-clinicdesk">Next →</a>
-                  </div>
-                </div>
+                </footer>
               </article>
 
-              <article class="project-card" id="proj-clinicdesk" tabindex="-1">
-                <h3>clinicdesk</h3>
-                <ul>
-                  <li>Construí una aplicación multipágina con PySide6 para centralizar flujos operativos de clínica en una sola interfaz.</li>
-                  <li>Definí contratos con clases ABC para desacoplar componentes y facilitar sustitución de implementaciones.</li>
-                  <li>Organicé la lógica en casos de uso para aislar reglas de negocio frente a eventos de interfaz.</li>
-                  <li>Implementé persistencia SQLite apoyada en schema SQL para controlar estructura y evolución de datos.</li>
-                  <li>Desarrollé pruebas con pytest para validar casos de uso, repositorios y comportamiento esperado de módulos clave.</li>
-                  <li>Estructuré la aplicación para facilitar mantenimiento incremental sin bloquear nuevas funcionalidades.</li>
-                  <li>Documenté decisiones técnicas para acelerar onboarding y reducir fricción en futuras iteraciones.</li>
-                </ul>
-                <p>
-                  <strong>Tech Highlights</strong><br />
-                  App desktop multipágina con PySide6 / Qt.<br />
-                  Contratos ABC + casos de uso + SQLite con schema SQL.<br />
-                  Testing con pytest enfocado en estabilidad funcional.
-                </p>
-                <p>Este proyecto demuestra capacidad para diseñar aplicaciones desktop mantenibles con estructura por capas.</p>
-                <div class="project-cta">
+              <article class="project-card card" id="proj-clinicdesk">
+                <header class="project-head">
+                  <h3>ClinicDesk</h3>
+                  <div class="project-tags">
+                    <span class="chip">Python</span>
+                    <span class="chip">PySide6</span>
+                    <span class="chip">SQLite</span>
+                    <span class="chip">pytest</span>
+                  </div>
+                </header>
+
+                <div class="project-body">
+                  <ul>
+                    <li>Construí una aplicación multipágina con PySide6 para centralizar flujos operativos de clínica en una sola interfaz.</li>
+                    <li>Definí contratos con clases ABC para desacoplar componentes y facilitar sustitución de implementaciones.</li>
+                    <li>Organicé la lógica en casos de uso para aislar reglas de negocio frente a eventos de interfaz.</li>
+                    <li>Implementé persistencia SQLite apoyada en schema SQL para controlar estructura y evolución de datos.</li>
+                    <li>Desarrollé pruebas con pytest para validar casos de uso, repositorios y comportamiento esperado de módulos clave.</li>
+                    <li>Estructuré la aplicación para facilitar mantenimiento incremental sin bloquear nuevas funcionalidades.</li>
+                    <li>Documenté decisiones técnicas para acelerar onboarding y reducir fricción en futuras iteraciones.</li>
+                  </ul>
+                  <ul>
+                    <li><strong>Tech Highlights:</strong> App desktop multipágina con PySide6 / Qt.</li>
+                    <li>Contratos ABC + casos de uso + SQLite con schema SQL.</li>
+                    <li>Testing con pytest enfocado en estabilidad funcional.</li>
+                    <li>Este proyecto demuestra capacidad para diseñar aplicaciones desktop mantenibles con estructura por capas.</li>
+                  </ul>
+                </div>
+
+                <footer class="project-foot">
                   <a class="btn" href="https://github.com/carlos-arcas/clinicdesk" target="_blank" rel="noopener">Ver repo</a>
-                  <div class="project-pager">
-                    <a class="btn ghost" href="#proj-horas">← Prev</a>
-                    <a class="btn ghost" href="#proj-bateria">Next →</a>
-                  </div>
-                </div>
+                </footer>
               </article>
 
-              <article class="project-card" id="proj-bateria" tabindex="-1">
-                <h3>Bateria_Fotovoltaica</h3>
-                <ul>
-                  <li>Desarrollé un simulador técnico para analizar comportamiento energético y escenarios de operación de batería.</li>
-                  <li>Estructuré el proyecto en capas domain/application/infrastructure/ui para separar modelo, orquestación y entrada/salida.</li>
-                  <li>Implementé pruebas unitarias, de integración y de rendimiento para validar exactitud y respuesta del simulador.</li>
-                  <li>Incorporé exportación a Excel para compartir resultados con usuarios técnicos y de negocio sin dependencias extra.</li>
-                  <li>Gestioné persistencia en JSON y Parquet para soportar trazabilidad de simulaciones y reutilización de resultados.</li>
-                  <li>Documenté decisiones de diseño y límites de arquitectura en ARCHITECTURE.md para guiar evolución del sistema.</li>
-                  <li>Preparé base de código orientada a ampliación de reglas y nuevos escenarios sin reescrituras globales.</li>
-                </ul>
-                <p>
-                  <strong>Tech Highlights</strong><br />
-                  Simulador Python con capas domain/application/infrastructure/ui.<br />
-                  Persistencia JSON/Parquet y exportación Excel.<br />
-                  Suite de testing unit/integration/performance + ARCHITECTURE.md.
-                </p>
-                <p>Este proyecto demuestra capacidad para estructurar tests por dominio y frontera de integración.</p>
-                <div class="project-cta">
-                  <a class="btn" href="https://github.com/carlos-arcas/Bateria_Fotovoltaica" target="_blank" rel="noopener">Ver repo</a>
-                  <div class="project-pager">
-                    <a class="btn ghost" href="#proj-clinicdesk">← Prev</a>
-                    <a class="btn ghost" href="#proj-horas">Next →</a>
+              <article class="project-card card" id="proj-bateria">
+                <header class="project-head">
+                  <h3>Batería Fotovoltaica</h3>
+                  <div class="project-tags">
+                    <span class="chip">Python</span>
+                    <span class="chip">PySide6</span>
+                    <span class="chip">tests</span>
+                    <span class="chip">Excel export</span>
                   </div>
+                </header>
+
+                <div class="project-body">
+                  <ul>
+                    <li>Desarrollé un simulador técnico para analizar comportamiento energético y escenarios de operación de batería.</li>
+                    <li>Estructuré el proyecto en capas domain/application/infrastructure/ui para separar modelo, orquestación y entrada/salida.</li>
+                    <li>Implementé pruebas unitarias, de integración y de rendimiento para validar exactitud y respuesta del simulador.</li>
+                    <li>Incorporé exportación a Excel para compartir resultados con usuarios técnicos y de negocio sin dependencias extra.</li>
+                    <li>Gestioné persistencia en JSON y Parquet para soportar trazabilidad de simulaciones y reutilización de resultados.</li>
+                    <li>Documenté decisiones de diseño y límites de arquitectura en ARCHITECTURE.md para guiar evolución del sistema.</li>
+                    <li>Preparé base de código orientada a ampliación de reglas y nuevos escenarios sin reescrituras globales.</li>
+                  </ul>
+                  <ul>
+                    <li><strong>Tech Highlights:</strong> Simulador Python con capas domain/application/infrastructure/ui.</li>
+                    <li>Persistencia JSON/Parquet y exportación Excel.</li>
+                    <li>Suite de testing unit/integration/performance + ARCHITECTURE.md.</li>
+                    <li>Este proyecto demuestra capacidad para estructurar tests por dominio y frontera de integración.</li>
+                  </ul>
                 </div>
+
+                <footer class="project-foot">
+                  <a class="btn" href="https://github.com/carlos-arcas/Bateria_Fotovoltaica" target="_blank" rel="noopener">Ver repo</a>
+                </footer>
               </article>
             </div>
           </div>
@@ -439,7 +457,7 @@
             Documentación técnica para mantenimiento y continuidad del servicio.
 
             PROJECTS
-            Horas_Sindicales
+            Horas Sindicales
             Arquitectura con puertos y adaptadores.
             Persistencia SQLite con migraciones SQL.
             Integración con Google Sheets.
@@ -449,7 +467,7 @@
             Este proyecto demuestra capacidad para entregar producto instalable para usuarios finales.
             Link: https://github.com/carlos-arcas/Horas_Sindicales
 
-            clinicdesk
+            ClinicDesk
             Aplicación multipágina con PySide6.
             Contratos definidos con clases ABC.
             Organización por casos de uso.
@@ -458,7 +476,7 @@
             Este proyecto demuestra capacidad para diseñar aplicaciones desktop mantenibles con estructura por capas.
             Link: https://github.com/carlos-arcas/clinicdesk
 
-            Bateria_Fotovoltaica
+            Batería Fotovoltaica
             Simulador técnico en Python.
             Arquitectura domain/application/infrastructure/ui.
             Tests unitarios, de integración y rendimiento.
