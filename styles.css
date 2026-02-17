@@ -818,6 +818,10 @@ Objetivo de accesibilidad:
     scroll-behavior: auto;
   }
 
+  .projects-dots .dot {
+    transform: none !important;
+  }
+
   .project-card {
     transition: none !important;
   }
@@ -1040,16 +1044,72 @@ Objetivo de accesibilidad:
   display: flex;
   gap: var(--gap, 1rem);
   overflow-x: auto;
+  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding: 0.25rem 0 0.75rem;
 }
 
+.projects-dots {
+  position: static;
+  top: auto;
+  z-index: auto;
+  width: auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.projects-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+  border: 2px solid currentColor;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.projects-dots .dot:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
 .project-card {
+  position: relative;
   flex: 0 0 88%;
   max-width: 88%;
   scroll-snap-align: start;
   scroll-margin-top: calc(var(--section-offset) + 1.2rem);
+}
+
+.project-card:target {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+.project-card:target .project-head h3 {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+body:not(:has(.project-card:target)) #proj-horas {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+body:has(#proj-horas:target) .projects-dots a[href="#proj-horas"],
+body:has(#proj-clinicdesk:target) .projects-dots a[href="#proj-clinicdesk"],
+body:has(#proj-bateria:target) .projects-dots a[href="#proj-bateria"] {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+body:not(:has(.project-card:target)) .projects-dots a[href="#proj-horas"] {
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 .project-head {
@@ -1078,8 +1138,22 @@ Objetivo de accesibilidad:
 .project-foot {
   margin-top: 1rem;
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pager {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid currentColor;
+  opacity: 0.85;
 }
 
 .projects-carousel-wrap::before,
@@ -1341,10 +1415,17 @@ body:has(#mode-brutal:checked):has(#preferencias:target) nav a[href="#preferenci
   nav,
   .projects-nav,
   .cv-nav,
-  .btn,
-  .btn-secondary,
   .flip-btn {
     display: none;
+  }
+
+  .projects-dots,
+  .pager {
+    display: none !important;
+  }
+
+  .project-card:target {
+    outline: none;
   }
 
   * {
