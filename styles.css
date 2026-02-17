@@ -286,6 +286,18 @@ header > p {
   font-size: var(--step-1);
 }
 
+.print-hint {
+  display: inline-block;
+  margin-top: 0.7rem;
+  margin-bottom: 0;
+  padding: 0.45rem 0.65rem;
+  border: 1px dashed var(--border);
+  border-radius: 0.5rem;
+  color: var(--muted);
+  font-size: var(--step--1);
+  background: color-mix(in srgb, var(--card) 88%, white 12%);
+}
+
 header > ul {
   margin-top: var(--gap);
   padding-left: 1.2rem;
@@ -1191,6 +1203,11 @@ body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::af
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 13mm;
+  }
+
   :root {
     --bg: #ffffff;
     --card: #ffffff;
@@ -1200,20 +1217,35 @@ body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::af
     --shadow: none;
   }
 
-  .mode-switcher {
+  .mode-switcher,
+  .mode-toggle,
+  .print-hint,
+  nav,
+  .cv-nav,
+  .btn,
+  .btn-secondary,
+  .flip-btn {
     display: none;
   }
 
   * {
     box-shadow: none !important;
     text-shadow: none !important;
+    filter: none !important;
+    background-image: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 
+  html,
   body,
   .app {
     background: #fff;
     color: #000;
     padding: 0;
+    margin: 0;
+    font-size: 11pt;
+    line-height: 1.35;
   }
 
   .app::before,
@@ -1224,23 +1256,73 @@ body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::af
     display: none !important;
   }
 
-  nav {
-    display: none;
-  }
-
-  main,
   header,
+  main,
   section,
-  article {
-    width: 100%;
-    margin: 0;
+  article,
+  .flip-wrapper,
+  .flip-card,
+  .flip-inner,
+  .flip-front,
+  .flip-back,
+  .card,
+  .item,
+  .kpi,
+  .section {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    margin: 0 0 0.5rem 0 !important;
+    padding: 0.35rem 0.45rem !important;
+    border-radius: 0 !important;
+    border: 1px solid #d4d4d4 !important;
     break-inside: avoid;
     page-break-inside: avoid;
+    transform: none !important;
+  }
+
+  main {
+    display: block !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  #experiencia {
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  .flip-card,
+  .flip-inner,
+  .flip-front,
+  .flip-back {
+    perspective: none !important;
+    transform: none !important;
+    position: static !important;
+    backface-visibility: visible !important;
+    -webkit-backface-visibility: visible !important;
+  }
+
+  .flip-inner {
+    gap: 0 !important;
   }
 
   a {
     color: inherit;
     text-decoration: underline;
+  }
+
+  a[href^="https://github.com"]::after,
+  a[href*="github.io"]::after,
+  a[href^="mailto:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.95em;
+    word-break: break-all;
+  }
+
+  .sr-only {
+    display: none !important;
   }
 }
 
@@ -1280,4 +1362,15 @@ Checklist brutalista agresivo:
 - [x] Hover/focus snappy sin mareo
 - [x] Flip funciona y no rompe móvil
 - [x] No rompe prefers-reduced-motion ni print
+*/
+
+/*
+Checklist print:
+- [ ] Print: fondo blanco y texto negro
+- [ ] Print: nav y switcher ocultos
+- [ ] Print: sin auroras, sin glow, sin sombras
+- [ ] Print: 1 columna
+- [ ] Print: flip imprime front+back
+- [ ] Print: 1–2 páginas razonables
+- [ ] No rompe el modo normal
 */
