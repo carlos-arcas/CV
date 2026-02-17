@@ -10,6 +10,7 @@
   --anim: 180ms ease;
   --navbg: color-mix(in srgb, var(--card) 85%, white 15%);
   --chipbg: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+  --nav-active-glow: 0 0 0 rgba(0, 0, 0, 0);
 
   --maxw: 72rem;
   --gap: clamp(1rem, 0.75rem + 1vw, 1.75rem);
@@ -22,6 +23,8 @@
   --step-3: clamp(1.9rem, 1.45rem + 1.5vw, 2.55rem);
 
   --nav-height-mobile: 4.25rem;
+  --nav-sticky-top: 4.7rem;
+  --section-offset: calc(var(--nav-sticky-top) + 1rem);
 }
 
 #mode-boring:checked ~ .app {
@@ -36,6 +39,7 @@
   --anim: 180ms ease;
   --navbg: color-mix(in srgb, var(--card) 85%, white 15%);
   --chipbg: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+  --nav-active-glow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 #mode-cyber:checked ~ .app {
@@ -50,6 +54,7 @@
   --anim: 220ms ease;
   --navbg: color-mix(in srgb, var(--card) 82%, #1d1240 18%);
   --chipbg: color-mix(in srgb, var(--card) 70%, #0f2a57 30%);
+  --nav-active-glow: 0 0 0.65rem color-mix(in srgb, var(--accent) 75%, transparent 25%);
 }
 
 #mode-brutal:checked ~ .app {
@@ -66,9 +71,10 @@
   --chipbg: #efefef;
   --step-0: clamp(1.05rem, 1rem + 0.3vw, 1.15rem);
   --step-1: clamp(1.3rem, 1.2rem + 0.7vw, 1.6rem);
+  --nav-active-glow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
-* ,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -252,7 +258,7 @@ header > ul {
 
 nav {
   position: sticky;
-  top: 4.7rem;
+  top: var(--nav-sticky-top);
   z-index: 20;
   margin-top: var(--gap);
   margin-bottom: var(--gap);
@@ -273,6 +279,7 @@ nav ul {
 }
 
 nav a {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -282,13 +289,37 @@ nav a {
   text-decoration: none;
   color: var(--muted);
   font-size: var(--step--1);
-  font-weight: 600;
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: transform var(--anim), color var(--anim), background-color var(--anim), border-color var(--anim), box-shadow var(--anim);
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.25rem;
+  height: 0.14rem;
+  border-radius: 999px;
+  background: currentColor;
+  transform: scaleX(0.1);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform var(--anim), opacity var(--anim);
 }
 
 nav a:hover,
 nav a:focus-visible {
   background: color-mix(in srgb, var(--accent) 12%, white 88%);
   color: var(--text);
+  transform: translateY(-2px);
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+  opacity: 0.85;
+  transform: scaleX(1);
 }
 
 main {
@@ -308,6 +339,15 @@ main > article,
   box-shadow: var(--shadow);
   padding: clamp(1rem, 0.9rem + 0.8vw, 1.6rem);
   transition: background var(--anim), border-color var(--anim), border-radius var(--anim), box-shadow var(--anim), transform var(--anim);
+}
+
+main > section {
+  scroll-margin-top: var(--section-offset);
+}
+
+main > section:target {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+  box-shadow: var(--shadow), 0 0 0 3px color-mix(in srgb, var(--accent) 26%, transparent 74%);
 }
 
 main > section:hover,
@@ -436,6 +476,106 @@ main > section ul,
   border: 0;
 }
 
+/* Fallback sin :has(): primer enlace marcado de forma estable */
+nav a[aria-current="page"] {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border) 55%);
+}
+
+nav a[aria-current="page"]::after {
+  opacity: 0.8;
+  transform: scaleX(1);
+}
+
+@supports selector(body:has(#hero:target)) {
+  body:has(main :target) nav a[aria-current="page"] {
+    color: var(--muted);
+    border-color: transparent;
+  }
+
+  body:has(main :target) nav a[aria-current="page"]::after {
+    opacity: 0;
+    transform: scaleX(0.2);
+  }
+
+  body:has(#hero:target) nav a[href="#hero"],
+  body:has(#impacto:target) nav a[href="#impacto"],
+  body:has(#experiencia:target) nav a[href="#experiencia"],
+  body:has(#proyectos:target) nav a[href="#proyectos"],
+  body:has(#skills:target) nav a[href="#skills"],
+  body:has(#formacion:target) nav a[href="#formacion"],
+  body:has(#idiomas:target) nav a[href="#idiomas"],
+  body:has(#contacto:target) nav a[href="#contacto"] {
+    color: var(--text);
+    border-color: color-mix(in srgb, var(--accent) 48%, var(--border) 52%);
+    background: color-mix(in srgb, var(--accent) 18%, var(--card) 82%);
+    box-shadow: var(--nav-active-glow);
+  }
+
+  body:has(#hero:target) nav a[href="#hero"]::after,
+  body:has(#impacto:target) nav a[href="#impacto"]::after,
+  body:has(#experiencia:target) nav a[href="#experiencia"]::after,
+  body:has(#proyectos:target) nav a[href="#proyectos"]::after,
+  body:has(#skills:target) nav a[href="#skills"]::after,
+  body:has(#formacion:target) nav a[href="#formacion"]::after,
+  body:has(#idiomas:target) nav a[href="#idiomas"]::after,
+  body:has(#contacto:target) nav a[href="#contacto"]::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  body:has(#mode-brutal:checked):has(#hero:target) nav a[href="#hero"],
+  body:has(#mode-brutal:checked):has(#impacto:target) nav a[href="#impacto"],
+  body:has(#mode-brutal:checked):has(#experiencia:target) nav a[href="#experiencia"],
+  body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"],
+  body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
+  body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
+  body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
+  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+    border-width: 3px;
+  }
+}
+
+#mode-cyber:checked ~ .app nav a[aria-current="page"],
+body:has(#mode-cyber:checked):has(#hero:target) nav a[href="#hero"],
+body:has(#mode-cyber:checked):has(#impacto:target) nav a[href="#impacto"],
+body:has(#mode-cyber:checked):has(#experiencia:target) nav a[href="#experiencia"],
+body:has(#mode-cyber:checked):has(#proyectos:target) nav a[href="#proyectos"],
+body:has(#mode-cyber:checked):has(#skills:target) nav a[href="#skills"],
+body:has(#mode-cyber:checked):has(#formacion:target) nav a[href="#formacion"],
+body:has(#mode-cyber:checked):has(#idiomas:target) nav a[href="#idiomas"],
+body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
+  box-shadow: var(--nav-active-glow);
+}
+
+#mode-brutal:checked ~ .app nav a[aria-current="page"],
+body:has(#mode-brutal:checked):has(#hero:target) nav a[href="#hero"],
+body:has(#mode-brutal:checked):has(#impacto:target) nav a[href="#impacto"],
+body:has(#mode-brutal:checked):has(#experiencia:target) nav a[href="#experiencia"],
+body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"],
+body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
+body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
+body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
+body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+  border: 3px solid var(--text);
+  background: var(--accent);
+  color: #fff;
+}
+
+#mode-brutal:checked ~ .app nav a[aria-current="page"]::after,
+body:has(#mode-brutal:checked):has(#hero:target) nav a[href="#hero"]::after,
+body:has(#mode-brutal:checked):has(#impacto:target) nav a[href="#impacto"]::after,
+body:has(#mode-brutal:checked):has(#experiencia:target) nav a[href="#experiencia"]::after,
+body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"]::after,
+body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"]::after,
+body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"]::after,
+body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"]::after,
+body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::after {
+  height: 0.32rem;
+  background: #fff;
+  opacity: 1;
+}
+
 @media (min-width: 52rem) {
   body {
     padding-bottom: var(--gap);
@@ -472,6 +612,10 @@ main > section ul,
 }
 
 @media (max-width: 51.99rem) {
+  :root {
+    --section-offset: 1rem;
+  }
+
   .mode-switcher {
     position: static;
     margin-top: 0.45rem;
@@ -512,6 +656,25 @@ main > section ul,
     padding-inline: 0.8rem;
     border: 1px solid var(--border);
     background: var(--card);
+  }
+
+  nav a::after {
+    left: 0.45rem;
+    right: 0.45rem;
+    bottom: 0.32rem;
+    height: 0.2rem;
+  }
+
+  #mode-brutal:checked ~ .app nav a[aria-current="page"],
+  body:has(#mode-brutal:checked):has(#hero:target) nav a[href="#hero"],
+  body:has(#mode-brutal:checked):has(#impacto:target) nav a[href="#impacto"],
+  body:has(#mode-brutal:checked):has(#experiencia:target) nav a[href="#experiencia"],
+  body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"],
+  body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
+  body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
+  body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
+  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+    border-width: 2px;
   }
 }
 
@@ -563,9 +726,9 @@ main > section ul,
 
 /*
 Checklist:
-- [ ] Responsive ok (móvil/desktop)
-- [ ] Foco visible
-- [ ] Texto legible y contraste correcto
-- [ ] .sr-only correcto (sin display:none)
-- [ ] Nav no tapa contenido en móvil
+- [ ] Indicador activo funciona con #anchor
+- [ ] Scroll no oculta secciones
+- [ ] Nav usable con teclado
+- [ ] Bottom nav no tapa contenido
+- [ ] Cyberpunk y Brutal tienen variantes visuales coherentes
 */
