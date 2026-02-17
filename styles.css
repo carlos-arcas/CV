@@ -641,7 +641,8 @@ body:has(#mode-cyber:checked):has(#proyectos:target) nav a[href="#proyectos"],
 body:has(#mode-cyber:checked):has(#skills:target) nav a[href="#skills"],
 body:has(#mode-cyber:checked):has(#formacion:target) nav a[href="#formacion"],
 body:has(#mode-cyber:checked):has(#idiomas:target) nav a[href="#idiomas"],
-body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
+body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"],
+body:has(#mode-cyber:checked):has(#preferencias:target) nav a[href="#preferencias"] {
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent 55%), var(--nav-active-glow);
 }
 
@@ -875,7 +876,8 @@ Objetivo de accesibilidad:
   body:has(#mode-cyber:checked):has(#skills:target) nav a[href="#skills"],
   body:has(#mode-cyber:checked):has(#formacion:target) nav a[href="#formacion"],
   body:has(#mode-cyber:checked):has(#idiomas:target) nav a[href="#idiomas"],
-  body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
+  body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"],
+  body:has(#mode-cyber:checked):has(#preferencias:target) nav a[href="#preferencias"] {
     box-shadow: none !important;
     text-shadow: none !important;
     filter: none !important;
@@ -1032,7 +1034,8 @@ nav a[aria-current="page"]::after {
   body:has(#skills:target) nav a[href="#skills"],
   body:has(#formacion:target) nav a[href="#formacion"],
   body:has(#idiomas:target) nav a[href="#idiomas"],
-  body:has(#contacto:target) nav a[href="#contacto"] {
+  body:has(#contacto:target) nav a[href="#contacto"],
+  body:has(#preferencias:target) nav a[href="#preferencias"] {
     color: var(--text);
     border-color: color-mix(in srgb, var(--accent) 48%, var(--border) 52%);
     background: color-mix(in srgb, var(--accent) 18%, var(--card) 82%);
@@ -1046,7 +1049,8 @@ nav a[aria-current="page"]::after {
   body:has(#skills:target) nav a[href="#skills"]::after,
   body:has(#formacion:target) nav a[href="#formacion"]::after,
   body:has(#idiomas:target) nav a[href="#idiomas"]::after,
-  body:has(#contacto:target) nav a[href="#contacto"]::after {
+  body:has(#contacto:target) nav a[href="#contacto"]::after,
+  body:has(#preferencias:target) nav a[href="#preferencias"]::after {
     opacity: 1;
     transform: scaleX(1);
   }
@@ -1058,7 +1062,8 @@ nav a[aria-current="page"]::after {
   body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
   body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
   body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
-  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"],
+  body:has(#mode-brutal:checked):has(#preferencias:target) nav a[href="#preferencias"] {
     border-width: 3px;
   }
 }
@@ -1071,7 +1076,8 @@ body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"],
 body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
 body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
 body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
-body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"],
+body:has(#mode-brutal:checked):has(#preferencias:target) nav a[href="#preferencias"] {
   border: 3px solid var(--text);
   background: var(--accent);
   color: #fff;
@@ -1085,7 +1091,8 @@ body:has(#mode-brutal:checked):has(#proyectos:target) nav a[href="#proyectos"]::
 body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"]::after,
 body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"]::after,
 body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"]::after,
-body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::after {
+body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::after,
+body:has(#mode-brutal:checked):has(#preferencias:target) nav a[href="#preferencias"]::after {
   height: 0.32rem;
   background: #fff;
   opacity: 1;
@@ -1188,7 +1195,8 @@ body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"]::af
   body:has(#mode-brutal:checked):has(#skills:target) nav a[href="#skills"],
   body:has(#mode-brutal:checked):has(#formacion:target) nav a[href="#formacion"],
   body:has(#mode-brutal:checked):has(#idiomas:target) nav a[href="#idiomas"],
-  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"] {
+  body:has(#mode-brutal:checked):has(#contacto:target) nav a[href="#contacto"],
+  body:has(#mode-brutal:checked):has(#preferencias:target) nav a[href="#preferencias"] {
     border-width: 2px;
   }
 }
