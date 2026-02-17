@@ -58,19 +58,21 @@
 }
 
 #mode-brutal:checked ~ .app {
-  --bg: #f6f6f6;
-  --text: #0a0a0a;
-  --muted: #212121;
-  --card: #ffffff;
-  --border: #111111;
-  --accent: #ff2a00;
-  --shadow: 8px 8px 0 #111111;
+  --bg: #0a0a0a;
+  --text: #f2f2f2;
+  --muted: #c7c7c7;
+  --card: #141414;
+  --border: #f2f2f2;
+  --accent: #ffd400;
+  --shadow: 6px 6px 0 #ffd400;
   --radius: 0;
-  --anim: 80ms linear;
-  --navbg: #ffffff;
-  --chipbg: #efefef;
-  --step-0: clamp(1.05rem, 1rem + 0.3vw, 1.15rem);
-  --step-1: clamp(1.3rem, 1.2rem + 0.7vw, 1.6rem);
+  --anim: 90ms linear;
+  --navbg: #0a0a0a;
+  --chipbg: #1f1f1f;
+  --step-0: clamp(1.12rem, 1.04rem + 0.45vw, 1.22rem);
+  --step-1: clamp(1.45rem, 1.28rem + 0.95vw, 1.9rem);
+  --step-2: clamp(2rem, 1.75rem + 1.4vw, 2.8rem);
+  --step-3: clamp(2.6rem, 2rem + 2.2vw, 4rem);
   --nav-active-glow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
@@ -213,6 +215,27 @@ summary:focus-visible,
   background: #eef2ff;
 }
 
+
+#mode-brutal:checked ~ .mode-switcher {
+  border: 3px solid #f2f2f2;
+  border-radius: 0;
+  background: #0a0a0a;
+  box-shadow: 6px 6px 0 #ffd400;
+}
+
+#mode-brutal:checked ~ .mode-switcher label {
+  border-radius: 0;
+  border: 2px solid transparent;
+  color: #f2f2f2;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+#mode-brutal:checked ~ .mode-switcher label:hover {
+  background: #ffd400;
+  color: #111;
+}
 #mode-boring:checked ~ .mode-switcher label[for="mode-boring"],
 #mode-cyber:checked ~ .mode-switcher label[for="mode-cyber"],
 #mode-brutal:checked ~ .mode-switcher label[for="mode-brutal"] {
@@ -628,8 +651,115 @@ body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
   filter: drop-shadow(0 14px 28px color-mix(in srgb, #7b5cff 34%, transparent 66%)) drop-shadow(0 0 0.8rem color-mix(in srgb, var(--accent) 20%, transparent 80%));
 }
 
+#mode-brutal:checked ~ .app {
+  background: var(--bg);
+}
+
+#mode-brutal:checked ~ .app,
+#mode-brutal:checked ~ .app * {
+  border-radius: 0;
+}
+
+#mode-brutal:checked ~ .app h1,
+#mode-brutal:checked ~ .app h2,
+#mode-brutal:checked ~ .app h3 {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#mode-brutal:checked ~ .app h1 {
+  line-height: 1;
+}
+
+#mode-brutal:checked ~ .app nav ul,
+#mode-brutal:checked ~ .app main > section,
+#mode-brutal:checked ~ .app main > article,
+#mode-brutal:checked ~ .app .card,
+#mode-brutal:checked ~ .app .section,
+#mode-brutal:checked ~ .app .kpi,
+#mode-brutal:checked ~ .app .chip,
+#mode-brutal:checked ~ .app .btn,
+#mode-brutal:checked ~ .app .btn-secondary,
+#mode-brutal:checked ~ .app .flip-btn,
+#mode-brutal:checked ~ .app nav a {
+  border-width: 3px;
+}
+
+#mode-brutal:checked ~ .app main > section,
+#mode-brutal:checked ~ .app main > article,
+#mode-brutal:checked ~ .app .card,
+#mode-brutal:checked ~ .app .section,
+#mode-brutal:checked ~ .app .kpi,
+#mode-brutal:checked ~ .app .flip-front,
+#mode-brutal:checked ~ .app .flip-back {
+  box-shadow: var(--shadow);
+}
+
+#mode-brutal:checked ~ .app nav ul {
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+#mode-brutal:checked ~ .app nav a,
+#mode-brutal:checked ~ .app .flip-btn,
+#mode-brutal:checked ~ .app .btn,
+#mode-brutal:checked ~ .app .btn-secondary {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+#mode-brutal:checked ~ .app nav a:hover,
+#mode-brutal:checked ~ .app nav a:focus-visible,
+#mode-brutal:checked ~ .app .flip-btn:hover,
+#mode-brutal:checked ~ .app .btn:hover,
+#mode-brutal:checked ~ .app .btn-secondary:hover {
+  background: var(--accent);
+  color: #111;
+  border-color: #111;
+  transform: translate(-2px, -2px);
+}
+
+#mode-brutal:checked ~ .app main > section:hover,
+#mode-brutal:checked ~ .app main > article:hover,
+#mode-brutal:checked ~ .app .card:hover,
+#mode-brutal:checked ~ .app .section:hover,
+#mode-brutal:checked ~ .app .kpi:hover {
+  transform: translate(-4px, -4px);
+}
+
+#mode-brutal:checked ~ .app nav a::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0.3rem;
+  border-radius: 0;
+}
+
+#mode-brutal:checked ~ .app a:focus-visible,
+#mode-brutal:checked ~ .app button:focus-visible,
+#mode-brutal:checked ~ .app [role="button"]:focus-visible,
+#mode-brutal:checked ~ .app input:focus-visible,
+#mode-brutal:checked ~ .app textarea:focus-visible,
+#mode-brutal:checked ~ .app select:focus-visible,
+#mode-brutal:checked ~ .app summary:focus-visible,
+#mode-brutal:checked ~ .app .mode-switcher label:focus-visible,
+#mode-brutal:checked ~ .app .flip-toggle:focus-visible + .flip-card .flip-btn {
+  outline: 4px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #mode-brutal:checked ~ .app nav a:hover,
+  #mode-brutal:checked ~ .app nav a:focus-visible {
+    animation: brutal-shake 90ms linear 1;
+  }
+}
+
 #mode-brutal:checked ~ .app .flip-inner {
-  transition-duration: 40ms;
+  transition-duration: 120ms;
   transition-timing-function: linear;
 }
 
@@ -641,7 +771,19 @@ body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
 
 #mode-brutal:checked ~ .app .flip-btn {
   border-width: 3px;
-  background: #fff;
+  background: #1a1a1a;
+  color: var(--text);
+}
+
+@keyframes brutal-shake {
+  0%,
+  100% {
+    transform: translate(-2px, -2px);
+  }
+
+  50% {
+    transform: translate(-1px, -2px);
+  }
 }
 
 @keyframes cyber-border-spin {
@@ -1128,4 +1270,14 @@ Checklist reduce-motion:
 - [ ] Scroll no es smooth
 - [ ] Cyberpunk no parpadea
 - [ ] CV sigue completamente legible
+*/
+
+/*
+Checklist brutalista agresivo:
+- [x] Brutal usa bordes gruesos y radius 0
+- [x] Tipografía grande y jerarquía clara
+- [x] Acento agresivo aplicado con coherencia
+- [x] Hover/focus snappy sin mareo
+- [x] Flip funciona y no rompe móvil
+- [x] No rompe prefers-reduced-motion ni print
 */
