@@ -500,9 +500,83 @@ main > section ul,
   background: #fff;
 }
 
+/*
+===============================================================================
+ACCESIBILIDAD AVANZADA — RESPETO REAL DE `prefers-reduced-motion`
+-------------------------------------------------------------------------------
+Este bloque aplica una versión estática del CV cuando la persona usuaria indica
+preferencia por reducir movimiento en su sistema operativo o navegador.
+
+Objetivo de accesibilidad:
+- Priorizar comprensión y legibilidad sin depender de animaciones.
+- Eliminar transiciones, animaciones y efectos de movimiento potencialmente
+  molestos (incluyendo flip 3D y estética cyberpunk con parpadeo/glow).
+- Mantener toda la información visible y jerarquizada.
+===============================================================================
+*/
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .app {
+    background: var(--bg);
+  }
+
+  .flip-wrapper {
+    perspective: none;
+  }
+
+  .flip-card {
+    min-height: auto;
+  }
+
   .flip-inner {
-    transition: none;
+    display: grid;
+    gap: 0.85rem;
+    transform: none !important;
+    transform-style: flat;
+  }
+
+  .flip-front,
+  .flip-back {
+    position: static;
+    min-height: auto;
+    transform: none;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .flip-btn {
+    display: none !important;
+  }
+
+  #mode-cyber:checked ~ .app,
+  #mode-cyber:checked ~ .app .mode-switcher,
+  #mode-cyber:checked ~ .app nav a,
+  #mode-cyber:checked ~ .app .card,
+  #mode-cyber:checked ~ .app .flip-front,
+  #mode-cyber:checked ~ .app .flip-back,
+  #mode-cyber:checked ~ .app .chip,
+  body:has(#mode-cyber:checked) nav a[aria-current="page"],
+  body:has(#mode-cyber:checked):has(#hero:target) nav a[href="#hero"],
+  body:has(#mode-cyber:checked):has(#impacto:target) nav a[href="#impacto"],
+  body:has(#mode-cyber:checked):has(#experiencia:target) nav a[href="#experiencia"],
+  body:has(#mode-cyber:checked):has(#proyectos:target) nav a[href="#proyectos"],
+  body:has(#mode-cyber:checked):has(#skills:target) nav a[href="#skills"],
+  body:has(#mode-cyber:checked):has(#formacion:target) nav a[href="#formacion"],
+  body:has(#mode-cyber:checked):has(#idiomas:target) nav a[href="#idiomas"],
+  body:has(#mode-cyber:checked):has(#contacto:target) nav a[href="#contacto"] {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
   }
 }
 
@@ -890,4 +964,14 @@ Checklist flip cards:
 - [ ] Hover flip solo en Cyberpunk
 - [ ] Contenido visible en DOM
 - [ ] No rompe layout móvil
+*/
+
+/*
+Checklist reduce-motion:
+- [ ] No hay animaciones en reduce-motion
+- [ ] Flip cards se muestran completas
+- [ ] Botones flip ocultos en reduce-motion
+- [ ] Scroll no es smooth
+- [ ] Cyberpunk no parpadea
+- [ ] CV sigue completamente legible
 */
