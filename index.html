@@ -22,177 +22,26 @@
     </script>
   </head>
   <body>
-    <header>
-      <h1>Carlos Arcas</h1>
-      <p>Python &amp; Data Automation Developer | BI (Power BI) | SQL | ETL</p>
-      <ul>
-        <li>Ubicación: Sevilla (Remoto)</li>
-        <li>
-          Email:
-          <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a>
-        </li>
-        <li>
-          GitHub:
-          <a href="https://github.com/TU_USUARIO">Perfil de GitHub de Carlos Arcas</a>
-        </li>
-        <li>
-          Web:
-          <a href="https://TU_USUARIO.github.io">Sitio web profesional de Carlos Arcas</a>
-        </li>
-      </ul>
-    </header>
+    <input type="radio" name="mode" id="mode-boring" class="mode-toggle" checked hidden />
+    <input type="radio" name="mode" id="mode-cyber" class="mode-toggle" hidden />
+    <input type="radio" name="mode" id="mode-brutal" class="mode-toggle" hidden />
 
-    <nav aria-label="Navegación principal del currículum">
-      <ul>
-        <li><a href="#hero">Resumen profesional</a></li>
-        <li><a href="#impacto">Impacto profesional</a></li>
-        <li><a href="#experiencia">Experiencia</a></li>
-        <li><a href="#proyectos">Proyectos personales</a></li>
-        <li><a href="#skills">Tecnologías</a></li>
-        <li><a href="#formacion">Formación</a></li>
-        <li><a href="#idiomas">Idiomas</a></li>
-        <li><a href="#contacto">Contacto y preferencia laboral</a></li>
-      </ul>
-    </nav>
+    <div class="mode-switcher" role="group" aria-label="Selector de modo visual">
+      <label for="mode-boring" tabindex="0">Aburrimode</label>
+      <label for="mode-cyber" tabindex="0">Cyberpunk</label>
+      <label for="mode-brutal" tabindex="0">Brutal</label>
+    </div>
 
-    <main>
-      <section id="hero">
-        <h2>Resumen profesional</h2>
-        <p>
-          Profesional de datos con experiencia en entorno corporativo en AYESA para proyectos de Endesa,
-          centrado en SQL, calidad de datos y automatización de procesos.
-        </p>
-        <p>
-          Desarrollo automatizaciones ETL con Python para preparar datasets y alimentar cuadros de mando
-          en Power BI, reduciendo trabajo manual y mejorando consistencia.
-        </p>
-        <p>
-          Busco un rol remoto en equipo técnico con code review y estándares de desarrollo, evitando
-          contextos de programador único y funciones comerciales puras.
-        </p>
-      </section>
-
-      <section id="impacto">
-        <h2>Impacto profesional</h2>
+    <div class="app">
+      <header>
+        <h1>Carlos Arcas</h1>
+        <p>Python &amp; Data Automation Developer | BI (Power BI) | SQL | ETL</p>
         <ul>
-          <li>Automatización de procesos ETL y de reporting para reducir carga manual y errores.</li>
-          <li>Validación y control de calidad de datos para mejorar fiabilidad de entregables.</li>
-          <li>Preparación de datos y soporte analítico para dashboards en Power BI.</li>
-          <li>Trabajo técnico coordinado con responsables de proyecto en contextos corporativos.</li>
-        </ul>
-      </section>
-
-      <section id="experiencia">
-        <h2>Experiencia</h2>
-        <h3>AYESA — Proyectos Endesa (Sep 2019 – Actualidad)</h3>
-
-        <article>
-          <h3>Endesa Distribución (2019–2024)</h3>
-          <ul>
-            <li>
-              Extracciones con SQL mediante consultas para reporting mensual fijo y peticiones ad-hoc.
-            </li>
-            <li>
-              Validación y calidad de datos, identificando errores de entrada de comerciales y operativa.
-            </li>
-            <li>Entrega de informes en Excel, XML u otros formatos requeridos.</li>
-            <li>
-              Trabajo técnico en equipo, con interlocución cliente normalmente gestionada por un senior
-              o por el propio cliente.
-            </li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Endesa X (Marketing) (2024–Actualidad)</h3>
-          <ul>
-            <li>
-              Automatizaciones con Python para ETL, descargas automáticas FTP, preparación de datasets
-              para Power BI y generación de informes Excel.
-            </li>
-            <li>
-              Consultas y extracción desde Salesforce (Atenea y X) y Redshift; también Oracle y SQLite
-              según necesidades.
-            </li>
-            <li>Desarrollo y mantenimiento de dashboards en Power BI con DAX nivel intermedio.</li>
-            <li>
-              Trabajo transversal con varios responsables y jefes de proyecto (FV, HVAC, entre otros).
-            </li>
-            <li>
-              Aporte de valor orientado a procesos de “doble click y listo” para reducir carga mental y
-              errores del proceso manual.
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="proyectos">
-        <h2>Proyectos personales</h2>
-
-        <article>
-          <h3>ClinicDesk</h3>
-          <p>
-            Aplicación de escritorio en Python con clean architecture, métricas de negocio y estructura
-            preparada para analítica.
-          </p>
-          <p>
-            <a href="https://github.com/TU_USUARIO">Repositorio de ClinicDesk en GitHub</a>
-          </p>
-        </article>
-
-        <article>
-          <h3>Horas Sindicales</h3>
-          <p>
-            Aplicación de escritorio en Python para cálculo y registro histórico de horas, con generación
-            de documentos.
-          </p>
-          <p>
-            <a href="https://github.com/TU_USUARIO">Repositorio de Horas Sindicales en GitHub</a>
-          </p>
-        </article>
-      </section>
-
-      <section id="skills">
-        <h2>Tecnologías</h2>
-        <ul>
-          <li>Python</li>
-          <li>SQL (estándar)</li>
-          <li>ETL</li>
-          <li>Power BI</li>
-          <li>DAX (intermedio)</li>
-          <li>Excel</li>
-          <li>Data Quality</li>
-          <li>FTP</li>
-          <li>Oracle</li>
-          <li>Redshift</li>
-          <li>SQLite</li>
-        </ul>
-        <p>Python · SQL (estándar) · ETL · Power BI · DAX (intermedio) · Excel · Data Quality · FTP · Oracle · Redshift · SQLite</p>
-      </section>
-
-      <section id="formacion">
-        <h2>Formación</h2>
-        <ul>
-          <li>CFGS Desarrollo de Aplicaciones Informáticas (2011)</li>
-        </ul>
-      </section>
-
-      <section id="idiomas">
-        <h2>Idiomas</h2>
-        <ul>
-          <li>Inglés: alto (lectura, escritura y conversación)</li>
-          <li>Francés: medio (lectura/escritura), conversación baja</li>
-        </ul>
-      </section>
-
-      <section id="contacto">
-        <h2>Contacto y preferencia laboral</h2>
-        <ul>
+          <li>Ubicación: Sevilla (Remoto)</li>
           <li>
             Email:
             <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a>
           </li>
-          <li>Ubicación: Sevilla (Remoto)</li>
           <li>
             GitHub:
             <a href="https://github.com/TU_USUARIO">Perfil de GitHub de Carlos Arcas</a>
@@ -201,44 +50,207 @@
             Web:
             <a href="https://TU_USUARIO.github.io">Sitio web profesional de Carlos Arcas</a>
           </li>
-          <li>Preferencia de trabajo: Remoto</li>
-          <li>Objetivo salarial: ≥ 30k</li>
-          <li>
-            Entorno deseado: equipo técnico con code review y estándares; evitar ser único programador
-            y evitar rol comercial puro.
-          </li>
         </ul>
-      </section>
+      </header>
 
-      <section class="sr-only" aria-label="ATS Plain Text">
-        <h2>ATS Plain Text</h2>
-        <p>
-          Carlos Arcas. Python &amp; Data Automation Developer | BI (Power BI) | SQL | ETL. Ubicación:
-          Sevilla (Remoto). Email: carlos.arcas.alcala@gmail.com. GitHub:
-          https://github.com/TU_USUARIO. Web: https://TU_USUARIO.github.io. Resumen: experiencia en
-          entorno corporativo en AYESA para Endesa, con SQL fuerte, validación y calidad de datos, y
-          automatizaciones ETL con Python para alimentar Power BI. Busca rol remoto en equipo técnico
-          con code review y estándares, evitando ser único programador y evitando rol comercial puro.
-          Experiencia: AYESA — Proyectos Endesa (Sep 2019 – Actualidad). Endesa Distribución
-          (2019–2024): extracciones con SQL para reporting mensual fijo y peticiones ad-hoc, validación
-          y calidad de datos, entrega de informes en Excel, XML u otros formatos, trabajo técnico en
-          equipo con interlocución cliente normalmente gestionada por senior o cliente. Endesa X
-          (Marketing) (2024–Actualidad): automatizaciones con Python para ETL, descargas automáticas
-          FTP, preparación de datasets para Power BI y generación de informes Excel; consultas y
-          extracción desde Salesforce (Atenea y X) y Redshift, también Oracle y SQLite según
-          necesidades; dashboards Power BI y DAX nivel intermedio; trabajo transversal con varios
-          responsables y jefes de proyecto (FV, HVAC, etc.); valor en procesos “doble click y listo”
-          para reducir carga mental y errores del proceso manual. Skills: Python, SQL (estándar), ETL,
-          Power BI, DAX (intermedio), Excel, Data Quality, FTP, Oracle, Redshift, SQLite. Proyectos
-          personales: ClinicDesk (Python desktop, clean architecture, métricas de negocio, preparado
-          para analítica) con enlace placeholder en GitHub; Horas Sindicales (Python desktop,
-          cálculo/registro histórico, generación de documentos) con enlace placeholder en GitHub.
-          Formación: CFGS Desarrollo de Aplicaciones Informáticas (2011). Idiomas: Inglés alto
-          (lectura, escritura y conversación), Francés medio (lectura/escritura), conversación baja.
-          Preferencia laboral: remoto, objetivo salarial ≥ 30k, equipo técnico con code review y
-          estándares, evitar ser único programador y evitar rol comercial puro.
-        </p>
-      </section>
-    </main>
+      <nav aria-label="Navegación principal del currículum">
+        <ul>
+          <li><a href="#hero">Resumen profesional</a></li>
+          <li><a href="#impacto">Impacto profesional</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos personales</a></li>
+          <li><a href="#skills">Tecnologías</a></li>
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#idiomas">Idiomas</a></li>
+          <li><a href="#contacto">Contacto y preferencia laboral</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section id="hero">
+          <h2>Resumen profesional</h2>
+          <p>
+            Profesional de datos con experiencia en entorno corporativo en AYESA para proyectos de Endesa,
+            centrado en SQL, calidad de datos y automatización de procesos.
+          </p>
+          <p>
+            Desarrollo automatizaciones ETL con Python para preparar datasets y alimentar cuadros de mando
+            en Power BI, reduciendo trabajo manual y mejorando consistencia.
+          </p>
+          <p>
+            Busco un rol remoto en equipo técnico con code review y estándares de desarrollo, evitando
+            contextos de programador único y funciones comerciales puras.
+          </p>
+        </section>
+
+        <section id="impacto">
+          <h2>Impacto profesional</h2>
+          <ul>
+            <li>Automatización de procesos ETL y de reporting para reducir carga manual y errores.</li>
+            <li>Validación y control de calidad de datos para mejorar fiabilidad de entregables.</li>
+            <li>Preparación de datos y soporte analítico para dashboards en Power BI.</li>
+            <li>Trabajo técnico coordinado con responsables de proyecto en contextos corporativos.</li>
+          </ul>
+        </section>
+
+        <section id="experiencia">
+          <h2>Experiencia</h2>
+          <h3>AYESA — Proyectos Endesa (Sep 2019 – Actualidad)</h3>
+
+          <article>
+            <h3>Endesa Distribución (2019–2024)</h3>
+            <ul>
+              <li>
+                Extracciones con SQL mediante consultas para reporting mensual fijo y peticiones ad-hoc.
+              </li>
+              <li>
+                Validación y calidad de datos, identificando errores de entrada de comerciales y operativa.
+              </li>
+              <li>Entrega de informes en Excel, XML u otros formatos requeridos.</li>
+              <li>
+                Trabajo técnico en equipo, con interlocución cliente normalmente gestionada por un senior
+                o por el propio cliente.
+              </li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Endesa X (Marketing) (2024–Actualidad)</h3>
+            <ul>
+              <li>
+                Automatizaciones con Python para ETL, descargas automáticas FTP, preparación de datasets
+                para Power BI y generación de informes Excel.
+              </li>
+              <li>
+                Consultas y extracción desde Salesforce (Atenea y X) y Redshift; también Oracle y SQLite
+                según necesidades.
+              </li>
+              <li>Desarrollo y mantenimiento de dashboards en Power BI con DAX nivel intermedio.</li>
+              <li>
+                Trabajo transversal con varios responsables y jefes de proyecto (FV, HVAC, entre otros).
+              </li>
+              <li>
+                Aporte de valor orientado a procesos de “doble click y listo” para reducir carga mental y
+                errores del proceso manual.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <section id="proyectos">
+          <h2>Proyectos personales</h2>
+
+          <article>
+            <h3>ClinicDesk</h3>
+            <p>
+              Aplicación de escritorio en Python con clean architecture, métricas de negocio y estructura
+              preparada para analítica.
+            </p>
+            <p>
+              <a href="https://github.com/TU_USUARIO">Repositorio de ClinicDesk en GitHub</a>
+            </p>
+          </article>
+
+          <article>
+            <h3>Horas Sindicales</h3>
+            <p>
+              Aplicación de escritorio en Python para cálculo y registro histórico de horas, con generación
+              de documentos.
+            </p>
+            <p>
+              <a href="https://github.com/TU_USUARIO">Repositorio de Horas Sindicales en GitHub</a>
+            </p>
+          </article>
+        </section>
+
+        <section id="skills">
+          <h2>Tecnologías</h2>
+          <ul>
+            <li>Python</li>
+            <li>SQL (estándar)</li>
+            <li>ETL</li>
+            <li>Power BI</li>
+            <li>DAX (intermedio)</li>
+            <li>Excel</li>
+            <li>Data Quality</li>
+            <li>FTP</li>
+            <li>Oracle</li>
+            <li>Redshift</li>
+            <li>SQLite</li>
+          </ul>
+          <p>Python · SQL (estándar) · ETL · Power BI · DAX (intermedio) · Excel · Data Quality · FTP · Oracle · Redshift · SQLite</p>
+        </section>
+
+        <section id="formacion">
+          <h2>Formación</h2>
+          <ul>
+            <li>CFGS Desarrollo de Aplicaciones Informáticas (2011)</li>
+          </ul>
+        </section>
+
+        <section id="idiomas">
+          <h2>Idiomas</h2>
+          <ul>
+            <li>Inglés: alto (lectura, escritura y conversación)</li>
+            <li>Francés: medio (lectura/escritura), conversación baja</li>
+          </ul>
+        </section>
+
+        <section id="contacto">
+          <h2>Contacto y preferencia laboral</h2>
+          <ul>
+            <li>
+              Email:
+              <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a>
+            </li>
+            <li>Ubicación: Sevilla (Remoto)</li>
+            <li>
+              GitHub:
+              <a href="https://github.com/TU_USUARIO">Perfil de GitHub de Carlos Arcas</a>
+            </li>
+            <li>
+              Web:
+              <a href="https://TU_USUARIO.github.io">Sitio web profesional de Carlos Arcas</a>
+            </li>
+            <li>Preferencia de trabajo: Remoto</li>
+            <li>Objetivo salarial: ≥ 30k</li>
+            <li>
+              Entorno deseado: equipo técnico con code review y estándares; evitar ser único programador
+              y evitar rol comercial puro.
+            </li>
+          </ul>
+        </section>
+
+        <section class="sr-only" aria-label="ATS Plain Text">
+          <h2>ATS Plain Text</h2>
+          <p>
+            Carlos Arcas. Python &amp; Data Automation Developer | BI (Power BI) | SQL | ETL. Ubicación:
+            Sevilla (Remoto). Email: carlos.arcas.alcala@gmail.com. GitHub:
+            https://github.com/TU_USUARIO. Web: https://TU_USUARIO.github.io. Resumen: experiencia en
+            entorno corporativo en AYESA para Endesa, con SQL fuerte, validación y calidad de datos, y
+            automatizaciones ETL con Python para alimentar Power BI. Busca rol remoto en equipo técnico
+            con code review y estándares, evitando ser único programador y evitando rol comercial puro.
+            Experiencia: AYESA — Proyectos Endesa (Sep 2019 – Actualidad). Endesa Distribución
+            (2019–2024): extracciones con SQL para reporting mensual fijo y peticiones ad-hoc, validación
+            y calidad de datos, entrega de informes en Excel, XML u otros formatos, trabajo técnico en
+            equipo con interlocución cliente normalmente gestionada por senior o cliente. Endesa X
+            (Marketing) (2024–Actualidad): automatizaciones con Python para ETL, descargas automáticas
+            FTP, preparación de datasets para Power BI y generación de informes Excel; consultas y
+            extracción desde Salesforce (Atenea y X) y Redshift, también Oracle y SQLite según
+            necesidades; dashboards Power BI y DAX nivel intermedio; trabajo transversal con varios
+            responsables y jefes de proyecto (FV, HVAC, etc.); valor en procesos “doble click y listo”
+            para reducir carga mental y errores del proceso manual. Skills: Python, SQL (estándar), ETL,
+            Power BI, DAX (intermedio), Excel, Data Quality, FTP, Oracle, Redshift, SQLite. Proyectos
+            personales: ClinicDesk (Python desktop, clean architecture, métricas de negocio, preparado
+            para analítica) con enlace placeholder en GitHub; Horas Sindicales (Python desktop,
+            cálculo/registro histórico, generación de documentos) con enlace placeholder en GitHub.
+            Formación: CFGS Desarrollo de Aplicaciones Informáticas (2011). Idiomas: Inglés alto
+            (lectura, escritura y conversación), Francés medio (lectura/escritura), conversación baja.
+            Preferencia laboral: remoto, objetivo salarial ≥ 30k, equipo técnico con code review y
+            estándares, evitar ser único programador y evitar rol comercial puro.
+          </p>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

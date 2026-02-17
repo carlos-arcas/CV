@@ -7,6 +7,10 @@
   --accent: #1d4ed8;
   --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
   --radius: 1rem;
+  --anim: 180ms ease;
+  --navbg: color-mix(in srgb, var(--card) 85%, white 15%);
+  --chipbg: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+
   --maxw: 72rem;
   --gap: clamp(1rem, 0.75rem + 1vw, 1.75rem);
 
@@ -18,6 +22,50 @@
   --step-3: clamp(1.9rem, 1.45rem + 1.5vw, 2.55rem);
 
   --nav-height-mobile: 4.25rem;
+}
+
+#mode-boring:checked ~ .app {
+  --bg: #f5f7fb;
+  --text: #111827;
+  --muted: #4b5563;
+  --card: #ffffff;
+  --border: #d6deea;
+  --accent: #1d4ed8;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --radius: 1rem;
+  --anim: 180ms ease;
+  --navbg: color-mix(in srgb, var(--card) 85%, white 15%);
+  --chipbg: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+}
+
+#mode-cyber:checked ~ .app {
+  --bg: #090a1f;
+  --text: #ddf6ff;
+  --muted: #93b7d7;
+  --card: #101838;
+  --border: #28477f;
+  --accent: #1fffd6;
+  --shadow: 0 0 0 1px rgba(31, 255, 214, 0.22), 0 14px 34px rgba(121, 56, 255, 0.25);
+  --radius: 1.1rem;
+  --anim: 220ms ease;
+  --navbg: color-mix(in srgb, var(--card) 82%, #1d1240 18%);
+  --chipbg: color-mix(in srgb, var(--card) 70%, #0f2a57 30%);
+}
+
+#mode-brutal:checked ~ .app {
+  --bg: #f6f6f6;
+  --text: #0a0a0a;
+  --muted: #212121;
+  --card: #ffffff;
+  --border: #111111;
+  --accent: #ff2a00;
+  --shadow: 8px 8px 0 #111111;
+  --radius: 0;
+  --anim: 80ms linear;
+  --navbg: #ffffff;
+  --chipbg: #efefef;
+  --step-0: clamp(1.05rem, 1rem + 0.3vw, 1.15rem);
+  --step-1: clamp(1.3rem, 1.2rem + 0.7vw, 1.6rem);
 }
 
 * ,
@@ -52,11 +100,21 @@ body {
   font-size: var(--step-0);
   line-height: 1.6;
   color: var(--text);
-  background: linear-gradient(180deg, #f8faff 0%, var(--bg) 35%, #eef3fb 100%);
+  background: #f0f2f8;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: calc(var(--nav-height-mobile) + env(safe-area-inset-bottom, 0px) + var(--gap));
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 12%, color-mix(in srgb, var(--accent) 16%, transparent 84%), transparent 36%),
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent) 12%, #7b5cff 88%), transparent 40%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 78%, #ffffff 22%) 0%, var(--bg) 55%, color-mix(in srgb, var(--bg) 70%, #0b0f22 30%) 100%);
+  transition: background var(--anim), color var(--anim);
 }
 
 img,
@@ -70,6 +128,7 @@ a {
   color: var(--accent);
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.08em;
+  transition: color var(--anim), background-color var(--anim), border-color var(--anim);
 }
 
 a:hover {
@@ -82,10 +141,66 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
-summary:focus-visible {
+summary:focus-visible,
+.mode-switcher label:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent) 75%, white 25%);
   outline-offset: 3px;
   border-radius: 0.35rem;
+}
+
+.mode-toggle[hidden] {
+  display: block !important;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mode-switcher {
+  position: sticky;
+  top: 0.5rem;
+  z-index: 30;
+  width: min(100% - 2rem, var(--maxw));
+  margin: 0.7rem auto 0;
+  padding: 0.45rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  background: color-mix(in srgb, #ffffff 85%, #f1f5f9 15%);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.mode-switcher label {
+  flex: 1;
+  text-align: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: #334155;
+  font-size: var(--step--1);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--anim);
+}
+
+.mode-switcher label:hover {
+  background: #eef2ff;
+}
+
+#mode-boring:checked ~ .mode-switcher label[for="mode-boring"],
+#mode-cyber:checked ~ .mode-switcher label[for="mode-cyber"],
+#mode-brutal:checked ~ .mode-switcher label[for="mode-brutal"] {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 18%, white 82%);
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border) 60%);
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--accent) 24%, transparent 76%);
 }
 
 h1,
@@ -137,7 +252,7 @@ header > ul {
 
 nav {
   position: sticky;
-  top: 0;
+  top: 4.7rem;
   z-index: 20;
   margin-top: var(--gap);
   margin-bottom: var(--gap);
@@ -151,9 +266,10 @@ nav ul {
   gap: 0.4rem;
   border: 1px solid var(--border);
   border-radius: calc(var(--radius) + 0.2rem);
-  background: color-mix(in srgb, var(--card) 85%, white 15%);
+  background: var(--navbg);
   backdrop-filter: blur(10px);
   box-shadow: var(--shadow);
+  transition: background var(--anim), border-color var(--anim), box-shadow var(--anim), border-radius var(--anim);
 }
 
 nav a {
@@ -162,7 +278,7 @@ nav a {
   justify-content: center;
   min-height: 2.2rem;
   padding: 0.35rem 0.75rem;
-  border-radius: 0.65rem;
+  border-radius: min(0.65rem, var(--radius));
   text-decoration: none;
   color: var(--muted);
   font-size: var(--step--1);
@@ -191,6 +307,15 @@ main > article,
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: clamp(1rem, 0.9rem + 0.8vw, 1.6rem);
+  transition: background var(--anim), border-color var(--anim), border-radius var(--anim), box-shadow var(--anim), transform var(--anim);
+}
+
+main > section:hover,
+main > article:hover,
+.card:hover,
+.section:hover,
+.kpi:hover {
+  transform: translateY(-2px);
 }
 
 main > section > h2,
@@ -230,7 +355,7 @@ main > section ul,
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--card) 65%, #eff4ff 35%);
+  background: var(--chipbg);
   color: var(--muted);
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
@@ -246,7 +371,7 @@ main > section ul,
   gap: 0.4rem;
   min-height: 2.5rem;
   padding: 0.45rem 0.95rem;
-  border-radius: 0.7rem;
+  border-radius: min(0.7rem, var(--radius));
   border: 1px solid transparent;
   font-weight: 700;
   text-decoration: none;
@@ -347,6 +472,11 @@ main > section ul,
 }
 
 @media (max-width: 51.99rem) {
+  .mode-switcher {
+    position: static;
+    margin-top: 0.45rem;
+  }
+
   nav {
     position: fixed;
     left: 0;
@@ -395,12 +525,17 @@ main > section ul,
     --shadow: none;
   }
 
+  .mode-switcher {
+    display: none;
+  }
+
   * {
     box-shadow: none !important;
     text-shadow: none !important;
   }
 
-  body {
+  body,
+  .app {
     background: #fff;
     color: #000;
     padding: 0;
