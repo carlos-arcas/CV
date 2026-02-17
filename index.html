@@ -20,15 +20,18 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
     <input type="radio" name="mode" id="mode-boring" class="mode-toggle" checked />
     <input type="radio" name="mode" id="mode-cyber" class="mode-toggle" />
     <input type="radio" name="mode" id="mode-brutal" class="mode-toggle" />
 
-    <div class="mode-switcher" role="group" aria-label="Selector de modo visual">
-      <label class="mode-switcher__option" for="mode-boring" tabindex="0">Aburrimode</label>
-      <label class="mode-switcher__option" for="mode-cyber" tabindex="0">Cyberpunk</label>
-      <label class="mode-switcher__option" for="mode-brutal" tabindex="0">Brutal</label>
-    </div>
+    <fieldset class="mode-switcher">
+      <legend class="u-sr-only">Selector de modo visual</legend>
+      <label class="mode-switcher__option" for="mode-boring">Aburrimode</label>
+      <label class="mode-switcher__option" for="mode-cyber">Cyberpunk</label>
+      <label class="mode-switcher__option" for="mode-brutal">Brutal</label>
+    </fieldset>
 
     <div class="cv">
       <div class="cv__shell">
@@ -65,7 +68,7 @@
           </ul>
         </nav>
 
-        <main class="cv__main">
+        <main class="cv__main" id="main-content">
           <section id="hero" class="hero" aria-labelledby="hero-title">
             <div class="hero__content">
               <p class="hero__eyebrow">Disponible para roles senior en backend y data systems</p>
@@ -78,7 +81,7 @@
               </div>
             </div>
             <aside class="hero__panel" aria-label="Fortalezas técnicas clave">
-              <p class="hero__panel-title">Fortalezas técnicas</p>
+              <h2 class="hero__panel-title">Fortalezas técnicas</h2>
               <ul class="hero__highlights">
                 <li>Arquitectura por capas y puertos/adaptadores para sistemas evolutivos.</li>
                 <li>Backend sólido con Python, contratos explícitos y testing por riesgo.</li>
@@ -231,7 +234,7 @@
                     </section>
 
                     <section class="architecture-block" aria-label="Resumen visual de arquitectura de Horas Sindicales">
-                      <p class="architecture-block__title">Arquitectura</p>
+                      <h4 class="architecture-block__title">Arquitectura</h4>
                       <ul>
                         <li>Dominio desacoplado</li>
                         <li>Infraestructura aislada</li>
@@ -326,7 +329,7 @@
                     </section>
 
                     <section class="architecture-block" aria-label="Resumen visual de arquitectura de ClinicDesk">
-                      <p class="architecture-block__title">Arquitectura</p>
+                      <h4 class="architecture-block__title">Arquitectura</h4>
                       <ul>
                         <li>Dominio desacoplado</li>
                         <li>Infraestructura aislada</li>
@@ -421,7 +424,7 @@
                     </section>
 
                     <section class="architecture-block" aria-label="Resumen visual de arquitectura de Batería Fotovoltaica">
-                      <p class="architecture-block__title">Arquitectura</p>
+                      <h4 class="architecture-block__title">Arquitectura</h4>
                       <ul>
                         <li>Dominio desacoplado</li>
                         <li>Infraestructura aislada</li>
