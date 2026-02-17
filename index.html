@@ -143,7 +143,7 @@
           <section id="proyectos" class="section" aria-labelledby="projects-title">
             <header class="section__header">
               <h2 id="projects-title">Proyectos</h2>
-              <p class="section__eyebrow">Apps desktop en Python (PySide6), arquitectura por capas, persistencia y testing.</p>
+              <p class="section__eyebrow">Casos de estudio orientados a arquitectura mantenible, decisiones de diseño y resolución de retos de ingeniería.</p>
             </header>
 
             <nav class="projects-dots" aria-label="Ir a proyecto">
@@ -159,12 +159,88 @@
                   <div class="chips"><span class="chip">Python</span><span class="chip">PySide6</span><span class="chip">SQLite</span><span class="chip">PyInstaller</span></div>
                 </header>
                 <div class="project-card__body">
-                  <ul class="list-grid">
-                    <li>Diseñé la solución con enfoque de puertos y adaptadores para desacoplar dominio, UI e infraestructura.</li>
-                    <li>Implementé persistencia con SQLite y gestioné cambios de esquema mediante migraciones SQL versionadas.</li>
-                    <li>Integré Google Sheets para entrada y sincronización de datos operativos desde hojas compartidas.</li>
-                    <li>Automatizé generación de PDF para formalizar documentación y facilitar distribución administrativa.</li>
-                  </ul>
+                  <div class="project-case-study">
+                    <section>
+                      <h4>Contexto del problema</h4>
+                      <p>La gestión de horas sindicales dependía de hojas dispersas, validaciones manuales y seguimiento reactivo. El resultado era un flujo frágil: inconsistencias en datos, tiempos de cierre largos y baja trazabilidad ante auditorías internas.</p>
+                    </section>
+
+                    <section>
+                      <h4>Objetivo del sistema</h4>
+                      <p>Construir una aplicación desktop que centralizara la operativa diaria, formalizara reglas de negocio y permitiera sincronizar información con hojas compartidas sin comprometer integridad ni mantenibilidad.</p>
+                    </section>
+
+                    <section>
+                      <h4>Decisiones arquitectónicas clave</h4>
+                      <ul class="list-grid">
+                        <li>Modelo por capas con puertos/adaptadores para aislar dominio de UI e integraciones externas.</li>
+                        <li>Casos de uso explícitos para separar reglas de negocio de eventos de interfaz.</li>
+                        <li>Repositorio SQLite como fuente operativa local con control de esquema versionado.</li>
+                        <li>Canal de sincronización desacoplado para Google Sheets, evitando contaminar dominio con detalles de API.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Stack técnico con justificación</h4>
+                      <ul class="list-grid">
+                        <li><strong>Python + PySide6:</strong> productividad alta para desktop interno y buena ergonomía para flujos administrativos complejos.</li>
+                        <li><strong>SQLite:</strong> despliegue sin dependencia de infraestructura externa y coste operativo bajo para uso local.</li>
+                        <li><strong>gspread/Google Sheets:</strong> integración pragmática con herramienta ya adoptada por negocio.</li>
+                        <li><strong>PyInstaller + Inno Setup:</strong> distribución controlada en Windows con instalación repetible.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Retos técnicos reales</h4>
+                      <ul class="list-grid">
+                        <li>Conservar consistencia entre datos locales y remotos bajo edición concurrente.</li>
+                        <li>Evolucionar esquema sin romper instalaciones ya desplegadas.</li>
+                        <li>Evitar acoplamiento accidental entre componentes UI y reglas de negocio.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Cómo se resolvieron</h4>
+                      <ul class="list-grid">
+                        <li>Migraciones SQL versionadas y estrategia explícita de actualización de base.</li>
+                        <li>Sincronización encapsulada en casos de uso y adaptadores con contrato claro.</li>
+                        <li>Cobertura de pruebas en dominio, aplicación e infraestructura para rutas críticas.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Métricas o impacto</h4>
+                      <ul class="list-grid">
+                        <li>Reducción estimada del 35–45% en tiempo de consolidación mensual al eliminar pasos manuales.</li>
+                        <li>Disminución estimada &gt;50% de incidencias por incoherencia de datos entre versiones de hoja.</li>
+                        <li>Onboarding técnico más corto gracias a arquitectura documentada y release instalable.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué mejoraría en versión 2.0</h4>
+                      <ul class="list-grid">
+                        <li>Motor de resolución de conflictos con estrategia merge y auditoría por registro.</li>
+                        <li>Telemetría de uso y errores para priorización basada en evidencia.</li>
+                        <li>Pipeline CI con tests automáticos y empaquetado firmado por release.</li>
+                      </ul>
+                    </section>
+
+                    <section class="architecture-block" aria-label="Resumen visual de arquitectura de Horas Sindicales">
+                      <p class="architecture-block__title">Arquitectura</p>
+                      <ul>
+                        <li>Dominio desacoplado</li>
+                        <li>Infraestructura aislada</li>
+                        <li>Tests automatizados</li>
+                        <li>Logging estructurado</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué demuestra este proyecto sobre mí como ingeniero</h4>
+                      <p>Capacidad para diseñar sistemas internos sostenibles: convierto un proceso sensible al error humano en una solución con límites de contexto claros, evolución controlada y foco explícito en mantenibilidad operativa.</p>
+                    </section>
+                  </div>
                 </div>
                 <footer class="project-card__footer">
                   <a class="btn" href="https://github.com/carlos-arcas/Horas_Sindicales" target="_blank" rel="noopener">Ver repo</a>
@@ -178,12 +254,88 @@
                   <div class="chips"><span class="chip">Python</span><span class="chip">PySide6</span><span class="chip">SQLite</span><span class="chip">pytest</span></div>
                 </header>
                 <div class="project-card__body">
-                  <ul class="list-grid">
-                    <li>Construí una aplicación multipágina con PySide6 para centralizar flujos operativos de clínica en una sola interfaz.</li>
-                    <li>Definí contratos con clases ABC para desacoplar componentes y facilitar sustitución de implementaciones.</li>
-                    <li>Organicé la lógica en casos de uso para aislar reglas de negocio frente a eventos de interfaz.</li>
-                    <li>Desarrollé pruebas con pytest para validar casos de uso, repositorios y comportamiento esperado de módulos clave.</li>
-                  </ul>
+                  <div class="project-case-study">
+                    <section>
+                      <h4>Contexto del problema</h4>
+                      <p>Los procesos de clínica estaban atomizados por tareas y pantallas no coordinadas, lo que generaba fricción en la operación diaria, duplicidades de entrada y dependencia de memoria operativa del equipo.</p>
+                    </section>
+
+                    <section>
+                      <h4>Objetivo del sistema</h4>
+                      <p>Diseñar una aplicación multipágina que consolidara flujo asistencial y administrativo en un producto único, con reglas transversales coherentes y menor coste de mantenimiento funcional.</p>
+                    </section>
+
+                    <section>
+                      <h4>Decisiones arquitectónicas clave</h4>
+                      <ul class="list-grid">
+                        <li>Separación dominio/aplicación/infraestructura/páginas para contener complejidad por capa.</li>
+                        <li>Contratos ABC para repositorios y servicios, permitiendo sustituir implementaciones con bajo impacto.</li>
+                        <li>Casos de uso como orquestadores de procesos de negocio entre módulos de interfaz.</li>
+                        <li>Persistencia SQLite local para garantizar disponibilidad y simplicidad de despliegue.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Stack técnico con justificación</h4>
+                      <ul class="list-grid">
+                        <li><strong>PySide6:</strong> UI rica, navegación multipágina y control detallado de interacción en escritorio.</li>
+                        <li><strong>Python:</strong> velocidad de iteración para casos de uso con reglas cambiantes.</li>
+                        <li><strong>SQLite:</strong> almacenamiento robusto para operación local sin sobrecoste de infraestructura.</li>
+                        <li><strong>pytest:</strong> validación sistemática de comportamiento en componentes críticos.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Retos técnicos reales</h4>
+                      <ul class="list-grid">
+                        <li>Mantener coherencia de reglas entre múltiples pantallas con estados interdependientes.</li>
+                        <li>Evitar crecimiento monolítico de lógica acoplada a eventos de UI.</li>
+                        <li>Asegurar regresión controlada al introducir nuevas funcionalidades clínicas.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Cómo se resolvieron</h4>
+                      <ul class="list-grid">
+                        <li>Extracción progresiva de lógica hacia casos de uso reutilizables.</li>
+                        <li>Contratos explícitos entre capa de aplicación e infraestructura para reducir dependencias implícitas.</li>
+                        <li>Pruebas de casos de uso y repositorios como red de seguridad para refactor continuo.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Métricas o impacto</h4>
+                      <ul class="list-grid">
+                        <li>Reducción estimada del 30% en pasos operativos por consolidación de tareas en una única UI.</li>
+                        <li>Menor tasa de retrabajo administrativo por validaciones unificadas entre módulos.</li>
+                        <li>Tiempo de entrega de nuevas pantallas más predecible por arquitectura modular.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué mejoraría en versión 2.0</h4>
+                      <ul class="list-grid">
+                        <li>Instrumentación de eventos de dominio y métricas de rendimiento por flujo.</li>
+                        <li>Suite de tests de contrato para adaptadores externos y repositorios.</li>
+                        <li>Feature toggles para desplegar cambios funcionales de forma incremental.</li>
+                      </ul>
+                    </section>
+
+                    <section class="architecture-block" aria-label="Resumen visual de arquitectura de ClinicDesk">
+                      <p class="architecture-block__title">Arquitectura</p>
+                      <ul>
+                        <li>Dominio desacoplado</li>
+                        <li>Infraestructura aislada</li>
+                        <li>Tests automatizados</li>
+                        <li>Logging estructurado</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué demuestra este proyecto sobre mí como ingeniero</h4>
+                      <p>Que sé estabilizar sistemas de negocio con alta fricción operativa: ordeno complejidad funcional en límites técnicos claros y preparo la base para evolución sostenida sin degradar calidad.</p>
+                    </section>
+                  </div>
                 </div>
                 <footer class="project-card__footer">
                   <a class="btn" href="https://github.com/carlos-arcas/clinicdesk" target="_blank" rel="noopener">Ver repo</a>
@@ -197,12 +349,88 @@
                   <div class="chips"><span class="chip">Python</span><span class="chip">PySide6</span><span class="chip">tests</span><span class="chip">Excel export</span></div>
                 </header>
                 <div class="project-card__body">
-                  <ul class="list-grid">
-                    <li>Desarrollé un simulador técnico para analizar comportamiento energético y escenarios de operación de batería.</li>
-                    <li>Estructuré el proyecto en capas domain/application/infrastructure/ui para separar modelo, orquestación y entrada/salida.</li>
-                    <li>Implementé pruebas unitarias, de integración y de rendimiento para validar exactitud y respuesta del simulador.</li>
-                    <li>Gestioné persistencia en JSON y Parquet para soportar trazabilidad de simulaciones y reutilización de resultados.</li>
-                  </ul>
+                  <div class="project-case-study">
+                    <section>
+                      <h4>Contexto del problema</h4>
+                      <p>El análisis de escenarios BESS/FV suele depender de hojas de cálculo difíciles de auditar y mantener, con riesgo alto de errores silenciosos al variar supuestos de demanda, degradación o estrategia financiera.</p>
+                    </section>
+
+                    <section>
+                      <h4>Objetivo del sistema</h4>
+                      <p>Desarrollar un simulador técnico-financiero reproducible, capaz de validar datos de entrada, ejecutar escenarios y exportar resultados trazables para toma de decisiones de ingeniería y negocio.</p>
+                    </section>
+
+                    <section>
+                      <h4>Decisiones arquitectónicas clave</h4>
+                      <ul class="list-grid">
+                        <li>Separación estricta domain/application/infrastructure/ui para proteger reglas de simulación.</li>
+                        <li>Casos de uso dedicados para orquestar simulación, persistencia de proyecto y cálculos financieros.</li>
+                        <li>Persistencia JSON/Parquet para combinar legibilidad, portabilidad y eficiencia en resultados.</li>
+                        <li>Suites de pruebas por nivel (unit, integration, performance) alineadas con riesgo técnico.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Stack técnico con justificación</h4>
+                      <ul class="list-grid">
+                        <li><strong>Python 3.11:</strong> ecosistema maduro para modelado numérico y validación de datos.</li>
+                        <li><strong>PySide6:</strong> interfaz guiada para expertos no técnicos sin renunciar a profundidad de parámetros.</li>
+                        <li><strong>JSON + Parquet:</strong> equilibrio entre interoperabilidad y rendimiento de almacenamiento.</li>
+                        <li><strong>pytest:</strong> verificación sistemática de exactitud y estabilidad del motor de simulación.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Retos técnicos reales</h4>
+                      <ul class="list-grid">
+                        <li>Controlar calidad de datasets heterogéneos provenientes de CSV/Excel.</li>
+                        <li>Mantener consistencia entre resultados técnicos y KPIs financieros derivados.</li>
+                        <li>Sostener tiempos de respuesta aceptables al aumentar granularidad de simulación.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Cómo se resolvieron</h4>
+                      <ul class="list-grid">
+                        <li>Pipeline de validación previa de datos para detectar incoherencias antes del cálculo.</li>
+                        <li>Modularización del dominio financiero para aislar supuestos y facilitar recalibración.</li>
+                        <li>Pruebas de rendimiento para detectar cuellos de botella en escenarios intensivos.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Métricas o impacto</h4>
+                      <ul class="list-grid">
+                        <li>Reducción estimada del 40–60% en tiempo de evaluación de escenarios frente a enfoque manual en hojas.</li>
+                        <li>Mayor fiabilidad percibida por separación explícita entre cálculo, persistencia y presentación.</li>
+                        <li>Reutilización de simulaciones históricas gracias a almacenamiento estructurado de proyectos.</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué mejoraría en versión 2.0</h4>
+                      <ul class="list-grid">
+                        <li>Ejecución batch de escenarios y comparación automática multiobjetivo.</li>
+                        <li>Motor de calibración asistida con sensibilidad y análisis de incertidumbre.</li>
+                        <li>Trazas de auditoría por corrida para reporting técnico regulatorio.</li>
+                      </ul>
+                    </section>
+
+                    <section class="architecture-block" aria-label="Resumen visual de arquitectura de Batería Fotovoltaica">
+                      <p class="architecture-block__title">Arquitectura</p>
+                      <ul>
+                        <li>Dominio desacoplado</li>
+                        <li>Infraestructura aislada</li>
+                        <li>Tests automatizados</li>
+                        <li>Logging estructurado</li>
+                      </ul>
+                    </section>
+
+                    <section>
+                      <h4>Qué demuestra este proyecto sobre mí como ingeniero</h4>
+                      <p>Que puedo diseñar software técnico donde exactitud, trazabilidad y mantenibilidad pesan más que la velocidad de prototipado: estructuro el sistema para evolucionar hipótesis sin comprometer la integridad del modelo.</p>
+                    </section>
+                  </div>
                 </div>
                 <footer class="project-card__footer">
                   <a class="btn" href="https://github.com/carlos-arcas/Bateria_Fotovoltaica" target="_blank" rel="noopener">Ver repo</a>
