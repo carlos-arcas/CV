@@ -65,6 +65,7 @@
           <a href="#valor">Valor</a>
           <a href="#servicios">Servicios</a>
           <a href="#caso-destacado">Caso destacado</a>
+          <a href="#control-auditoria">Auditoria</a>
           <a href="#experiencia">Experiencia</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -111,7 +112,7 @@
             <div class="workflow-card workflow-card--engine">
               <span>Motor</span>
               <strong>Python + SQL + validaciones</strong>
-              <small>Logs, historico, snapshots y ejecucion guiada</small>
+              <small>Roles, logs, historico, snapshots y ejecucion guiada</small>
             </div>
             <div class="workflow-arrow" aria-hidden="true">></div>
             <div class="workflow-card workflow-card--output">
@@ -165,6 +166,7 @@
             <article class="problem-card"><h3>Informes hechos a mano</h3><p>Procesos diarios, semanales o mensuales basados en copiar, pegar, filtrar y revisar.</p></article>
             <article class="problem-card"><h3>Cruces de datos repetitivos</h3><p>Pedidos, clientes, facturacion, incidencias o listados comparados entre varios sistemas.</p></article>
             <article class="problem-card"><h3>Falta de validaciones</h3><p>Informes enviados sin controles previos o cambios en datos sin suficiente trazabilidad.</p></article>
+            <article class="problem-card"><h3>Sin control de usuarios</h3><p>Herramientas internas donde cualquiera puede ejecutar procesos criticos sin permisos, historial ni responsable claro.</p></article>
             <article class="problem-card"><h3>Dependencia de una persona</h3><p>Procesos que solo sabe ejecutar quien conoce el Excel, la macro o el orden exacto de pasos.</p></article>
           </div>
         </section>
@@ -191,12 +193,12 @@
             <article class="service-card">
               <h3>Herramientas ejecutables para Windows</h3>
               <p>Aplicaciones con botones, mensajes claros, configuracion sencilla y ejecucion por usuarios no tecnicos.</p>
-              <ul><li>Interfaz guiada</li><li>Paquetes ejecutables</li><li>Manual de uso si procede</li></ul>
+              <ul><li>Interfaz guiada</li><li>Paquetes ejecutables</li><li>Usuarios autorizados y roles</li></ul>
             </article>
             <article class="service-card">
               <h3>Automatizacion de datos y SQL</h3>
               <p>Extraccion, cruce, limpieza, transformacion y validacion de datos desde SQL, Excel, CSV u otras fuentes.</p>
-              <ul><li>Consultas SQL</li><li>Validaciones previas</li><li>Logs e historico</li></ul>
+              <ul><li>Consultas SQL</li><li>Validaciones previas</li><li>Logs, historico y reversibilidad</li></ul>
             </article>
             <article class="service-card">
               <h3>Power BI y reporting operativo</h3>
@@ -225,8 +227,42 @@
             <span>Informe semanal de incidencias</span>
             <span>Control de datos erroneos antes de enviar reportes</span>
             <span>Herramienta para consultar datos sin tocar SQL</span>
+            <span>Control por roles para operarios y supervisores</span>
+            <span>Auditoria de quien hizo que y a que hora</span>
             <span>Automatizacion de correos con adjuntos</span>
             <span>Limpieza y normalizacion de Excel/CSV</span>
+          </div>
+        </section>
+
+        <section id="control-auditoria" class="section governance-section">
+          <div class="section__header">
+            <p class="section__eyebrow">Control, auditoria y permisos</p>
+            <h2>Herramientas internas con usuarios, roles y trazabilidad</h2>
+            <p>
+              En procesos sensibles no basta con automatizar. Tambien hay que saber quien ejecuto cada accion, cuando lo hizo, con que parametros y como volver atras si algo necesita revision.
+            </p>
+          </div>
+          <div class="governance-grid">
+            <article class="governance-card">
+              <span class="governance-card__tag">Acceso</span>
+              <h3>Usuarios autorizados</h3>
+              <p>Control de acceso para que solo personas permitidas puedan abrir o ejecutar herramientas internas.</p>
+            </article>
+            <article class="governance-card">
+              <span class="governance-card__tag">Roles</span>
+              <h3>Operarios y supervisores</h3>
+              <p>Permisos diferenciados: operarios para ejecucion guiada y supervisores para validaciones, desbloqueos o acciones de mayor impacto.</p>
+            </article>
+            <article class="governance-card">
+              <span class="governance-card__tag">Auditoria</span>
+              <h3>Quien hizo que y cuando</h3>
+              <p>Registro de usuario, fecha, hora, accion, parametros usados, resultado y errores para revisar cualquier operacion.</p>
+            </article>
+            <article class="governance-card">
+              <span class="governance-card__tag">Reversion</span>
+              <h3>Snapshots y vuelta atras</h3>
+              <p>Guardado de estado previo, historico de cambios y rutas de recuperacion cuando una modificacion debe revertirse o validarse.</p>
+            </article>
           </div>
         </section>
 
@@ -249,8 +285,9 @@
                 <li>Automatizacion de informes y generacion de Excel.</li>
                 <li>Conexion con SQL Server y auditoria local con SQLite.</li>
                 <li>Operaciones individuales y masivas con validaciones previas.</li>
+                <li>Control de usuarios autorizados y permisos por rol.</li>
                 <li>Snapshots antes y despues de operaciones.</li>
-                <li>Trazabilidad de cambios, logs y recuperacion ante errores.</li>
+                <li>Trazabilidad de cambios, logs, auditoria de acciones y recuperacion ante errores.</li>
                 <li>Integracion con Outlook y tests automatizados.</li>
                 <li>Desarrollo dirigido y supervisado mediante IA generativa y agentes IA.</li>
               </ul>
@@ -263,7 +300,7 @@
               <div class="impact-flow" aria-label="Resumen de impacto">
                 <span>Antes: pasos manuales</span>
                 <span>Ahora: ejecucion guiada</span>
-                <span>Base: validacion y trazabilidad</span>
+                <span>Base: permisos, validacion, auditoria y trazabilidad</span>
               </div>
             </article>
           </div>
@@ -312,6 +349,7 @@
             <article><h3>Automatizacion</h3><p>Python, Power Automate, scripts, ejecutables y procesos batch.</p></article>
             <article><h3>Datos</h3><p>SQL, SQL Server, Oracle, Redshift, SQLite, Access y SOQL.</p></article>
             <article><h3>Reporting</h3><p>Excel avanzado, Power BI, Power Query, CSV y generacion de informes.</p></article>
+            <article><h3>Control operativo</h3><p>Usuarios, roles, logs de auditoria, snapshots, historico y reversion de cambios.</p></article>
             <article><h3>Herramientas</h3><p>Git, GitHub, VS Code, Outlook, Salesforce y AWS.</p></article>
             <article><h3>IA aplicada</h3><p>ChatGPT, OpenAI Codex, agentes IA, documentacion y testing asistidos.</p></article>
           </div>
