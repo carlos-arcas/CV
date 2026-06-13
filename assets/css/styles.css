@@ -1275,10 +1275,16 @@
   }
 
   @media (max-width: 56rem) {
+    .cv__main {
+      gap: var(--space-5);
+      padding-block: var(--space-4) var(--space-6);
+    }
+
     .site-topbar {
       position: static;
       align-items: flex-start;
       flex-direction: column;
+      gap: var(--space-3);
     }
 
     .site-nav {
@@ -1288,6 +1294,75 @@
 
     .mode-switcher {
       max-width: none;
+    }
+
+    .hero,
+    .section,
+    .case-study,
+    .final-cta {
+      padding: var(--space-4);
+    }
+
+    .landing-hero {
+      min-height: auto;
+    }
+
+    .hero__name {
+      font-size: clamp(1.9rem, 10vw, 2.75rem);
+    }
+
+    .hero__tagline {
+      font-size: var(--font-size-0);
+    }
+
+    .hero-visual {
+      gap: var(--space-2);
+      padding: var(--space-3);
+    }
+
+    .hero-visual::before {
+      padding-bottom: var(--space-2);
+    }
+
+    .workflow-card {
+      gap: var(--space-1);
+      padding: var(--space-3);
+    }
+
+    .workflow-card strong {
+      font-size: var(--font-size-0);
+    }
+
+    .workflow-card small {
+      display: none;
+    }
+
+    .workflow-card--input,
+    .workflow-card--output,
+    .workflow-arrow {
+      display: none;
+    }
+
+    .hero__cta-group,
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .btn,
+    .hero__cta-primary,
+    .hero__cta-secondary {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .trust-strip,
+    .use-case-list {
+      gap: var(--space-2);
+    }
+
+    .trust-strip {
+      display: none;
     }
 
     .final-cta {
