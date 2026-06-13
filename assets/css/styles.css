@@ -213,7 +213,6 @@
   .process-grid > *,
   .governance-grid > *,
   .tech-grid > *,
-  .ai-grid > *,
   .collab-grid > *,
   .case-study__body > *,
   .final-cta > * {
@@ -255,7 +254,6 @@
     .process-grid,
     .governance-grid,
     .tech-grid,
-    .ai-grid,
     .collab-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -630,7 +628,6 @@
   .process-grid,
   .governance-grid,
   .tech-grid,
-  .ai-grid,
   .collab-grid {
     display: grid;
     gap: var(--space-3);
@@ -647,7 +644,6 @@
   .impact-panel,
   .timeline-item,
   .tech-grid article,
-  .ai-grid article,
   .collab-card,
   .contact-card {
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 22%, var(--color-theme-border) 78%);
@@ -669,7 +665,6 @@
   .process-card:hover,
   .governance-card:hover,
   .tech-grid article:hover,
-  .ai-grid article:hover,
   .collab-card:hover {
     transform: translateY(-4px);
     border-color: color-mix(in srgb, var(--color-theme-primary) 34%, var(--color-theme-border) 66%);
@@ -695,7 +690,6 @@
   .process-card p,
   .governance-card p,
   .tech-grid article p,
-  .ai-grid article p,
   .collab-card p {
     line-height: 1.48;
   }
@@ -949,7 +943,6 @@
     .case-study__body,
     .governance-grid,
     .tech-grid,
-    .ai-grid,
     .collab-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -970,10 +963,6 @@
     }
 
     .fit-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .ai-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
