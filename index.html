@@ -88,13 +88,13 @@
         </a>
 
         <nav class="site-nav" aria-label="Navegación principal">
-          <a href="#valor">Valor</a>
-          <a href="#problemas">Problemas</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#caso-destacado">Caso</a>
-          <a href="#tecnologias">Tecnologías</a>
-          <a href="#contacto">Contacto</a>
+          <a href="#valor" data-nav-link>Valor</a>
+          <a href="#problemas" data-nav-link>Problemas</a>
+          <a href="#servicios" data-nav-link>Servicios</a>
+          <a href="#proceso" data-nav-link>Proceso</a>
+          <a href="#caso-destacado" data-nav-link>Caso</a>
+          <a href="#tecnologias" data-nav-link>Tecnologías</a>
+          <a href="#contacto" data-nav-link>Contacto</a>
         </nav>
       </header>
 
@@ -195,6 +195,39 @@
             <article class="problem-card"><h3>Sin validaciones</h3><p>Datos enviados o modificados sin controles previos.</p></article>
             <article class="problem-card"><h3>Sin control de usuarios</h3><p>Procesos críticos sin permisos ni responsable claro.</p></article>
             <article class="problem-card"><h3>Dependencia interna</h3><p>Tareas que solo sabe ejecutar una persona.</p></article>
+          </div>
+        </section>
+
+        <section id="antes-despues" class="section before-after-section">
+          <div class="section__header">
+            <p class="section__eyebrow">Antes / Después</p>
+            <h2>De trabajo manual a proceso guiado</h2>
+            <p>
+              El objetivo no es complicar el sistema: es convertir pasos repetitivos en una herramienta clara, controlada y fácil de ejecutar.
+            </p>
+          </div>
+          <div class="before-after-grid">
+            <article class="before-after-card before-after-card--before">
+              <span class="before-after-card__label">Antes</span>
+              <h3>Proceso manual</h3>
+              <ul>
+                <li>Excel lentos o con macros antiguas.</li>
+                <li>Copias entre archivos y sistemas.</li>
+                <li>Validaciones hechas a ojo.</li>
+                <li>Dependencia de una persona concreta.</li>
+              </ul>
+            </article>
+            <div class="before-after-arrow" aria-hidden="true">→</div>
+            <article class="before-after-card before-after-card--after">
+              <span class="before-after-card__label">Después</span>
+              <h3>Herramienta controlada</h3>
+              <ul>
+                <li>Ejecución guiada paso a paso.</li>
+                <li>Validaciones antes de entregar.</li>
+                <li>Logs, usuarios y trazabilidad.</li>
+                <li>Informes listos para usar.</li>
+              </ul>
+            </article>
           </div>
         </section>
 
@@ -496,6 +529,55 @@
           <p>KEYWORDS Python SQL Excel VBA Power BI Power Automate automatizacion informes procesos ejecutables Windows reporting datos</p>
         </section>
       </main>
+
+      <a class="floating-cta" href="mailto:carlos.arcas.alcala@gmail.com?subject=Automatizacion%20de%20informes%20o%20procesos">
+        Contar mi caso
+      </a>
     </div>
+    <script>
+      const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+      const navTargets = navLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if ("IntersectionObserver" in window && navTargets.length > 0) {
+        const activateNavLink = (id) => {
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${id}`;
+            link.classList.toggle("is-active", isActive);
+            if (isActive) {
+              link.setAttribute("aria-current", "true");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+            if (visible?.target?.id) {
+              activateNavLink(visible.target.id);
+            }
+          },
+          {
+            rootMargin: "-28% 0px -55% 0px",
+            threshold: [0.12, 0.3, 0.55]
+          }
+        );
+
+        navTargets.forEach((section) => observer.observe(section));
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            const id = link.getAttribute("href").slice(1);
+            activateNavLink(id);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
