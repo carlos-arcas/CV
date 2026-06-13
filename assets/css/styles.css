@@ -212,6 +212,7 @@
   .service-grid > *,
   .process-grid > *,
   .governance-grid > *,
+  .proof-grid > *,
   .tech-grid > *,
   .collab-grid > *,
   .case-study__body > *,
@@ -253,6 +254,7 @@
     .service-grid,
     .process-grid,
     .governance-grid,
+    .proof-grid,
     .tech-grid,
     .collab-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -627,6 +629,7 @@
   .service-grid,
   .process-grid,
   .governance-grid,
+  .proof-grid,
   .tech-grid,
   .collab-grid {
     display: grid;
@@ -640,6 +643,7 @@
   .service-card,
   .process-card,
   .governance-card,
+  .proof-card,
   .case-panel,
   .impact-panel,
   .timeline-item,
@@ -664,6 +668,7 @@
   .service-card:hover,
   .process-card:hover,
   .governance-card:hover,
+  .proof-card:hover,
   .tech-grid article:hover,
   .collab-card:hover {
     transform: translateY(-4px);
@@ -675,6 +680,7 @@
   .service-card,
   .process-card,
   .governance-card,
+  .proof-card,
   .fit-card,
   .problem-card,
   .collab-card {
@@ -689,6 +695,7 @@
   .service-card p,
   .process-card p,
   .governance-card p,
+  .proof-card p,
   .tech-grid article p,
   .collab-card p {
     line-height: 1.48;
@@ -760,6 +767,14 @@
       var(--color-theme-surface);
     box-shadow: var(--shadow-2);
     padding: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  .proof-section {
+    border-color: color-mix(in srgb, var(--color-theme-primary) 24%, var(--color-theme-border) 76%);
+  }
+
+  .proof-card {
+    border-top: 4px solid color-mix(in srgb, var(--color-theme-primary) 66%, var(--color-theme-accent) 34%);
   }
 
   .governance-card {
@@ -942,6 +957,7 @@
 
     .case-study__body,
     .governance-grid,
+    .proof-grid,
     .tech-grid,
     .collab-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -954,6 +970,7 @@
     .fit-grid,
     .process-grid,
     .governance-grid,
+    .proof-grid,
     .collab-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
