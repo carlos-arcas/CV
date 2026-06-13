@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="t d">
-  <title id="t">Carlos Arcas - Automatizacion de informes y procesos</title>
-  <desc id="d">Open Graph preview for Carlos Arcas professional automation landing.</desc>
+  <title id="t">Carlos Arcas - Automatización de informes y procesos</title>
+  <desc id="d">Vista previa de la landing profesional de automatización de Carlos Arcas.</desc>
   <defs>
     <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#0b57d0"/>
@@ -11,8 +11,8 @@
   <rect x="72" y="72" width="1056" height="486" rx="32" fill="#ffffff" opacity="0.08"/>
   <g fill="#ffffff" font-family="Inter, Segoe UI, Arial, sans-serif">
     <text x="100" y="205" font-size="58" font-weight="700">Carlos Arcas</text>
-    <text x="100" y="280" font-size="38" font-weight="600">Automatizacion de informes y procesos</text>
-    <text x="100" y="344" font-size="30" font-weight="400">Python - SQL - Excel - Power BI - IA aplicada</text>
+    <text x="100" y="280" font-size="38" font-weight="600">Automatización de informes y procesos</text>
+    <text x="100" y="344" font-size="30" font-weight="400">Python - SQL - Excel - Power BI</text>
     <text x="100" y="455" font-size="24" font-weight="400" opacity="0.9">carlos-arcas.github.io/CV/</text>
   </g>
 </svg>
