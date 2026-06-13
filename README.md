@@ -10,25 +10,26 @@ Presentar el perfil de Carlos Arcas como Analista Programador y Consultor de Aut
 - migracion de Excel/VBA a Python,
 - SQL, Excel avanzado y Power BI,
 - herramientas ejecutables para usuarios no tecnicos,
-- IA generativa y agentes IA aplicados al desarrollo con supervision.
+- control operativo, validaciones, documentacion y mantenimiento.
 
 ## Estructura
 
 ```text
 .
-├── index.html              # Pagina principal publicada por GitHub Pages
-├── assets/
-│   ├── css/
-│   │   └── styles.css      # Estilos de la landing
-│   └── img/
-│       └── og-image.svg    # Imagen Open Graph / redes sociales
-├── docs/
-│   ├── context/            # Contexto y briefing de contenido
-│   ├── audits/             # Auditorias y revisiones previas
-│   └── CV_COPY_ESTRATEGICO.md
-├── robots.txt
-├── sitemap.xml
-└── README.md
+|-- index.html              # Pagina principal publicada por GitHub Pages
+|-- assets/
+|   |-- css/
+|   |   `-- styles.css      # Estilos de la landing
+|   `-- img/
+|       |-- favicon.svg     # Icono de pestana
+|       `-- og-image.svg    # Imagen Open Graph / redes sociales
+|-- docs/
+|   |-- context/            # Contexto y briefing de contenido
+|   |-- audits/             # Auditorias y revisiones previas
+|   `-- CV_COPY_ESTRATEGICO.md
+|-- robots.txt
+|-- sitemap.xml
+`-- README.md
 ```
 
 ## Ver en local
@@ -56,7 +57,7 @@ El repo esta preparado para GitHub Pages con `Deploy from a branch`:
 
 ## Exportar CV a PDF
 
-La propia web incluye botones de descarga que lanzan la impresion del navegador.
+La propia web incluye botones que lanzan la impresion del navegador.
 Tambien puede hacerse manualmente con:
 
 ```text
