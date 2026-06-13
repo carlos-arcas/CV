@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carlos Arcas | Python Backend Engineer | Arquitectura limpia y automatización</title>
+    <title>Carlos Arcas | Automatizacion de informes, Excel y procesos</title>
     <meta
       name="description"
-      content="CV técnico de Carlos Arcas, Python Backend Engineer con enfoque en arquitectura limpia, automatización y mejora operativa en entornos de datos."
+      content="Landing profesional de Carlos Arcas: automatizacion de informes, migracion de Excel/VBA a Python, SQL, Power BI, herramientas ejecutables e IA aplicada."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Carlos Arcas" />
@@ -15,34 +15,34 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="CV de Carlos Arcas" />
-    <meta property="og:title" content="Carlos Arcas | Python Backend Engineer" />
+    <meta property="og:site_name" content="Carlos Arcas - Automatizacion" />
+    <meta property="og:title" content="Automatizo informes, Excel complejos y procesos repetitivos" />
     <meta
       property="og:description"
-      content="Perfil backend en Python enfocado en arquitectura limpia, automatización y mantenibilidad." 
+      content="Analista Programador y Consultor de Automatizacion especializado en Python, SQL, Excel, Power BI e IA aplicada."
     />
     <meta property="og:url" content="https://carlos-arcas.github.io/CV/" />
-    <meta property="og:image" content="https://carlos-arcas.github.io/CV/og-image.svg" />
+    <meta property="og:image" content="https://carlos-arcas.github.io/CV/assets/img/og-image.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Vista previa del CV técnico de Carlos Arcas" />
+    <meta property="og:image:alt" content="Vista previa de la landing profesional de Carlos Arcas" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Carlos Arcas | Python Backend Engineer" />
+    <meta name="twitter:title" content="Carlos Arcas | Automatizacion de informes y procesos" />
     <meta
       name="twitter:description"
-      content="Backend Python, arquitectura limpia y automatización orientada a fiabilidad operativa." 
+      content="Herramientas de un boton para informes, Excel, SQL, Power BI, procesos administrativos e IA aplicada."
     />
-    <meta name="twitter:image" content="https://carlos-arcas.github.io/CV/og-image.svg" />
+    <meta name="twitter:image" content="https://carlos-arcas.github.io/CV/assets/img/og-image.svg" />
     <meta name="twitter:url" content="https://carlos-arcas.github.io/CV/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
@@ -51,221 +51,327 @@
     <input type="radio" name="mode" id="mode-cyber" class="mode-toggle" />
     <input type="radio" name="mode" id="mode-brutal" class="mode-toggle" />
 
-    <fieldset class="mode-switcher">
-      <legend class="u-sr-only">Selector de modo visual</legend>
-      <label class="mode-switcher__option" for="mode-boring">Aburrimode</label>
-      <label class="mode-switcher__option" for="mode-cyber">Cyberpunk</label>
-      <label class="mode-switcher__option" for="mode-brutal">Brutal</label>
-    </fieldset>
-
     <div class="cv">
-      <div class="cv__shell">
-        <header class="cv-header" id="inicio">
-          <p class="cv-header__name">Carlos Arcas</p>
-          <p>Python Backend Engineer | Arquitectura limpia y automatización</p>
-          <p class="u-muted">Para guardar en PDF: Ctrl+P → Guardar como PDF</p>
-          <ul class="cv-header__meta">
-            <li>Ubicación: Sevilla (Remoto)</li>
-            <li>Email: <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a></li>
-            <li>
-              GitHub:
-              <a href="https://github.com/carlos-arcas" target="_blank" rel="noopener">https://github.com/carlos-arcas</a>
-            </li>
-            <li>
-              Web:
-              <a href="https://carlos-arcas.github.io/CV/" target="_blank" rel="noopener">https://carlos-arcas.github.io/CV/</a>
-            </li>
-          </ul>
-        </header>
+      <header class="site-topbar" id="inicio">
+        <a class="brand" href="#hero" aria-label="Inicio de Carlos Arcas">
+          <span class="brand__mark">CA</span>
+          <span>
+            <strong>Carlos Arcas</strong>
+            <small>Analista Programador | Automatizacion</small>
+          </span>
+        </a>
 
-        <nav class="cv-nav" aria-label="Navegación principal del currículum por secciones">
-          <ul class="cv-nav__list">
-            <li><a class="cv-nav__link" href="#hero" aria-current="page">Hero</a></li>
-            <li><a class="cv-nav__link" href="#experiencia">Experiencia</a></li>
-            <li><a class="cv-nav__link" href="#proyectos">Proyectos</a></li>
-            <li><a class="cv-nav__link" href="#como-trabajo">Cómo trabajo</a></li>
-            <li><a class="cv-nav__link" href="#stack">Stack técnico</a></li>
-            <li><a class="cv-nav__link" href="#formacion">Formación</a></li>
-            <li><a class="cv-nav__link" href="#idiomas">Idiomas</a></li>
-            <li><a class="cv-nav__link" href="#contacto">Contacto</a></li>
-            <li><a class="cv-nav__link" href="#auditoria">Reauditoría</a></li>
-          </ul>
+        <nav class="site-nav" aria-label="Navegacion principal">
+          <a href="#valor">Valor</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#caso-destacado">Caso destacado</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#contacto">Contacto</a>
         </nav>
+      </header>
 
-        <main class="cv__main" id="main-content">
-          <section id="hero" class="hero" aria-labelledby="hero-title">
-            <div class="hero__content">
-              <h1 id="hero-title" class="hero__name">Carlos Arcas</h1>
-              <p class="hero__subtitle">Python Backend Engineer</p>
-              <p class="hero__tagline">Enfoque en arquitectura limpia y automatización.</p>
-              <p>
-                Ingeniero backend con experiencia en Python y datos en entorno corporativo. Me centro en separar dominio e infraestructura,
-                reducir complejidad accidental y dejar sistemas que otro equipo pueda mantener sin depender de conocimiento tácito.
-              </p>
+      <fieldset class="mode-switcher">
+        <legend class="u-sr-only">Selector de modo visual</legend>
+        <label class="mode-switcher__option" for="mode-boring">Profesional</label>
+        <label class="mode-switcher__option" for="mode-cyber">Tecnico</label>
+        <label class="mode-switcher__option" for="mode-brutal">Contraste</label>
+      </fieldset>
+
+      <main class="cv__main" id="main-content">
+        <section id="hero" class="hero landing-hero" aria-labelledby="hero-title">
+          <div class="hero__content">
+            <p class="hero__eyebrow">Automatizacion de informes, Excel y procesos internos</p>
+            <h1 id="hero-title" class="hero__name">Automatizo informes, Excel complejos y procesos repetitivos</h1>
+            <p class="hero__tagline">
+              Convierto tareas manuales, macros lentas y procesos administrativos en herramientas rapidas, estables y sencillas de usar con Python, SQL, Excel, Power BI e IA aplicada.
+            </p>
+            <div class="hero__cta-group" aria-label="Acciones principales">
+              <a class="btn hero__cta-primary" href="mailto:carlos.arcas.alcala@gmail.com?subject=Automatizacion%20de%20informes%20o%20procesos">
+                Tienes un informe que tarda demasiado?
+              </a>
+              <a class="btn btn--ghost hero__cta-secondary" href="#casos">Ver casos de uso</a>
+              <button class="btn btn--ghost hero__cta-secondary" type="button" onclick="window.print()">Descargar CV</button>
             </div>
-          </section>
+            <ul class="trust-strip" aria-label="Especialidades principales">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>Excel/VBA</li>
+              <li>Power BI</li>
+              <li>IA aplicada</li>
+            </ul>
+          </div>
 
-          <section id="experiencia" class="section">
-            <h2>Experiencia profesional</h2>
-            <article>
-              <h3>AYESA — Proyectos Endesa (2019 – Actualidad)</h3>
-              <p>
-                Desarrollo backend y automatización para operación de datos en áreas de distribución y marketing. Trabajo principal:
-                transformar procesos manuales en flujos reproducibles con validaciones y trazabilidad.
-              </p>
-              <ul class="list-grid">
-                <li>Diseño de procesos ETL en Python con separación por capas para facilitar cambios sin romper integraciones existentes.</li>
-                <li>Integración con SQL, SOQL y Redshift mediante adaptadores para aislar reglas de negocio de la infraestructura.</li>
-                <li>Refactor de utilidades heredadas hacia módulos testeables con pytest y logging estructurado.</li>
-                <li>Estandarización de datasets para consumo en BI con control de esquema, validaciones de calidad y supuestos documentados.</li>
-                <li>Distribución de herramientas internas en formato CLI/desktop para reducir fricción operativa en usuarios no técnicos.</li>
+          <aside class="hero-visual" aria-label="Flujo visual de automatizacion">
+            <div class="workflow-card workflow-card--input">
+              <span>Entrada</span>
+              <strong>Excel, CSV, SQL, listados</strong>
+              <small>Datos dispersos, informes manuales, macros antiguas</small>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">></div>
+            <div class="workflow-card workflow-card--engine">
+              <span>Motor</span>
+              <strong>Python + SQL + validaciones</strong>
+              <small>Logs, historico, snapshots y ejecucion guiada</small>
+            </div>
+            <div class="workflow-arrow" aria-hidden="true">></div>
+            <div class="workflow-card workflow-card--output">
+              <span>Salida</span>
+              <strong>Herramienta de un boton</strong>
+              <small>Informes estables para usuarios no tecnicos</small>
+            </div>
+          </aside>
+        </section>
+
+        <section id="valor" class="section value-section">
+          <div class="section__header">
+            <p class="section__eyebrow">Propuesta de valor</p>
+            <h2>Automatizacion practica para empresas que no quieren depender de procesos manuales</h2>
+            <p>
+              Trabajo con problemas concretos de negocio: informes que tardan, Excel que se bloquean, datos que se cruzan a mano y procesos que solo sabe hacer una persona.
+            </p>
+          </div>
+          <div class="value-grid">
+            <article class="value-card">
+              <span class="value-card__icon">01</span>
+              <h3>Menos tiempo perdido</h3>
+              <p>Automatizo pasos repetitivos para que el equipo no tenga que preparar informes copiando y pegando datos.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-card__icon">02</span>
+              <h3>Menos errores manuales</h3>
+              <p>Incluyo validaciones, mensajes claros y comprobaciones antes de generar informes o modificar datos.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-card__icon">03</span>
+              <h3>Menos dependencia de macros</h3>
+              <p>Migro Excel/VBA lentos a procesos Python mas mantenibles, con logs y estructura preparada para evolucionar.</p>
+            </article>
+            <article class="value-card">
+              <span class="value-card__icon">04</span>
+              <h3>Herramientas usables</h3>
+              <p>Creo ejecutables para Windows con botones, configuracion sencilla y salidas entendibles para usuarios no tecnicos.</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="problemas" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Problemas que soluciono</p>
+            <h2>Cuando Excel y los procesos manuales empiezan a frenar el trabajo</h2>
+          </div>
+          <div class="problem-grid">
+            <article class="problem-card"><h3>Excel que se bloquean</h3><p>Ficheros demasiado pesados, formulas lentas o pasos manuales que se repiten cada semana.</p></article>
+            <article class="problem-card"><h3>Macros VBA antiguas</h3><p>Automatizaciones que funcionan, pero son dificiles de tocar, explicar o mantener.</p></article>
+            <article class="problem-card"><h3>Informes hechos a mano</h3><p>Procesos diarios, semanales o mensuales basados en copiar, pegar, filtrar y revisar.</p></article>
+            <article class="problem-card"><h3>Cruces de datos repetitivos</h3><p>Pedidos, clientes, facturacion, incidencias o listados comparados entre varios sistemas.</p></article>
+            <article class="problem-card"><h3>Falta de validaciones</h3><p>Informes enviados sin controles previos o cambios en datos sin suficiente trazabilidad.</p></article>
+            <article class="problem-card"><h3>Dependencia de una persona</h3><p>Procesos que solo sabe ejecutar quien conoce el Excel, la macro o el orden exacto de pasos.</p></article>
+          </div>
+        </section>
+
+        <section id="servicios" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Servicios principales</p>
+            <h2>De procesos manuales a herramientas internas claras</h2>
+            <p>
+              Servicios pensados para pymes y equipos de administracion, operaciones, logistica, soporte, calidad, produccion o reporting.
+            </p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card">
+              <h3>Automatizacion de informes Excel</h3>
+              <p>Generacion de Excel, CSV o informes internos con varias pestanas, formatos definidos, historico y validaciones.</p>
+              <ul><li>Informes recurrentes</li><li>Plantillas y formatos</li><li>Control de datos antes de entregar</li></ul>
+            </article>
+            <article class="service-card service-card--featured">
+              <h3>Migracion de Excel/VBA a Python</h3>
+              <p>Sustitucion progresiva de macros lentas por procesos mas estables, mantenibles y faciles de ejecutar.</p>
+              <ul><li>Menos bloqueos</li><li>Logica mas clara</li><li>Base preparada para crecer</li></ul>
+            </article>
+            <article class="service-card">
+              <h3>Herramientas ejecutables para Windows</h3>
+              <p>Aplicaciones con botones, mensajes claros, configuracion sencilla y ejecucion por usuarios no tecnicos.</p>
+              <ul><li>Interfaz guiada</li><li>Paquetes ejecutables</li><li>Manual de uso si procede</li></ul>
+            </article>
+            <article class="service-card">
+              <h3>Automatizacion de datos y SQL</h3>
+              <p>Extraccion, cruce, limpieza, transformacion y validacion de datos desde SQL, Excel, CSV u otras fuentes.</p>
+              <ul><li>Consultas SQL</li><li>Validaciones previas</li><li>Logs e historico</li></ul>
+            </article>
+            <article class="service-card">
+              <h3>Power BI y reporting operativo</h3>
+              <p>Preparacion de datos para cuadros de mando, informes de seguimiento y reporting para direccion o cliente.</p>
+              <ul><li>Datasets consistentes</li><li>Power BI</li><li>Power Query y Excel avanzado</li></ul>
+            </article>
+            <article class="service-card">
+              <h3>Revision de procesos internos</h3>
+              <p>Identificacion de tareas automatizables, priorizacion de mejoras y propuesta de solucion realista.</p>
+              <ul><li>Diagnostico inicial</li><li>Mapa de procesos</li><li>Plan de automatizacion</li></ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="casos" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Casos de uso</p>
+            <h2>Que puedo automatizar</h2>
+          </div>
+          <div class="use-case-list">
+            <span>Informe diario de ventas generado con un boton</span>
+            <span>Cruce de pedidos, clientes y facturacion</span>
+            <span>Generacion automatica de Excel para administracion</span>
+            <span>Migracion de informe VBA lento a Python</span>
+            <span>Comparacion de listados entre dos sistemas</span>
+            <span>Informe semanal de incidencias</span>
+            <span>Control de datos erroneos antes de enviar reportes</span>
+            <span>Herramienta para consultar datos sin tocar SQL</span>
+            <span>Automatizacion de correos con adjuntos</span>
+            <span>Limpieza y normalizacion de Excel/CSV</span>
+          </div>
+        </section>
+
+        <section id="caso-destacado" class="section case-study">
+          <div class="case-study__intro">
+            <p class="section__eyebrow">Caso destacado</p>
+            <h2>Suite interna de automatizacion para soporte operativo y reporting</h2>
+            <p>
+              Durante mi experiencia en soporte operativo detecte que muchas incidencias requerian modificaciones individuales o masivas sobre bases de datos, generacion manual de informes, uso de Excel pesados y procesos con varios pasos repetitivos.
+            </p>
+            <p>
+              Por iniciativa propia dirigi y desarrolle una suite interna de automatizacion para centralizar tareas, reducir riesgos y simplificar procesos.
+            </p>
+          </div>
+          <div class="case-study__body">
+            <article class="case-panel">
+              <h3>Caracteristicas principales</h3>
+              <ul class="feature-list">
+                <li>Aplicacion Python con interfaz grafica.</li>
+                <li>Automatizacion de informes y generacion de Excel.</li>
+                <li>Conexion con SQL Server y auditoria local con SQLite.</li>
+                <li>Operaciones individuales y masivas con validaciones previas.</li>
+                <li>Snapshots antes y despues de operaciones.</li>
+                <li>Trazabilidad de cambios, logs y recuperacion ante errores.</li>
+                <li>Integracion con Outlook y tests automatizados.</li>
+                <li>Desarrollo dirigido y supervisado mediante IA generativa y agentes IA.</li>
               </ul>
             </article>
-          </section>
-
-          <section id="proyectos" class="section" aria-labelledby="projects-title">
-            <h2 id="projects-title">Proyectos destacados</h2>
-
-            <article class="card">
-              <h3>Horas Sindicales</h3>
-              <p><strong>Tipo:</strong> Proyecto personal enfocado en diseño de arquitectura y aprendizaje práctico.</p>
-              <p><strong>Contexto:</strong> Operativa gestionada con hojas dispersas y validaciones manuales.</p>
-              <p><strong>Problema:</strong> Errores de consistencia, falta de trazabilidad y dificultad para auditar cambios.</p>
+            <article class="impact-panel">
+              <h3>Resultado prudente</h3>
               <p>
-                <strong>Decisión arquitectónica:</strong> Arquitectura por capas (dominio, aplicación, infraestructura) con casos de uso explícitos,
-                repositorio SQLite y sincronización desacoplada con Google Sheets.
+                Procesos que antes requerian multiples pasos manuales se simplificaron en herramientas de ejecucion guiada, reduciendo tiempo, riesgo operativo y dependencia de manipulacion directa sobre datos.
               </p>
-              <p><strong>Resultado técnico:</strong> Flujo centralizado, reglas de negocio aisladas y menor impacto al cambiar interfaz o canal de integración.</p>
-              <p><strong>Aprendizaje:</strong> Diseñar primero límites entre capas redujo retrabajo; habría incorporado tests de contrato desde el inicio.</p>
+              <div class="impact-flow" aria-label="Resumen de impacto">
+                <span>Antes: pasos manuales</span>
+                <span>Ahora: ejecucion guiada</span>
+                <span>Base: validacion y trazabilidad</span>
+              </div>
             </article>
+          </div>
+        </section>
 
-            <article class="card">
-              <h3>ClinicDesk</h3>
-              <p><strong>Tipo:</strong> Proyecto personal enfocado en diseño de arquitectura y aprendizaje práctico.</p>
-              <p><strong>Contexto:</strong> Necesidad de prototipar una gestión clínica básica con agenda y datos de pacientes.</p>
-              <p><strong>Problema:</strong> Riesgo de acoplar reglas de negocio a la interfaz y complicar cambios funcionales.</p>
-              <p>
-                <strong>Decisión arquitectónica:</strong> Núcleo de dominio independiente, puertos para persistencia y servicios, y entrada por CLI/desktop
-                sobre la misma lógica de aplicación.
-              </p>
-              <p><strong>Resultado técnico:</strong> Base reutilizable para evolucionar funcionalidades sin reescribir comportamiento crítico.</p>
-              <p><strong>Aprendizaje:</strong> Un modelo de dominio pequeño pero explícito facilita pruebas; faltó definir mejor estrategia de migraciones.</p>
-            </article>
-
-            <article class="card">
-              <h3>Batería Fotovoltaica</h3>
-              <p><strong>Tipo:</strong> Proyecto personal enfocado en diseño de arquitectura y aprendizaje práctico.</p>
-              <p><strong>Contexto:</strong> Simulación de escenarios de carga/descarga para evaluar decisiones de uso energético.</p>
-              <p><strong>Problema:</strong> Traducir reglas de negocio de energía a cálculos trazables y verificables.</p>
-              <p>
-                <strong>Decisión arquitectónica:</strong> Separación de motor de cálculo, entrada de datos y capa de reporting para poder validar cada parte por
-                separado.
-              </p>
-              <p><strong>Resultado técnico:</strong> Escenarios reproducibles y mayor claridad al comparar hipótesis de operación.</p>
-              <p><strong>Aprendizaje:</strong> La claridad de supuestos es tan importante como el algoritmo; habría priorizado más validación de entrada.</p>
-            </article>
-          </section>
-
-          <section id="como-trabajo" class="section">
-            <h2>Cómo trabajo</h2>
-            <ul class="list-grid">
-              <li>Defino límites de arquitectura antes de escalar funcionalidades para evitar deuda de acoplamiento.</li>
-              <li>Convierto reglas de negocio en casos de uso explícitos y testeables.</li>
-              <li>Prefiero cambios pequeños, revisables y con rollback claro.</li>
-              <li>Documento supuestos y trade-offs para facilitar mantenimiento por terceros.</li>
-              <li>Priorizo operabilidad: logs útiles, validaciones de datos y rutas de diagnóstico.</li>
-            </ul>
-
-            <article class="card" aria-labelledby="ventaja-mvp-title">
-              <h3 id="ventaja-mvp-title">Ventaja operativa: aceleración de MVP con base arquitectónica</h3>
-              <ul class="list-grid">
-                <li>Mantengo un scaffolding interno que genera estructura base por capas (dominio, aplicación e infraestructura), carpetas y plantillas iniciales homogéneas.</li>
-                <li>Utilizo un launcher reproducible (ejecución por doble clic) para preparar entorno y arrancar el flujo de trabajo con el mismo punto de entrada entre iteraciones.</li>
-                <li>Trabajo con plantillas de interfaz orientadas a usuarios no técnicos para prototipar pantallas funcionales sin mezclar reglas de negocio con la UI.</li>
-                <li>Automatizo la creación de piezas recurrentes como configuración, logging y adaptadores/conectores para integraciones habituales.</li>
-                <li>Este enfoque permite entregar MVPs en menos tiempo manteniendo estándares de diseño y reduciendo refactorizaciones profundas en fases posteriores.</li>
+        <section id="experiencia" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Experiencia profesional</p>
+            <h2>Perfil tecnico con foco en datos, soporte operativo y automatizacion</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <span class="timeline-item__date">Abril 2026 - actualidad</span>
+              <h3>ATECH BPO / Proyecto ENEL CP Reclamaciones</h3>
+              <p><strong>Rol:</strong> Analista Programador / Automatizacion de Procesos / Soporte Operativo de Datos.</p>
+              <ul>
+                <li>Soporte operativo sobre sistemas corporativos de gestion de reclamaciones.</li>
+                <li>Correccion individual y masiva de registros, desarrollo SQL y validacion de datos.</li>
+                <li>Automatizacion de procesos manuales, optimizacion de informes internos y simplificacion de procesos Excel/VBA.</li>
+                <li>Control de trazabilidad e identificacion proactiva de procesos automatizables.</li>
               </ul>
             </article>
-          </section>
+            <article class="timeline-item">
+              <span class="timeline-item__date">Septiembre 2019 - marzo 2026</span>
+              <h3>AYESA / ATECH BPO - Proyectos para Endesa y Endesa X</h3>
+              <p>SQL avanzado, Python, automatizacion de informes, Power BI, Redshift, Salesforce, AWS, Oracle, Excel avanzado y Power Automate.</p>
+              <ul>
+                <li>Extraccion, tratamiento y almacenamiento de datos.</li>
+                <li>Desarrollo de herramientas internas y paquetes ejecutables.</li>
+                <li>Comunicacion tecnica con cliente, reuniones de seguimiento y analisis de requerimientos.</li>
+              </ul>
+            </article>
+            <article class="timeline-item timeline-item--compact">
+              <span class="timeline-item__date">Experiencia anterior</span>
+              <p>Ejercito de Tierra (2014-2018), ISABLUE - COBOL (2012-2013) y CMS Consultores - Android/Web (2011-2012).</p>
+            </article>
+          </div>
+        </section>
 
-          <section id="stack" class="section">
-            <h2>Stack técnico compacto</h2>
-            <div class="list-grid list-grid--two-col">
-              <article>
-                <h3>Lenguaje y backend</h3>
-                <ul>
-                  <li>Python (núcleo de desarrollo backend y automatización)</li>
-                  <li>SQL / SQLite (persistencia operativa y validaciones)</li>
-                </ul>
-              </article>
-              <article>
-                <h3>Calidad y diseño</h3>
-                <ul>
-                  <li>Pytest (pruebas unitarias e integración)</li>
-                  <li>Clean Architecture y puertos/adaptadores</li>
-                </ul>
-              </article>
-              <article>
-                <h3>Integración y datos</h3>
-                <ul>
-                  <li>SOQL / Redshift (consulta y consolidación de datos)</li>
-                  <li>Power BI (consumo de datasets curados)</li>
-                </ul>
-              </article>
-              <article>
-                <h3>Herramientas de entrega</h3>
-                <ul>
-                  <li>CLI y aplicaciones desktop con PySide6</li>
-                  <li>Git/GitHub para versionado y colaboración</li>
-                </ul>
-              </article>
+        <section id="tecnologias" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Tecnologias</p>
+            <h2>Stack preparado para automatizar, validar y entregar</h2>
+          </div>
+          <div class="tech-grid">
+            <article><h3>Automatizacion</h3><p>Python, Power Automate, scripts, ejecutables y procesos batch.</p></article>
+            <article><h3>Datos</h3><p>SQL, SQL Server, Oracle, Redshift, SQLite, Access y SOQL.</p></article>
+            <article><h3>Reporting</h3><p>Excel avanzado, Power BI, Power Query, CSV y generacion de informes.</p></article>
+            <article><h3>Herramientas</h3><p>Git, GitHub, VS Code, Outlook, Salesforce y AWS.</p></article>
+            <article><h3>IA aplicada</h3><p>ChatGPT, OpenAI Codex, agentes IA, documentacion y testing asistidos.</p></article>
+          </div>
+        </section>
+
+        <section id="ia" class="section ai-section">
+          <div class="section__header">
+            <p class="section__eyebrow">IA generativa y agentes IA</p>
+            <h2>IA como acelerador profesional, no como sustituto del criterio</h2>
+            <p>
+              Uso IA generativa y agentes IA para construir, revisar, documentar y mantener soluciones de automatizacion, siempre con supervision funcional y validacion tecnica.
+            </p>
+          </div>
+          <div class="ai-grid">
+            <article><h3>Direccion</h3><p>Definicion del problema, prompts, contexto funcional y limites de seguridad.</p></article>
+            <article><h3>Validacion</h3><p>Revision de codigo generado, pruebas, refactorizacion asistida y comprobacion del resultado.</p></article>
+            <article><h3>Mantenimiento</h3><p>Documentacion tecnica asistida, generacion de tests y mejoras incrementales.</p></article>
+          </div>
+        </section>
+
+        <section id="colaboracion" class="section">
+          <div class="section__header">
+            <p class="section__eyebrow">Modalidades de colaboracion</p>
+            <h2>Formas de trabajar segun la necesidad</h2>
+          </div>
+          <div class="collab-grid">
+            <article class="collab-card"><h3>Profesional interno</h3><p>Apoyo tecnico en datos, reporting y automatizacion dentro de un equipo.</p></article>
+            <article class="collab-card"><h3>Proyecto puntual</h3><p>Automatizacion de un informe, Excel o proceso concreto con alcance definido.</p></article>
+            <article class="collab-card"><h3>Mantenimiento evolutivo</h3><p>Ajustes de columnas, formatos, errores, nuevas reglas o ampliacion de funcionalidades.</p></article>
+            <article class="collab-card"><h3>Revision inicial</h3><p>Analisis de procesos repetitivos y priorizacion de automatizaciones rentables.</p></article>
+          </div>
+        </section>
+
+        <section id="contacto" class="section final-cta">
+          <div class="final-cta__content">
+            <p class="section__eyebrow">Contacto y CV</p>
+            <h2>Tienes un Excel que se bloquea, un informe que tarda demasiado o una tarea que se repite cada semana?</h2>
+            <p>
+              Puedo revisarlo y proponerte una automatizacion sencilla, entendible y mantenible. Tambien puedes usar esta pagina como CV web o guardarla en PDF.
+            </p>
+            <div class="btn-group">
+              <a class="btn" href="mailto:carlos.arcas.alcala@gmail.com?subject=Automatizacion%20de%20informes%20o%20procesos">Contactar</a>
+              <button class="btn btn--ghost" type="button" onclick="window.print()">Descargar CV</button>
+              <a class="btn btn--ghost" href="https://github.com/carlos-arcas" target="_blank" rel="noopener">Ver GitHub / portfolio</a>
             </div>
-          </section>
+          </div>
+          <address class="contact-card">
+            <strong>Carlos Arcas</strong>
+            <span>Sevilla (Remoto)</span>
+            <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a>
+            <a href="https://carlos-arcas.github.io/CV/" target="_blank" rel="noopener">carlos-arcas.github.io/CV/</a>
+          </address>
+        </section>
 
-          <section id="formacion" class="section">
-            <h2>Formación</h2>
-            <ul class="list-grid">
-              <li>2011 — C.F.G.S Desarrollo de Aplicaciones Informáticas — I.E.S Velázquez</li>
-              <li>2011 — Diseño Web y Multimedia — AFOBAN</li>
-              <li>2007 — Técnico de Sistemas Microinformáticos — CENEC</li>
-            </ul>
-          </section>
-
-          <section id="idiomas" class="section">
-            <h2>Idiomas</h2>
-            <ul class="list-grid">
-              <li>Inglés: alto</li>
-              <li>Francés: medio en lectura/escritura, conversación básica</li>
-            </ul>
-          </section>
-
-          <section id="contacto" class="section">
-            <h2>Contacto</h2>
-            <ul class="list-grid">
-              <li>Email: <a href="mailto:carlos.arcas.alcala@gmail.com">carlos.arcas.alcala@gmail.com</a></li>
-              <li>Ubicación: Sevilla (Remoto)</li>
-              <li>GitHub: <a href="https://github.com/carlos-arcas" target="_blank" rel="noopener">https://github.com/carlos-arcas</a></li>
-              <li>Web: <a href="https://carlos-arcas.github.io/CV/" target="_blank" rel="noopener">https://carlos-arcas.github.io/CV/</a></li>
-            </ul>
-          </section>
-
-          <section id="auditoria" class="section">
-            <h2>Reauditoría crítica del CV</h2>
-            <ul class="list-grid">
-              <li><strong>¿Transmite credibilidad?</strong> Sí. El contenido evita cifras no verificables y centra el valor en decisiones técnicas concretas.</li>
-              <li><strong>¿Hay riesgo de descarte?</strong> Moderado-bajo. El riesgo principal es no mostrar resultados con ejemplos verificables de producción.</li>
-              <li><strong>Nivel que proyecta:</strong> Mid / Mid+ orientado a backend y automatización.</li>
-              <li><strong>¿Llamaría a entrevista?</strong> Sí, para validar profundidad real en diseño, testing y operación en entorno corporativo.</li>
-              <li><strong>Qué falta para subir nivel:</strong> evidencias públicas (casos técnicos reproducibles, tests, ADRs y postmortems breves).</li>
-            </ul>
-          </section>
-
-          <section class="u-sr-only" aria-label="ATS Plain Text">
-            <h2>ATS Plain Text</h2>
-            <p>NAME Carlos Arcas TITLE Python Backend Engineer LOCATION Sevilla (Remoto)</p>
-          </section>
-        </main>
-      </div>
+        <section class="u-sr-only" aria-label="ATS Plain Text">
+          <h2>ATS Plain Text</h2>
+          <p>NAME Carlos Arcas TITLE Analista Programador Consultor de Automatizacion LOCATION Sevilla Remoto</p>
+          <p>KEYWORDS Python SQL Excel VBA Power BI Power Automate automatizacion informes procesos ejecutables Windows IA generativa agentes IA</p>
+        </section>
+      </main>
     </div>
   </body>
 </html>
