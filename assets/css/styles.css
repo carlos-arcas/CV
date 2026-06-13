@@ -253,6 +253,7 @@
 
     .value-grid,
     .problem-grid,
+    .fit-grid,
     .service-grid,
     .governance-grid,
     .tech-grid,
@@ -729,6 +730,7 @@
 
   .value-grid,
   .problem-grid,
+  .fit-grid,
   .service-grid,
   .governance-grid,
   .tech-grid,
@@ -740,6 +742,7 @@
 
   .value-card,
   .problem-card,
+  .fit-card,
   .service-card,
   .governance-card,
   .case-panel,
@@ -762,6 +765,7 @@
 
   .value-card:hover,
   .problem-card:hover,
+  .fit-card:hover,
   .service-card:hover,
   .governance-card:hover,
   .tech-grid article:hover,
@@ -775,6 +779,7 @@
   .value-card,
   .service-card,
   .governance-card,
+  .fit-card,
   .problem-card,
   .collab-card {
     display: grid;
@@ -805,6 +810,14 @@
 
   .problem-card {
     border-left: 4px solid color-mix(in srgb, var(--color-theme-warm) 70%, var(--color-theme-border) 30%);
+  }
+
+  .fit-card {
+    border-left: 4px solid color-mix(in srgb, var(--color-theme-accent) 72%, var(--color-theme-border) 28%);
+  }
+
+  .fit-card p {
+    line-height: 1.48;
   }
 
   .service-card--featured {
@@ -1238,12 +1251,17 @@
   @media (min-width: 72rem) {
     .value-grid,
     .problem-grid,
+    .fit-grid,
     .governance-grid,
     .collab-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .service-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .fit-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
