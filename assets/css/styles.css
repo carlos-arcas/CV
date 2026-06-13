@@ -95,8 +95,15 @@
     }
 
     .workflow-status::before,
-    .workflow-status::after {
+    .workflow-status::after,
+    .scroll-progress span {
       animation: none !important;
+    }
+
+    .js-enabled .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
   }
 
@@ -272,6 +279,26 @@
 }
 
 @layer components {
+  .scroll-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 50;
+    height: 0.24rem;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .scroll-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    box-shadow: 0 0 20px rgb(0 166 200 / 0.28);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform var(--duration-fast) linear;
+  }
+
   .site-topbar {
     position: sticky;
     top: 0;
@@ -355,6 +382,19 @@
     background: linear-gradient(135deg, var(--color-theme-primary), color-mix(in srgb, var(--color-theme-primary) 72%, var(--color-theme-accent) 28%));
     color: var(--color-theme-on-primary);
     box-shadow: 0 8px 18px rgb(21 91 213 / 0.18);
+  }
+
+  .js-enabled .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition:
+      opacity 560ms var(--easing-standard),
+      transform 560ms var(--easing-standard);
+  }
+
+  .js-enabled .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .mode-toggle {
