@@ -203,15 +203,14 @@
     gap: var(--space-7);
   }
 
-  .cv__shell > *,
   .cv__main > *,
   .section > *,
   .hero > *,
-  .card,
   .value-grid > *,
   .problem-grid > *,
   .fit-grid > *,
   .service-grid > *,
+  .process-grid > *,
   .governance-grid > *,
   .tech-grid > *,
   .ai-grid > *,
@@ -222,9 +221,7 @@
   }
 
   .section,
-  .hero,
-  .card,
-  .cv-header {
+  .hero {
     content-visibility: auto;
     contain-intrinsic-size: 1px 500px;
   }
@@ -250,21 +247,12 @@
       var(--color-theme-surface);
   }
 
-  .list-grid {
-    display: grid;
-    gap: var(--space-2);
-  }
-
   @media (min-width: 48rem) {
-    .list-grid--two-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-4) var(--space-6);
-    }
-
     .value-grid,
     .problem-grid,
     .fit-grid,
     .service-grid,
+    .process-grid,
     .governance-grid,
     .tech-grid,
     .ai-grid,
@@ -439,70 +427,6 @@
     --color-theme-on-primary: #ffffff;
   }
 
-  .cv-header {
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-l);
-    background: var(--color-theme-surface);
-    box-shadow: var(--shadow-1);
-    padding: var(--space-6);
-    display: grid;
-    gap: var(--space-3);
-  }
-
-  .cv-header__name {
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-theme-text);
-    letter-spacing: 0;
-  }
-
-  .cv-header__meta {
-    display: grid;
-    gap: var(--space-2);
-  }
-
-  .cv-nav {
-    position: sticky;
-    top: 4.5rem;
-    z-index: 9;
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-m);
-    background: var(--color-theme-surface);
-    box-shadow: var(--shadow-1);
-    padding: var(--space-3);
-    min-width: 0;
-  }
-
-  .cv-nav__list {
-    display: flex;
-    gap: var(--space-2);
-    overflow-x: auto;
-    list-style: none;
-    padding: 0;
-    min-width: 0;
-  }
-
-  .cv-nav__link {
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap;
-    border: 1px solid var(--color-theme-border);
-    border-radius: 999px;
-    padding: var(--space-2) var(--space-3);
-    text-decoration: none;
-    font-size: var(--font-size--1);
-    font-weight: var(--font-weight-medium);
-    transition: border-color var(--duration-base) var(--easing-standard),
-      background-color var(--duration-base) var(--easing-standard),
-      color var(--duration-base) var(--easing-standard);
-    background-image: none;
-  }
-
-  .cv-nav__link:hover {
-    border-color: color-mix(in srgb, var(--color-theme-primary) 35%, var(--color-theme-border));
-    background: color-mix(in srgb, var(--color-theme-primary) 8%, transparent);
-  }
-
   .hero {
     scroll-margin-top: var(--section-scroll-offset);
     display: grid;
@@ -518,9 +442,7 @@
     overflow: hidden;
   }
 
-  .hero__content,
-  .project-card,
-  .project-case-study {
+  .hero__content {
     display: grid;
     gap: var(--space-3);
   }
@@ -542,12 +464,6 @@
     font-size: clamp(2.45rem, 5vw, 5.45rem);
     line-height: 1.02;
     letter-spacing: 0;
-  }
-
-  .hero__subtitle {
-    color: var(--color-theme-primary);
-    font-size: clamp(1rem, 1.35vw, 1.3rem);
-    font-weight: var(--font-weight-semibold);
   }
 
   .hero__tagline {
@@ -643,9 +559,7 @@
   }
 
   .hero__cta-group,
-  .btn-group,
-  .chips,
-  .carousel-dots {
+  .btn-group {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-2);
@@ -681,24 +595,6 @@
     background: linear-gradient(135deg, #0b2447, #1d4ed8 58%, #0096b8);
   }
 
-  .hero__panel {
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-m);
-    background: var(--color-theme-surface-alt);
-    padding: var(--space-4);
-  }
-
-  .hero__panel-title {
-    margin-bottom: var(--space-3);
-    font-size: var(--font-size-0);
-  }
-
-  .hero__highlights {
-    padding-left: 1.1rem;
-    display: grid;
-    gap: var(--space-2);
-  }
-
   .section article + article {
     margin-top: var(--space-6);
     padding-top: var(--space-6);
@@ -727,30 +623,11 @@
     padding: var(--space-1) var(--space-3);
   }
 
-  .card {
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-m);
-    background: color-mix(in srgb, var(--color-theme-surface) 94%, white 6%);
-    box-shadow: var(--shadow-1);
-    padding: var(--space-4);
-    transition: transform var(--duration-base) var(--easing-standard),
-      box-shadow var(--duration-base) var(--easing-standard),
-      border-color var(--duration-base) var(--easing-standard);
-  }
-
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-2);
-  }
-
-  .section--cta {
-    border-color: color-mix(in srgb, var(--color-theme-primary) 30%, var(--color-theme-border) 70%);
-  }
-
   .value-grid,
   .problem-grid,
   .fit-grid,
   .service-grid,
+  .process-grid,
   .governance-grid,
   .tech-grid,
   .ai-grid,
@@ -764,6 +641,7 @@
   .problem-card,
   .fit-card,
   .service-card,
+  .process-card,
   .governance-card,
   .case-panel,
   .impact-panel,
@@ -788,6 +666,7 @@
   .problem-card:hover,
   .fit-card:hover,
   .service-card:hover,
+  .process-card:hover,
   .governance-card:hover,
   .tech-grid article:hover,
   .ai-grid article:hover,
@@ -799,6 +678,7 @@
 
   .value-card,
   .service-card,
+  .process-card,
   .governance-card,
   .fit-card,
   .problem-card,
@@ -812,6 +692,7 @@
   .value-card p,
   .problem-card p,
   .service-card p,
+  .process-card p,
   .governance-card p,
   .tech-grid article p,
   .ai-grid article p,
@@ -855,6 +736,25 @@
     display: grid;
     gap: var(--space-1);
     padding-left: 1.1rem;
+  }
+
+  .process-section {
+    border-color: color-mix(in srgb, var(--color-theme-accent) 28%, var(--color-theme-border) 72%);
+  }
+
+  .process-card {
+    position: relative;
+    padding-top: var(--space-5);
+  }
+
+  .process-card__step {
+    inline-size: fit-content;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
+    color: var(--color-theme-on-primary);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    padding: 0.24rem 0.62rem;
   }
 
   .governance-section {
@@ -991,137 +891,6 @@
     background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--color-theme-surface-alt) 65%, white 35%));
   }
 
-  .project-card__header,
-  .project-card__footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-3);
-  }
-
-  .project-case-study section {
-    display: grid;
-    gap: var(--space-2);
-    padding-bottom: var(--space-2);
-    border-bottom: 1px dashed color-mix(in srgb, var(--color-theme-border) 80%, transparent);
-  }
-
-  .project-case-study section:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
-
-  .principles-grid {
-    display: grid;
-    gap: var(--space-3);
-  }
-
-  .principle-card {
-    border-left: 4px solid color-mix(in srgb, var(--color-theme-primary) 70%, var(--color-theme-border));
-  }
-
-  .principle-card h3 {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-  }
-
-  .principle-icon {
-    color: var(--color-theme-primary);
-    font-size: 0.7rem;
-    transform: translateY(-1px);
-  }
-
-  @media (min-width: 60rem) {
-    .principles-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: start;
-    }
-  }
-
-  .architecture-block {
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-s);
-    padding: var(--space-3);
-    background: color-mix(in srgb, var(--color-theme-surface-alt) 86%, white 14%);
-  }
-
-  .architecture-block ul {
-    padding-left: 1.1rem;
-    display: grid;
-    gap: var(--space-1);
-  }
-
-  .technical-validation {
-    display: grid;
-    gap: var(--space-4);
-  }
-
-  .tv-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-  }
-
-  .tv-badges img {
-    height: 1.25rem;
-    width: auto;
-  }
-
-  .tv-stats {
-    display: grid;
-    gap: var(--space-3);
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  }
-
-  .tv-stat {
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-s);
-    padding: var(--space-3);
-    background: color-mix(in srgb, var(--color-theme-surface-alt) 80%, var(--color-theme-surface) 20%);
-  }
-
-  .tv-stat__label {
-    font-size: var(--font-size--1);
-    color: var(--color-theme-muted);
-  }
-
-  .tv-stat__value {
-    margin-top: var(--space-1);
-    font-size: var(--font-size-1);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-theme-text);
-  }
-
-  .tv-grid {
-    display: grid;
-    gap: var(--space-3);
-  }
-
-  .tv-card {
-    display: grid;
-    gap: var(--space-2);
-  }
-
-  .tv-diagram {
-    margin: 0;
-    overflow-x: auto;
-    border: 1px solid var(--color-theme-border);
-    border-radius: var(--radius-s);
-    padding: var(--space-3);
-    background: color-mix(in srgb, var(--color-theme-surface-alt) 75%, var(--color-theme-surface) 25%);
-    color: var(--color-theme-text);
-    font-size: var(--font-size--1);
-    line-height: 1.45;
-  }
-
-  @media (min-width: 64rem) {
-    .tv-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   .btn {
     display: inline-flex;
     align-items: center;
@@ -1172,92 +941,6 @@
     color: var(--color-theme-primary);
   }
 
-  .chip {
-    border: 1px solid var(--color-theme-border);
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--color-theme-primary) 12%, var(--color-theme-surface) 88%);
-    color: var(--color-theme-text);
-    padding: 0.25rem 0.65rem;
-    font-size: var(--font-size--1);
-  }
-
-  .carousel { display: grid; gap: var(--space-3); }
-
-  .carousel-viewport {
-    overflow: hidden;
-    border-radius: var(--radius-l);
-  }
-
-  .carousel-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: var(--space-3);
-    padding-bottom: var(--space-2);
-  }
-
-  .carousel-track::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-
-  .project-card {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    min-inline-size: 100%;
-    transition: transform var(--duration-base) var(--easing-standard),
-      box-shadow var(--duration-base) var(--easing-standard);
-    will-change: transform;
-  }
-
-  .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-2);
-  }
-
-  .project-card:target {
-    border-color: color-mix(in srgb, var(--color-theme-primary) 45%, var(--color-theme-border));
-  }
-
-  .carousel-dot {
-    inline-size: 0.85rem;
-    block-size: 0.85rem;
-    border-radius: 50%;
-    border: 1px solid var(--color-theme-border);
-    background: color-mix(in srgb, var(--color-theme-surface-alt) 78%, white 22%);
-    text-decoration: none;
-    transition: transform var(--duration-fast) var(--easing-standard),
-      background-color var(--duration-base) var(--easing-standard),
-      border-color var(--duration-base) var(--easing-standard);
-    background-image: none;
-  }
-
-  .carousel-dot:hover { transform: scale(1.08); }
-  .carousel-dot:active { transform: scale(0.96); }
-
-  .carousel-dot[href="#p1"] {
-    background: var(--color-theme-primary);
-    border-color: var(--color-theme-primary);
-  }
-
-  @supports selector(.carousel:has(#p2:target)) {
-    .carousel:has(.project-card:target) .carousel-dot[href="#p1"] {
-      background: color-mix(in srgb, var(--color-theme-surface-alt) 78%, white 22%);
-      border-color: var(--color-theme-border);
-    }
-
-    .carousel:has(#p1:target) .carousel-dot[href="#p1"],
-    .carousel:has(#p2:target) .carousel-dot[href="#p2"],
-    .carousel:has(#p3:target) .carousel-dot[href="#p3"] {
-      background: var(--color-theme-primary);
-      border-color: var(--color-theme-primary);
-    }
-  }
-
   @media (min-width: 64rem) {
     .hero {
       grid-template-columns: minmax(0, 1.32fr) minmax(24rem, 0.68fr);
@@ -1276,6 +959,7 @@
     .value-grid,
     .problem-grid,
     .fit-grid,
+    .process-grid,
     .governance-grid,
     .collab-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1529,8 +1213,6 @@
 }
 
 @layer utilities {
-  .u-muted { color: var(--color-theme-muted); }
-
   .u-sr-only {
     position: absolute;
     width: 1px;
