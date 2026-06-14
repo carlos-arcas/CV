@@ -1086,7 +1086,30 @@
     color: var(--color-theme-accent);
   }
 
-  .service-card ul,
+  .service-card ul {
+    gap: var(--space-2);
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .service-card li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-2);
+    align-items: start;
+    line-height: 1.42;
+  }
+
+  .service-card li::before {
+    content: "";
+    inline-size: 0.58rem;
+    block-size: 0.58rem;
+    margin-top: 0.42rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
+    box-shadow: 0 0 0 0.18rem color-mix(in srgb, var(--color-theme-primary) 10%, transparent 90%);
+  }
+
   .feature-list,
   .timeline-item ul {
     display: grid;
