@@ -1188,6 +1188,7 @@
     position: relative;
     overflow: hidden;
     padding-right: calc(var(--space-4) + 2.4rem);
+    padding-block-end: calc(var(--space-4) + 0.35rem);
     counter-increment: collab-card;
     border-top: 4px solid color-mix(in srgb, var(--color-theme-accent) 58%, var(--color-theme-primary) 42%);
     min-block-size: 12.8rem;
@@ -1206,6 +1207,27 @@
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-bold);
     line-height: 1;
+  }
+
+  .collab-card::before {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+    height: 0.24rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-accent), var(--color-theme-primary));
+    opacity: 0.72;
+    transform: scaleX(0.42);
+    transform-origin: 0 50%;
+    transition: transform var(--duration-base) var(--easing-standard), opacity var(--duration-base) var(--easing-standard);
+  }
+
+  .collab-card:hover::before,
+  .collab-card:focus-within::before {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .collab-grid .collab-card + .collab-card {
