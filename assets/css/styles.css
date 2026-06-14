@@ -1722,6 +1722,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-2);
+    counter-reset: cta-option;
   }
 
   .cta-option {
@@ -1739,10 +1740,26 @@
     padding-block-end: calc(var(--space-3) + 1.9rem);
     text-decoration: none;
     box-shadow: 0 10px 24px rgb(15 23 42 / 0.06);
+    counter-increment: cta-option;
     transition:
       border-color var(--duration-base) var(--easing-standard),
       box-shadow var(--duration-base) var(--easing-standard),
       transform var(--duration-base) var(--easing-standard);
+  }
+
+  .cta-option::before {
+    content: counter(cta-option, decimal-leading-zero);
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2rem;
+    block-size: 2rem;
+    margin-block-end: var(--space-1);
+    border-radius: var(--radius-s);
+    background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
+    color: var(--color-theme-on-primary);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 10px 22px rgb(21 91 213 / 0.18);
   }
 
   .cta-option::after {
