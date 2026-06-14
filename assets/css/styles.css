@@ -2158,7 +2158,7 @@
     position: fixed;
     left: var(--space-4);
     right: var(--space-4);
-    bottom: var(--space-4);
+    bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
     z-index: 30;
     display: none;
     align-items: center;
@@ -2171,6 +2171,19 @@
     box-shadow: 0 18px 38px rgb(7 24 47 / 0.20), 0 8px 24px rgb(0 166 200 / 0.14);
     backdrop-filter: blur(18px);
     padding: var(--space-2);
+  }
+
+  .mobile-actionbar::before {
+    content: "";
+    position: absolute;
+    left: var(--space-3);
+    right: var(--space-3);
+    top: 0.36rem;
+    height: 0.18rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.74;
+    pointer-events: none;
   }
 
   .mobile-actionbar__link {
@@ -2191,6 +2204,18 @@
     text-decoration: none;
     background-image: none;
     cursor: pointer;
+    transition:
+      background-color var(--duration-base) var(--easing-standard),
+      border-color var(--duration-base) var(--easing-standard),
+      color var(--duration-base) var(--easing-standard),
+      transform var(--duration-fast) var(--easing-standard),
+      box-shadow var(--duration-base) var(--easing-standard);
+  }
+
+  .mobile-actionbar__link:hover,
+  .mobile-actionbar__link:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgb(21 91 213 / 0.12);
   }
 
   .mobile-actionbar__link.is-active:not(.mobile-actionbar__link--primary) {
