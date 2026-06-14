@@ -2937,6 +2937,34 @@
       line-height: 1.4;
     }
 
+    .before-after-card {
+      gap: var(--space-2);
+      padding: var(--space-3);
+      padding-block-end: calc(var(--space-3) + 0.85rem);
+    }
+
+    .before-after-card::after {
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: 0.65rem;
+    }
+
+    .before-after-card ul {
+      gap: var(--space-1);
+    }
+
+    .before-after-card li {
+      gap: var(--space-1);
+      font-size: 0.84rem;
+      line-height: 1.38;
+    }
+
+    .before-after-card li::before {
+      inline-size: 0.5rem;
+      block-size: 0.5rem;
+      margin-top: 0.42rem;
+    }
+
     .cta-options {
       grid-template-columns: 1fr;
     }
