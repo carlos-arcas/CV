@@ -2832,13 +2832,23 @@
 
     .trust-strip,
     .use-case-list {
-      gap: var(--space-2);
+      gap: var(--space-1);
     }
 
     .use-case-list span {
+      flex: 1 1 calc(50% - var(--space-1));
+      min-height: 2.65rem;
       border-radius: var(--radius-s);
-      flex: 1 1 100%;
-      padding-block: var(--space-3);
+      gap: var(--space-1);
+      padding: 0.55rem 0.62rem;
+      font-size: 0.72rem;
+      line-height: 1.25;
+    }
+
+    .use-case-list span::before {
+      inline-size: 1.28rem;
+      block-size: 1.28rem;
+      font-size: 0.62rem;
     }
 
     .trust-strip {
