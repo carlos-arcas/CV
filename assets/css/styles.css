@@ -1110,7 +1110,7 @@
   .tech-grid article {
     position: relative;
     overflow: hidden;
-    padding-top: var(--space-5);
+    padding-top: var(--space-4);
     counter-increment: tech-card;
   }
 
@@ -1136,6 +1136,21 @@
 
   .tech-grid article h3 {
     overflow-wrap: anywhere;
+  }
+
+  .tech-card__tag {
+    width: fit-content;
+    max-width: calc(100% - 3.2rem);
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 24%, var(--color-theme-border) 76%);
+    border-radius: 999px;
+    background:
+      linear-gradient(135deg, rgb(255 255 255 / 0.92), color-mix(in srgb, var(--color-theme-surface-alt) 58%, white 42%));
+    color: color-mix(in srgb, var(--color-theme-primary) 82%, var(--color-theme-text) 18%);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    padding: 0.28rem 0.68rem;
+    box-shadow: 0 8px 18px rgb(21 91 213 / 0.08);
   }
 
   .collab-card {
