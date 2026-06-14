@@ -258,6 +258,23 @@
     pointer-events: none;
   }
 
+  .hero:target,
+  .section:target:not(.u-sr-only),
+  .hero.is-targeted,
+  .section.is-targeted:not(.u-sr-only) {
+    border-color: color-mix(in srgb, var(--color-theme-primary) 52%, var(--color-theme-accent) 48%);
+    box-shadow:
+      var(--shadow-2),
+      0 0 0 0.18rem color-mix(in srgb, var(--color-theme-primary) 12%, transparent 88%);
+  }
+
+  .hero:target::before,
+  .section:target:not(.u-sr-only)::before,
+  .hero.is-targeted::before,
+  .section.is-targeted:not(.u-sr-only)::before {
+    opacity: 1;
+  }
+
   .cv__main .section:nth-of-type(even) {
     background:
       linear-gradient(135deg, rgb(21 91 213 / 0.06), transparent 34%),
