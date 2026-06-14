@@ -2856,8 +2856,36 @@
       grid-template-columns: 1fr;
     }
 
+    .quick-path-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
     .quick-path-card {
-      min-block-size: 7.5rem;
+      min-block-size: 8.2rem;
+      padding: var(--space-3);
+      padding-inline-end: var(--space-3);
+      padding-block-end: calc(var(--space-3) + 1.9rem);
+    }
+
+    .quick-path-card::before {
+      right: var(--space-3);
+      bottom: var(--space-3);
+      inline-size: 1.35rem;
+      block-size: 1.35rem;
+    }
+
+    .quick-path-card::after {
+      inset-inline: var(--space-3);
+      bottom: 0.6rem;
+    }
+
+    .quick-path-card strong {
+      font-size: var(--font-size-0);
+    }
+
+    .quick-path-card small {
+      font-size: 0.72rem;
     }
 
     .cta-options {
