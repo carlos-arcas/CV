@@ -649,6 +649,7 @@
   }
 
   .workflow-card {
+    position: relative;
     display: grid;
     gap: var(--space-2);
     border: 1px solid var(--color-theme-border);
@@ -656,6 +657,28 @@
     background: rgb(255 255 255 / 0.94);
     padding: var(--space-4);
     backdrop-filter: blur(10px);
+    overflow: hidden;
+  }
+
+  .workflow-card::after {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-3);
+    height: 0.22rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.64;
+    transform: scaleX(0.42);
+    transform-origin: 0 50%;
+    transition: transform var(--duration-base) var(--easing-standard), opacity var(--duration-base) var(--easing-standard);
+  }
+
+  .workflow-card:hover::after,
+  .workflow-card:focus-within::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .workflow-card span {
@@ -681,6 +704,11 @@
   .workflow-card--engine {
     border-color: color-mix(in srgb, var(--color-theme-accent) 45%, var(--color-theme-border) 55%);
     box-shadow: 0 12px 28px rgb(15 159 143 / 0.12);
+  }
+
+  .workflow-card--engine::after {
+    opacity: 0.88;
+    transform: scaleX(0.72);
   }
 
   .workflow-arrow {
