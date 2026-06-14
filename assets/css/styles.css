@@ -3288,6 +3288,28 @@
       display: none;
     }
 
+    .mobile-actionbar {
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+      min-height: 3.65rem;
+      gap: 0.36rem;
+      padding: 0.36rem;
+    }
+
+    .mobile-actionbar::before {
+      left: var(--space-2);
+      right: var(--space-2);
+      top: 0.28rem;
+      height: 0.14rem;
+    }
+
+    .mobile-actionbar__link {
+      min-height: 2.75rem;
+      padding: 0.62rem 0.34rem;
+      border-radius: calc(var(--radius-m) - 0.34rem);
+    }
+
     .process-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-2);
