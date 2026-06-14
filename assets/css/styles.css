@@ -3506,11 +3506,14 @@
 
     .site-topbar,
     .mode-switcher,
+    .scroll-progress,
+    .skip-link,
     .hero__cta-group,
+    .quick-path-section,
     .cta-options,
     .btn-group,
     .mobile-actionbar {
-      display: none;
+      display: none !important;
     }
 
     body {
@@ -3522,7 +3525,7 @@
     .cv__main {
       width: 100%;
       padding: 0;
-      gap: 0.85rem;
+      gap: 0.55rem;
     }
 
     .hero,
@@ -3533,6 +3536,66 @@
       box-shadow: none;
       padding: 0;
       break-inside: avoid;
+    }
+
+    .section__header {
+      gap: 0.25rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .section__eyebrow {
+      padding: 0.12rem 0.45rem;
+      font-size: 8pt;
+    }
+
+    .value-grid,
+    .problem-grid,
+    .fit-grid,
+    .service-grid,
+    .before-after-grid,
+    .process-grid,
+    .governance-grid,
+    .case-summary,
+    .case-study__body,
+    .proof-grid,
+    .tech-grid,
+    .collab-grid,
+    .contact-card {
+      gap: 0.45rem;
+    }
+
+    .value-card,
+    .problem-card,
+    .fit-card,
+    .service-card,
+    .before-after-card,
+    .process-card,
+    .governance-card,
+    .case-panel,
+    .impact-panel,
+    .proof-card,
+    .timeline-item,
+    .tech-grid article,
+    .collab-card,
+    .contact-card,
+    .cta-option {
+      box-shadow: none;
+      padding: 0.55rem;
+      min-height: 0;
+    }
+
+    .value-card::after,
+    .fit-card::before,
+    .service-card::before,
+    .process-card::after,
+    .governance-card::before,
+    .governance-card::after,
+    .proof-card::before,
+    .proof-card::after,
+    .collab-card::before,
+    .collab-card::after,
+    .tech-grid article::after {
+      display: none;
     }
 
     .hero {
@@ -3549,6 +3612,12 @@
 
     .section h3 {
       font-size: 11pt;
+    }
+
+    .section p,
+    .section li,
+    .section small {
+      line-height: 1.28;
     }
 
     .hero-visual,
