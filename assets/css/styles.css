@@ -3107,6 +3107,42 @@
       font-size: 0.68rem;
     }
 
+    .tech-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .tech-grid article {
+      min-block-size: 8.2rem;
+      padding: var(--space-3);
+      padding-top: var(--space-3);
+    }
+
+    .tech-grid article::before {
+      inline-size: 1.65rem;
+      block-size: 0.28rem;
+    }
+
+    .tech-grid article::after {
+      display: none;
+    }
+
+    .tech-card__tag {
+      max-width: 100%;
+      padding: 0.22rem 0.5rem;
+      font-size: 0.66rem;
+    }
+
+    .tech-grid article h3 {
+      font-size: var(--font-size-0);
+      line-height: 1.16;
+    }
+
+    .tech-grid article p {
+      font-size: 0.72rem;
+      line-height: 1.36;
+    }
+
     .process-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-2);
