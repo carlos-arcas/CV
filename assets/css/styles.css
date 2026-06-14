@@ -2396,8 +2396,8 @@
     z-index: 30;
     display: none;
     align-items: center;
-    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.06fr) minmax(0, 0.72fr);
-    gap: var(--space-2);
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 0.72fr) minmax(0, 1.08fr) minmax(0, 0.58fr);
+    gap: 0.42rem;
     min-height: 4rem;
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 34%, var(--color-theme-border) 66%);
     border-radius: var(--radius-m);
@@ -2431,10 +2431,10 @@
     background: color-mix(in srgb, #ffffff 82%, var(--color-theme-surface-alt) 18%);
     color: var(--color-theme-primary);
     font: inherit;
-    font-size: var(--font-size--1);
+    font-size: clamp(0.68rem, 2.8vw, var(--font-size--1));
     font-weight: var(--font-weight-semibold);
     line-height: 1;
-    padding: 0.72rem 0.55rem;
+    padding: 0.72rem 0.4rem;
     text-decoration: none;
     background-image: none;
     cursor: pointer;
