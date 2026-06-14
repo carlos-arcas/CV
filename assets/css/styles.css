@@ -967,6 +967,28 @@
     box-shadow: 0 8px 18px rgb(21 91 213 / 0.14);
   }
 
+  .collab-card {
+    border-top: 4px solid color-mix(in srgb, var(--color-theme-accent) 58%, var(--color-theme-primary) 42%);
+    min-block-size: 12.8rem;
+  }
+
+  .collab-grid .collab-card + .collab-card {
+    margin-top: 0;
+    padding-top: var(--space-4);
+    border-top: 4px solid color-mix(in srgb, var(--color-theme-accent) 58%, var(--color-theme-primary) 42%);
+  }
+
+  .collab-card__tag {
+    width: fit-content;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-theme-accent) 12%, #ffffff 88%);
+    color: var(--color-theme-accent);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    padding: 0.3rem 0.7rem;
+  }
+
   .service-card--featured {
     border-color: color-mix(in srgb, var(--color-theme-primary) 54%, var(--color-theme-border) 46%);
     background:
