@@ -2903,6 +2903,40 @@
       font-size: 0.72rem;
     }
 
+    .fit-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .fit-card {
+      min-block-size: 9.25rem;
+      padding: var(--space-3);
+      padding-right: var(--space-3);
+      padding-block-end: calc(var(--space-3) + 0.7rem);
+    }
+
+    .fit-card::after {
+      top: var(--space-3);
+      right: var(--space-3);
+      font-size: var(--font-size-0);
+    }
+
+    .fit-card::before {
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: 0.55rem;
+    }
+
+    .fit-card h3 {
+      padding-right: 1.6rem;
+      font-size: var(--font-size-0);
+    }
+
+    .fit-card p {
+      font-size: 0.72rem;
+      line-height: 1.4;
+    }
+
     .cta-options {
       grid-template-columns: 1fr;
     }
