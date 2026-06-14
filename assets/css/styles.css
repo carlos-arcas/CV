@@ -1070,8 +1070,13 @@
     border-color: color-mix(in srgb, var(--color-theme-accent) 28%, var(--color-theme-border) 72%);
   }
 
+  .process-grid {
+    position: relative;
+  }
+
   .process-card {
     position: relative;
+    z-index: 1;
     padding-top: var(--space-5);
   }
 
@@ -1083,6 +1088,9 @@
     font-size: var(--font-size--1);
     font-weight: var(--font-weight-bold);
     padding: 0.24rem 0.62rem;
+    box-shadow:
+      0 0 0 0.38rem color-mix(in srgb, var(--color-theme-surface) 82%, transparent),
+      0 10px 22px rgb(21 91 213 / 0.18);
   }
 
   .before-after-section {
@@ -1650,6 +1658,18 @@
 
     .fit-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      inset-inline: clamp(4rem, 8vw, 7rem);
+      top: 2.95rem;
+      height: 0.18rem;
+      border-radius: 999px;
+      background:
+        linear-gradient(90deg, transparent, var(--color-theme-primary) 14%, var(--color-theme-accent) 50%, var(--color-theme-primary) 86%, transparent);
+      opacity: 0.34;
     }
 
     .tech-grid {
