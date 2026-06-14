@@ -1959,14 +1959,26 @@
   }
 
   .contact-card__row {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(4.8rem, auto) minmax(0, 1fr);
     align-items: center;
     gap: var(--space-3);
     border-top: 1px solid color-mix(in srgb, var(--color-theme-primary) 16%, var(--color-theme-border) 84%);
+    border-left: 3px solid color-mix(in srgb, var(--color-theme-primary) 42%, var(--color-theme-accent) 58%);
     border-radius: var(--radius-s);
     background: rgb(255 255 255 / 0.56);
     padding: var(--space-3);
+    transition:
+      background-color var(--duration-base) var(--easing-standard),
+      border-color var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
+  .contact-card__row:hover {
+    border-left-color: var(--color-theme-accent);
+    background: color-mix(in srgb, white 76%, var(--color-theme-surface-alt) 24%);
+    transform: translateX(0.12rem);
   }
 
   .contact-card__label {
