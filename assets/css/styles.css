@@ -378,6 +378,7 @@
   }
 
   .site-nav a {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -390,9 +391,33 @@
     background-image: none;
   }
 
+  .site-nav a::after {
+    content: "";
+    position: absolute;
+    left: var(--space-3);
+    right: var(--space-3);
+    bottom: 0.32rem;
+    height: 0.12rem;
+    border-radius: 999px;
+    background: currentcolor;
+    opacity: 0;
+    transform: scaleX(0.36);
+    transform-origin: 50% 50%;
+    transition:
+      opacity var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
   .site-nav a:hover {
     background: color-mix(in srgb, var(--color-theme-primary) 10%, transparent);
     color: var(--color-theme-primary);
+  }
+
+  .site-nav a:hover::after,
+  .site-nav a:focus-visible::after,
+  .site-nav a.is-active::after {
+    opacity: 0.74;
+    transform: scaleX(1);
   }
 
   .site-nav a.is-active {
