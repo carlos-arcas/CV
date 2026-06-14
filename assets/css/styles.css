@@ -1460,7 +1460,26 @@
   }
 
   .proof-card {
+    position: relative;
+    overflow: hidden;
+    padding-inline-end: calc(var(--space-4) + 2.7rem);
     border-top: 4px solid color-mix(in srgb, var(--color-theme-primary) 66%, var(--color-theme-accent) 34%);
+  }
+
+  .proof-card::after {
+    content: "✓";
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2rem;
+    block-size: 2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
+    color: var(--color-theme-on-primary);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 10px 22px rgb(21 91 213 / 0.16);
   }
 
   .governance-card {
