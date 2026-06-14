@@ -65,7 +65,7 @@
     --easing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
 
     --container-max-width: 99rem;
-    --section-scroll-offset: 6rem;
+    --section-scroll-offset: 7rem;
   }
 }
 
@@ -307,21 +307,31 @@
 
   .site-topbar {
     position: sticky;
-    top: 0;
+    top: var(--space-2);
     z-index: 20;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
-    padding: var(--space-3) 0;
-    background: color-mix(in srgb, var(--color-theme-bg) 82%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 16%, var(--color-theme-border) 84%);
+    border-radius: var(--radius-m);
+    background: color-mix(in srgb, var(--color-theme-surface) 88%, transparent);
+    box-shadow: 0 16px 36px rgb(15 23 42 / 0.08);
     backdrop-filter: blur(18px);
+    padding: var(--space-3);
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
     gap: var(--space-3);
+    color: var(--color-theme-text);
+    background-image: none;
+    min-width: fit-content;
+    border-radius: var(--radius-s);
+  }
+
+  .brand:hover {
     color: var(--color-theme-text);
     background-image: none;
   }
@@ -335,6 +345,7 @@
     background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
     color: var(--color-theme-on-primary);
     font-weight: var(--font-weight-bold);
+    box-shadow: 0 10px 24px rgb(21 91 213 / 0.18);
   }
 
   .brand strong,
@@ -1579,7 +1590,7 @@
 
   @media (min-width: 48rem) and (max-width: 63.99rem) {
     :root {
-      --section-scroll-offset: 8rem;
+      --section-scroll-offset: 11rem;
     }
 
     .site-topbar,
