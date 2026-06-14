@@ -1069,8 +1069,27 @@
   }
 
   .collab-card {
+    position: relative;
+    overflow: hidden;
+    padding-right: calc(var(--space-4) + 2.4rem);
+    counter-increment: collab-card;
     border-top: 4px solid color-mix(in srgb, var(--color-theme-accent) 58%, var(--color-theme-primary) 42%);
     min-block-size: 12.8rem;
+  }
+
+  .collab-grid {
+    counter-reset: collab-card;
+  }
+
+  .collab-card::after {
+    content: counter(collab-card, decimal-leading-zero);
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    color: color-mix(in srgb, var(--color-theme-accent) 26%, transparent 74%);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
   }
 
   .collab-grid .collab-card + .collab-card {
