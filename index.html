@@ -632,8 +632,16 @@
         .filter(Boolean);
       const progressBar = document.querySelector(".scroll-progress span");
       const revealTargets = Array.from(document.querySelectorAll(".hero, .section:not(.u-sr-only)"));
+      const targetableSections = Array.from(document.querySelectorAll(".hero, .section:not(.u-sr-only)"));
 
       revealTargets.forEach((target) => target.classList.add("reveal-on-scroll"));
+
+      const markTargetSection = (hash) => {
+        const id = hash?.startsWith("#") ? hash.slice(1) : "";
+        targetableSections.forEach((section) => {
+          section.classList.toggle("is-targeted", Boolean(id) && section.id === id);
+        });
+      };
 
       const updateScrollProgress = () => {
         if (!progressBar) return;
@@ -662,8 +670,12 @@
             behavior: "auto"
           });
           window.history.pushState(null, "", hash);
+          markTargetSection(hash);
         });
       });
+
+      markTargetSection(window.location.hash);
+      window.addEventListener("hashchange", () => markTargetSection(window.location.hash));
 
       if ("IntersectionObserver" in window && navTargets.length > 0) {
         const centerActiveNavLink = (link) => {
