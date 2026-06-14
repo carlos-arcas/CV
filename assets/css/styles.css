@@ -1703,16 +1703,34 @@
 
   .contact-card__row {
     display: grid;
-    gap: var(--space-1);
+    grid-template-columns: minmax(4.8rem, auto) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-3);
     border-top: 1px solid color-mix(in srgb, var(--color-theme-primary) 16%, var(--color-theme-border) 84%);
-    padding-top: var(--space-3);
+    border-radius: var(--radius-s);
+    background: rgb(255 255 255 / 0.56);
+    padding: var(--space-3);
   }
 
   .contact-card__label {
+    display: inline-grid;
+    place-items: center;
+    width: fit-content;
+    min-width: 4.4rem;
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 20%, var(--color-theme-border) 80%);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-theme-primary) 10%, white 90%);
     color: var(--color-theme-primary);
     font-size: var(--font-size--1);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .contact-card__row a,
+  .contact-card__row > span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
 
   .btn {
