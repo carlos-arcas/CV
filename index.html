@@ -633,6 +633,7 @@
       const progressBar = document.querySelector(".scroll-progress span");
       const revealTargets = Array.from(document.querySelectorAll(".hero, .section:not(.u-sr-only)"));
       const targetableSections = Array.from(document.querySelectorAll(".hero, .section:not(.u-sr-only)"));
+      let targetHighlightTimer;
 
       revealTargets.forEach((target) => target.classList.add("reveal-on-scroll"));
 
@@ -641,6 +642,13 @@
         targetableSections.forEach((section) => {
           section.classList.toggle("is-targeted", Boolean(id) && section.id === id);
         });
+
+        window.clearTimeout(targetHighlightTimer);
+        if (id) {
+          targetHighlightTimer = window.setTimeout(() => {
+            targetableSections.forEach((section) => section.classList.remove("is-targeted"));
+          }, 2600);
+        }
       };
 
       const updateScrollProgress = () => {
