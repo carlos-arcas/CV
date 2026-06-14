@@ -1245,6 +1245,7 @@
     position: relative;
     overflow: hidden;
     padding-right: calc(var(--space-4) + 2.5rem);
+    padding-block-end: calc(var(--space-4) + 0.42rem);
     counter-increment: fit-card;
     border-left: 4px solid color-mix(in srgb, var(--color-theme-accent) 72%, var(--color-theme-border) 28%);
   }
@@ -1262,6 +1263,29 @@
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-bold);
     line-height: 1;
+  }
+
+  .fit-card::before {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+    height: 0.22rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-accent), var(--color-theme-primary));
+    opacity: 0.68;
+    transform: scaleX(0.38);
+    transform-origin: 0 50%;
+    transition:
+      opacity var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
+  .fit-card:hover::before,
+  .fit-card:focus-within::before {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .fit-card p {
