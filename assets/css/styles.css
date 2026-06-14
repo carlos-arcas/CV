@@ -2965,6 +2965,41 @@
       margin-top: 0.42rem;
     }
 
+    .service-card {
+      padding: var(--space-3);
+      padding-top: calc(var(--space-3) + 0.45rem);
+    }
+
+    .service-card::before {
+      left: var(--space-3);
+      right: var(--space-3);
+      top: 0.62rem;
+    }
+
+    .service-card ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1);
+      margin-top: var(--space-1);
+      padding: var(--space-2);
+    }
+
+    .service-card li {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 1.85rem;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.78);
+      font-size: 0.72rem;
+      line-height: 1.2;
+      padding: 0.32rem 0.55rem;
+    }
+
+    .service-card li::before {
+      display: none;
+    }
+
     .cta-options {
       grid-template-columns: 1fr;
     }
