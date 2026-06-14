@@ -582,9 +582,12 @@
         </section>
       </main>
 
-      <a class="floating-cta" href="mailto:carlos.arcas.alcala@gmail.com?subject=Automatizacion%20de%20informes%20o%20procesos">
-        Contar mi caso
-      </a>
+      <nav class="mobile-actionbar" aria-label="Acciones rápidas móviles">
+        <a class="mobile-actionbar__link" href="#casos">Ver casos</a>
+        <a class="mobile-actionbar__link mobile-actionbar__link--primary" href="mailto:carlos.arcas.alcala@gmail.com?subject=Automatizacion%20de%20informes%20o%20procesos">
+          Contar mi caso
+        </a>
+      </nav>
     </div>
     <script>
       document.documentElement.classList.add("js-enabled");
@@ -608,6 +611,25 @@
       updateScrollProgress();
       window.addEventListener("scroll", updateScrollProgress, { passive: true });
       window.addEventListener("resize", updateScrollProgress);
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const hash = link.getAttribute("href");
+          if (!hash || hash === "#") return;
+
+          const target = document.getElementById(hash.slice(1));
+          if (!target) return;
+
+          event.preventDefault();
+          const targetTop = target.getBoundingClientRect().top + window.scrollY;
+          const scrollMargin = Number.parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+          window.scrollTo({
+            top: Math.max(targetTop - scrollMargin, 0),
+            behavior: "auto"
+          });
+          window.history.pushState(null, "", hash);
+        });
+      });
 
       if ("IntersectionObserver" in window && navTargets.length > 0) {
         const activateNavLink = (id) => {
