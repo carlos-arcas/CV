@@ -1004,9 +1004,15 @@
     line-height: 1.48;
   }
 
+  .tech-grid {
+    counter-reset: tech-card;
+  }
+
   .tech-grid article {
     position: relative;
+    overflow: hidden;
     padding-top: var(--space-5);
+    counter-increment: tech-card;
   }
 
   .tech-grid article::before {
@@ -1016,6 +1022,21 @@
     border-radius: 999px;
     background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
     box-shadow: 0 8px 18px rgb(21 91 213 / 0.14);
+  }
+
+  .tech-grid article::after {
+    content: counter(tech-card, decimal-leading-zero);
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    color: color-mix(in srgb, var(--color-theme-primary) 24%, transparent 76%);
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+  }
+
+  .tech-grid article h3 {
+    overflow-wrap: anywhere;
   }
 
   .collab-card {
