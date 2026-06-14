@@ -1066,7 +1066,32 @@
   }
 
   .problem-card {
+    position: relative;
+    overflow: hidden;
+    padding-inline-end: calc(var(--space-4) + 2.6rem);
     border-left: 4px solid color-mix(in srgb, var(--color-theme-warm) 70%, var(--color-theme-border) 30%);
+    counter-increment: problem-card;
+  }
+
+  .problem-grid {
+    counter-reset: problem-card;
+  }
+
+  .problem-card::before {
+    content: counter(problem-card, decimal-leading-zero);
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.1rem;
+    block-size: 2.1rem;
+    border-radius: var(--radius-s);
+    background: color-mix(in srgb, var(--color-theme-warm) 12%, white 88%);
+    color: color-mix(in srgb, var(--color-theme-warm) 88%, var(--color-theme-text) 12%);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    box-shadow: 0 10px 22px rgb(217 119 6 / 0.12);
   }
 
   .problem-card:last-child {
@@ -1074,6 +1099,12 @@
     background:
       linear-gradient(135deg, rgb(21 91 213 / 0.10), rgb(0 166 200 / 0.08)),
       linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--color-theme-surface-alt) 34%, #ffffff 66%));
+  }
+
+  .problem-card:last-child::before {
+    background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
+    color: var(--color-theme-on-primary);
+    box-shadow: 0 10px 22px rgb(21 91 213 / 0.16);
   }
 
   .fit-card {
