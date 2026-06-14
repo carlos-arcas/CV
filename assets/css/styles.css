@@ -3083,10 +3083,79 @@
 
     .cta-options {
       grid-template-columns: 1fr;
+      gap: var(--space-2);
     }
 
     .cta-option {
-      min-block-size: 7.4rem;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      column-gap: var(--space-2);
+      row-gap: 0.12rem;
+      min-block-size: 0;
+      padding: var(--space-3);
+      padding-right: calc(var(--space-3) + 2rem);
+      padding-block-end: var(--space-3);
+    }
+
+    .cta-option::before {
+      grid-row: span 2;
+      inline-size: 1.8rem;
+      block-size: 1.8rem;
+      margin-block-end: 0;
+      font-size: 0.68rem;
+    }
+
+    .cta-option::after {
+      right: var(--space-3);
+      bottom: 50%;
+      inline-size: 1.45rem;
+      block-size: 1.45rem;
+      transform: translateY(50%);
+    }
+
+    .cta-option:hover::after,
+    .cta-option:focus-visible::after {
+      transform: translate(0.12rem, 50%);
+    }
+
+    .cta-option strong::after {
+      display: none;
+    }
+
+    .cta-option strong,
+    .cta-option span {
+      grid-column: 2;
+      min-width: 0;
+    }
+
+    .cta-option span {
+      font-size: 0.74rem;
+      line-height: 1.34;
+    }
+
+    .final-cta .btn-group {
+      gap: var(--space-2);
+    }
+
+    .contact-card {
+      gap: var(--space-2);
+      padding: var(--space-3);
+    }
+
+    .contact-card__name {
+      font-size: var(--font-size-1);
+    }
+
+    .contact-card__row {
+      grid-template-columns: 1fr;
+      gap: var(--space-1);
+      padding: var(--space-2);
+    }
+
+    .contact-card__label {
+      min-width: 0;
+      font-size: 0.68rem;
+      padding: 0.18rem 0.5rem;
     }
 
     .timeline {
