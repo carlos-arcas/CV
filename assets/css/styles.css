@@ -1343,6 +1343,40 @@
       var(--color-theme-surface);
   }
 
+  .service-card {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(var(--space-4) + 0.35rem);
+  }
+
+  .service-card::before {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    top: var(--space-3);
+    height: 0.24rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.62;
+    transform: scaleX(0.34);
+    transform-origin: 0 50%;
+    transition:
+      opacity var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
+  .service-card:hover::before,
+  .service-card:focus-within::before {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .service-card--featured::before {
+    opacity: 0.92;
+    transform: scaleX(0.76);
+  }
+
   .service-card__tag {
     width: fit-content;
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 24%, var(--color-theme-border) 76%);
