@@ -1900,7 +1900,7 @@
     z-index: 30;
     display: none;
     align-items: center;
-    grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.06fr) minmax(0, 0.72fr);
     gap: var(--space-2);
     min-height: 4rem;
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 34%, var(--color-theme-border) 66%);
@@ -1921,12 +1921,14 @@
     border-radius: calc(var(--radius-m) - 0.25rem);
     background: color-mix(in srgb, #ffffff 82%, var(--color-theme-surface-alt) 18%);
     color: var(--color-theme-primary);
-    font-size: var(--font-size-0);
+    font: inherit;
+    font-size: var(--font-size--1);
     font-weight: var(--font-weight-semibold);
     line-height: 1;
-    padding: 0.75rem;
+    padding: 0.72rem 0.55rem;
     text-decoration: none;
     background-image: none;
+    cursor: pointer;
   }
 
   .mobile-actionbar__link.is-active:not(.mobile-actionbar__link--primary) {
