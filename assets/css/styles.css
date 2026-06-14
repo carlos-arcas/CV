@@ -936,6 +936,21 @@
     border-top: 1px dashed var(--color-theme-border);
   }
 
+  .value-grid article + article,
+  .problem-grid article + article,
+  .fit-grid article + article,
+  .service-grid article + article,
+  .process-grid article + article,
+  .governance-grid article + article,
+  .proof-grid article + article,
+  .tech-grid article + article,
+  .collab-grid article + article,
+  .cta-options article + article {
+    margin-top: 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid color-mix(in srgb, var(--color-theme-primary) 22%, var(--color-theme-border) 78%);
+  }
+
   .section h3,
   .section h4 {
     margin-bottom: var(--space-2);
