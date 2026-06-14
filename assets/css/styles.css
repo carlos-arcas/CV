@@ -1702,7 +1702,31 @@
     position: relative;
     overflow: hidden;
     padding-inline-end: calc(var(--space-4) + 2.7rem);
+    padding-block-end: calc(var(--space-4) + 0.42rem);
     border-top: 4px solid color-mix(in srgb, var(--color-theme-primary) 66%, var(--color-theme-accent) 34%);
+  }
+
+  .proof-card::before {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+    height: 0.22rem;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.68;
+    transform: scaleX(0.44);
+    transform-origin: 0 50%;
+    transition:
+      opacity var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
+  .proof-card:hover::before,
+  .proof-card:focus-within::before {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .proof-card::after {
