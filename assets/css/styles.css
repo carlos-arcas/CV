@@ -946,6 +946,24 @@
       var(--color-theme-surface);
   }
 
+  .service-card__tag {
+    width: fit-content;
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 24%, var(--color-theme-border) 76%);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-theme-primary) 11%, #ffffff 89%);
+    color: var(--color-theme-primary);
+    font-size: var(--font-size--1);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    padding: 0.3rem 0.7rem;
+  }
+
+  .service-card--featured .service-card__tag {
+    border-color: color-mix(in srgb, var(--color-theme-accent) 34%, var(--color-theme-border) 66%);
+    background: color-mix(in srgb, var(--color-theme-accent) 12%, #ffffff 88%);
+    color: var(--color-theme-accent);
+  }
+
   .service-card ul,
   .feature-list,
   .timeline-item ul {
