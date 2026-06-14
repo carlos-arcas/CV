@@ -1298,7 +1298,34 @@
   .process-card {
     position: relative;
     z-index: 1;
+    overflow: hidden;
     padding-top: var(--space-5);
+    padding-block-end: calc(var(--space-4) + 0.32rem);
+  }
+
+  .process-card::after {
+    content: "";
+    position: absolute;
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+    height: 0.24rem;
+    border-radius: 999px;
+    background:
+      linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent)) 0 0 / 36% 100% no-repeat,
+      color-mix(in srgb, var(--color-theme-border) 48%, white 52%);
+  }
+
+  .process-card:nth-child(2)::after {
+    background-size: 58% 100%, 100% 100%;
+  }
+
+  .process-card:nth-child(3)::after {
+    background-size: 78% 100%, 100% 100%;
+  }
+
+  .process-card:nth-child(4)::after {
+    background-size: 100% 100%, 100% 100%;
   }
 
   .process-card__step {
