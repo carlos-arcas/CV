@@ -989,6 +989,13 @@
     border-left: 4px solid color-mix(in srgb, var(--color-theme-warm) 70%, var(--color-theme-border) 30%);
   }
 
+  .problem-card:last-child {
+    border-left-color: color-mix(in srgb, var(--color-theme-primary) 72%, var(--color-theme-accent) 28%);
+    background:
+      linear-gradient(135deg, rgb(21 91 213 / 0.10), rgb(0 166 200 / 0.08)),
+      linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--color-theme-surface-alt) 34%, #ffffff 66%));
+  }
+
   .fit-card {
     border-left: 4px solid color-mix(in srgb, var(--color-theme-accent) 72%, var(--color-theme-border) 28%);
   }
@@ -1660,6 +1667,10 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .problem-card:last-child {
+      grid-column: span 2;
+    }
+
     .process-grid::before {
       content: "";
       position: absolute;
@@ -1718,6 +1729,10 @@
 
     .before-after-arrow {
       display: grid;
+    }
+
+    .problem-card:last-child {
+      grid-column: 1 / -1;
     }
 
     .hero,
