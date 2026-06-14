@@ -428,10 +428,11 @@
     max-width: 28rem;
     margin-block: var(--space-2) 0;
     padding: var(--space-2);
-    border: 1px solid var(--color-border);
+    border: 1px solid color-mix(in srgb, var(--color-theme-primary) 18%, var(--color-theme-border) 82%);
     border-radius: 999px;
-    background: color-mix(in srgb, white 92%, var(--color-surface-alt) 8%);
-    box-shadow: var(--shadow-1);
+    background: color-mix(in srgb, var(--color-theme-surface) 90%, transparent);
+    box-shadow: 0 14px 32px rgb(15 23 42 / 0.08);
+    backdrop-filter: blur(16px);
     display: flex;
     gap: var(--space-2);
   }
@@ -444,9 +445,17 @@
     cursor: pointer;
     font-size: var(--font-size--1);
     font-weight: var(--font-weight-bold);
-    color: var(--color-text-muted);
-    transition: background-color var(--duration-base) var(--easing-standard),
-      border-color var(--duration-base) var(--easing-standard);
+    color: var(--color-theme-muted);
+    transition:
+      background-color var(--duration-base) var(--easing-standard),
+      border-color var(--duration-base) var(--easing-standard),
+      color var(--duration-base) var(--easing-standard),
+      box-shadow var(--duration-base) var(--easing-standard);
+  }
+
+  .mode-switcher__option:hover {
+    background: color-mix(in srgb, var(--color-theme-primary) 9%, transparent);
+    color: var(--color-theme-primary);
   }
 
   #mode-boring:focus-visible ~ .cv .mode-switcher label[for="mode-boring"],
@@ -459,8 +468,10 @@
   #mode-boring:checked ~ .cv .mode-switcher label[for="mode-boring"],
   #mode-cyber:checked ~ .cv .mode-switcher label[for="mode-cyber"],
   #mode-brutal:checked ~ .cv .mode-switcher label[for="mode-brutal"] {
-    background: color-mix(in srgb, var(--color-theme-primary) 18%, white 82%);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--color-theme-primary) 20%, white 80%), color-mix(in srgb, var(--color-theme-accent) 16%, white 84%));
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 40%, var(--color-theme-border) 60%);
+    color: var(--color-theme-text);
+    box-shadow: 0 8px 18px rgb(21 91 213 / 0.12);
   }
 
   #mode-cyber:checked ~ .cv {
