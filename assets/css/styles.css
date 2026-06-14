@@ -2664,25 +2664,44 @@
       position: static;
       align-items: flex-start;
       flex-direction: column;
-      gap: var(--space-3);
+      gap: var(--space-2);
+      padding: var(--space-2);
+    }
+
+    .brand {
+      gap: var(--space-2);
+    }
+
+    .brand__mark {
+      inline-size: 2.15rem;
+      block-size: 2.15rem;
+      border-radius: 0.68rem;
+    }
+
+    .brand small {
+      font-size: 0.72rem;
     }
 
     .site-nav {
       width: 100%;
-      border-radius: var(--radius-m);
+      border-radius: 999px;
       align-self: stretch;
-      flex-wrap: wrap;
-      overflow-x: visible;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding: 0.35rem;
     }
 
     .site-nav a {
-      flex: 1 1 calc(50% - var(--space-2));
-      min-width: 0;
-      padding-inline: var(--space-2);
+      flex: 0 0 auto;
+      min-block-size: 2.3rem;
+      scroll-snap-align: center;
+      padding: 0.55rem 0.8rem;
     }
 
     .mode-switcher {
       max-width: none;
+      margin-block-start: var(--space-2);
     }
 
     .hero,
