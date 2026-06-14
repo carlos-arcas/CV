@@ -1014,6 +1014,30 @@
     font-weight: var(--font-weight-bold);
   }
 
+  .value-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .value-card::after {
+    content: "";
+    position: absolute;
+    inset: auto var(--space-4) 0;
+    height: 0.22rem;
+    border-radius: 999px 999px 0 0;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.72;
+    transform: scaleX(0.42);
+    transform-origin: 0 50%;
+    transition: transform var(--duration-base) var(--easing-standard), opacity var(--duration-base) var(--easing-standard);
+  }
+
+  .value-card:hover::after,
+  .value-card:focus-within::after {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
   .problem-card {
     border-left: 4px solid color-mix(in srgb, var(--color-theme-warm) 70%, var(--color-theme-border) 30%);
   }
