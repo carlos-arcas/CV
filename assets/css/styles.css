@@ -1546,6 +1546,7 @@
   }
 
   .before-after-card {
+    position: relative;
     display: grid;
     gap: var(--space-3);
     border: 1px solid color-mix(in srgb, var(--color-theme-primary) 24%, var(--color-theme-border) 76%);
@@ -1553,7 +1554,20 @@
     background: linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--color-theme-surface-alt) 36%, #ffffff 64%));
     box-shadow: var(--shadow-1);
     padding: var(--space-5);
+    padding-block-end: calc(var(--space-5) + 0.45rem);
     min-width: 0;
+    overflow: hidden;
+  }
+
+  .before-after-card::after {
+    content: "";
+    position: absolute;
+    left: var(--space-5);
+    right: var(--space-5);
+    bottom: var(--space-4);
+    height: 0.24rem;
+    border-radius: 999px;
+    opacity: 0.78;
   }
 
   .before-after-card__label {
@@ -1568,6 +1582,12 @@
     border-left: 4px solid color-mix(in srgb, var(--color-theme-warm) 78%, var(--color-theme-border) 22%);
   }
 
+  .before-after-card--before::after {
+    background:
+      linear-gradient(90deg, var(--color-theme-warm), color-mix(in srgb, var(--color-theme-warm) 42%, var(--color-theme-border) 58%)) 0 0 / 42% 100% no-repeat,
+      color-mix(in srgb, var(--color-theme-border) 54%, white 46%);
+  }
+
   .before-after-card--before .before-after-card__label {
     background: color-mix(in srgb, var(--color-theme-warm) 13%, white 87%);
     color: #92400e;
@@ -1575,6 +1595,11 @@
 
   .before-after-card--after {
     border-left: 4px solid color-mix(in srgb, var(--color-theme-accent) 74%, var(--color-theme-border) 26%);
+  }
+
+  .before-after-card--after::after {
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    box-shadow: 0 10px 22px rgb(0 166 200 / 0.14);
   }
 
   .before-after-card--after .before-after-card__label {
