@@ -2056,6 +2056,7 @@
     text-decoration: none;
     box-shadow: 0 10px 24px rgb(15 23 42 / 0.06);
     counter-increment: cta-option;
+    overflow: hidden;
     transition:
       border-color var(--duration-base) var(--easing-standard),
       box-shadow var(--duration-base) var(--easing-standard),
@@ -2096,6 +2097,22 @@
       transform var(--duration-base) var(--easing-standard);
   }
 
+  .cta-option strong::after {
+    content: "";
+    display: block;
+    width: min(7rem, 62%);
+    height: 0.18rem;
+    margin-top: var(--space-2);
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--color-theme-primary), var(--color-theme-accent));
+    opacity: 0.62;
+    transform: scaleX(0.42);
+    transform-origin: 0 50%;
+    transition:
+      opacity var(--duration-base) var(--easing-standard),
+      transform var(--duration-base) var(--easing-standard);
+  }
+
   .cta-option:hover,
   .cta-option:focus-visible {
     border-color: color-mix(in srgb, var(--color-theme-primary) 72%, var(--color-theme-accent) 28%);
@@ -2108,6 +2125,12 @@
     background: linear-gradient(135deg, var(--color-theme-primary), var(--color-theme-accent));
     color: var(--color-theme-on-primary);
     transform: translateX(0.12rem);
+  }
+
+  .cta-option:hover strong::after,
+  .cta-option:focus-visible strong::after {
+    opacity: 1;
+    transform: scaleX(1);
   }
 
   .cta-option strong {
