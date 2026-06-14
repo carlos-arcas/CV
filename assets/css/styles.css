@@ -3143,6 +3143,45 @@
       line-height: 1.36;
     }
 
+    .collab-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2);
+    }
+
+    .collab-card,
+    .collab-grid .collab-card + .collab-card {
+      min-block-size: 9.4rem;
+      padding: var(--space-3);
+      padding-right: var(--space-3);
+      padding-block-end: calc(var(--space-3) + 0.7rem);
+      border-top-width: 3px;
+    }
+
+    .collab-card::after {
+      display: none;
+    }
+
+    .collab-card::before {
+      left: var(--space-3);
+      right: var(--space-3);
+      bottom: 0.58rem;
+    }
+
+    .collab-card__tag {
+      padding: 0.22rem 0.52rem;
+      font-size: 0.66rem;
+    }
+
+    .collab-card h3 {
+      font-size: var(--font-size-0);
+      line-height: 1.16;
+    }
+
+    .collab-card p {
+      font-size: 0.72rem;
+      line-height: 1.36;
+    }
+
     .process-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-2);
