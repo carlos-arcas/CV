@@ -143,11 +143,6 @@ def build_pdf() -> None:
     canvas.drawString(margin + 7 * mm, hero_top - 7 * mm, "AUTOMATIZACIÓN PARA EMPRESAS")
     draw_paragraph(canvas, "Convierto procesos manuales en herramientas claras y fiables.", margin + 7 * mm, hero_top - 10.5 * mm, 105 * mm, style("hero", 19, 20.5, INK, True))
     draw_paragraph(canvas, "Automatizo informes, mejoro Excel complejos y creo aplicaciones internas para reducir pasos, errores y dependencia de una sola persona.", margin + 120 * mm, hero_top - 9 * mm, 57 * mm, style("hero-summary", 7.6, 10, MUTED))
-    canvas.setFillColor(BLUE)
-    canvas.roundRect(margin + 120 * mm, hero_top - 33 * mm, 28 * mm, 7.5 * mm, 1 * mm, fill=1, stroke=0)
-    canvas.setFillColor(white)
-    canvas.setFont("Arial-Bold", 6.5)
-    canvas.drawCentredString(margin + 134 * mm, hero_top - 30.5 * mm, "CONTAR MI CASO")
 
     results_top = hero_top - hero_height - 4 * mm
     result_width = content_width / 3
@@ -203,13 +198,14 @@ def build_pdf() -> None:
 
     qr_size = 21 * mm
     qr_x = page_width - margin - qr_size - 5 * mm
-    qr_y = contact_y + 7 * mm
+    qr_y = contact_y + 9 * mm
     canvas.setFillColor(white)
-    canvas.rect(qr_x - 1.5 * mm, qr_y - 1.5 * mm, qr_size + 3 * mm, qr_size + 5 * mm, fill=1, stroke=0)
+    canvas.rect(qr_x - 1.5 * mm, qr_y - 7 * mm, qr_size + 3 * mm, qr_size + 9 * mm, fill=1, stroke=0)
     qr_drawing(qr_size).drawOn(canvas, qr_x, qr_y)
     canvas.setFillColor(INK)
-    canvas.setFont("Arial-Bold", 5.4)
-    canvas.drawCentredString(qr_x + qr_size / 2, qr_y - 0.2 * mm, "VER PORTFOLIO")
+    canvas.setFont("Arial-Bold", 5.2)
+    canvas.drawCentredString(qr_x + qr_size / 2, qr_y - 2.5 * mm, "AMPLIAR")
+    canvas.drawCentredString(qr_x + qr_size / 2, qr_y - 5 * mm, "INFORMACIÓN")
 
     canvas.setFillColor(MUTED)
     canvas.setFont("Arial", 5.8)
