@@ -27,7 +27,7 @@ BLUE_SOFT = HexColor("#EAF2FF")
 CYAN = HexColor("#08A7C2")
 TEAL = HexColor("#0B927F")
 YELLOW = HexColor("#E5AE26")
-PLUS_SURFACE = HexColor("#FFFAEC")
+DIFFERENTIAL_SURFACE = HexColor("#FFFAEC")
 SURFACE = HexColor("#F5F8FC")
 LINE = HexColor("#D7E1EC")
 MUTED = HexColor("#52657B")
@@ -42,10 +42,10 @@ SERVICES = (
     ("06", "Alertas y controles", "Avisos y comprobaciones automáticas que detectan errores.", "Los problemas llegan antes."),
     ("07", "Tareas masivas", "Importar, transformar o procesar archivos y registros.", "Horas de trabajo en pocos pasos."),
     ("08", "Usuarios y permisos", "Roles, accesos, histórico de cambios y auditoría.", "Cada persona ve lo necesario."),
-    ("09 · PLUS", "Webs profesionales", "Páginas personalizadas, rápidas y adaptadas a móvil.", "Una presencia digital propia."),
-    ("10 · PLUS", "E-commerce", "Catálogo, clientes, pedidos, pagos y administración.", "Venta online preparada para crecer."),
-    ("11 · PLUS", "Portales privados", "Zonas de clientes o empleados con seguimiento.", "Información centralizada."),
-    ("12 · PLUS", "Integraciones", "Conexión entre archivos, bases de datos, APIs y apps.", "Menos trabajo duplicado."),
+    ("09", "Webs profesionales", "Páginas personalizadas, rápidas y adaptadas a móvil.", "Una presencia digital propia."),
+    ("10", "E-commerce", "Catálogo, clientes, pedidos, pagos y administración.", "Venta online preparada para crecer."),
+    ("11", "Portales privados", "Zonas de clientes o empleados con seguimiento.", "Información centralizada."),
+    ("12", "Integraciones", "Conexión entre archivos, bases de datos, APIs y apps.", "Menos trabajo duplicado."),
 )
 
 
@@ -86,13 +86,13 @@ def qr_drawing(size: float) -> Drawing:
 
 def draw_service_card(canvas: Canvas, x: float, y_top: float, width: float, height: float, service: tuple[str, str, str, str]) -> None:
     number, title, description, value = service
-    is_plus = "PLUS" in number
-    canvas.setFillColor(PLUS_SURFACE if is_plus else white)
-    canvas.setStrokeColor(HexColor("#EAD8A4") if is_plus else LINE)
+    is_differential = number in {"09", "10", "11", "12"}
+    canvas.setFillColor(DIFFERENTIAL_SURFACE if is_differential else white)
+    canvas.setStrokeColor(HexColor("#EAD8A4") if is_differential else LINE)
     canvas.roundRect(x, y_top - height, width, height, 1.3 * mm, fill=1, stroke=1)
-    canvas.setFillColor(YELLOW if is_plus else CYAN)
+    canvas.setFillColor(YELLOW if is_differential else CYAN)
     canvas.rect(x, y_top - height, 1.2 * mm, height, fill=1, stroke=0)
-    canvas.setFillColor(HexColor("#936E0B") if is_plus else BLUE)
+    canvas.setFillColor(HexColor("#936E0B") if is_differential else BLUE)
     canvas.setFont("Arial-Bold", 5.8)
     canvas.drawString(x + 4 * mm, y_top - 4.8 * mm, number)
     draw_paragraph(canvas, title, x + 4 * mm, y_top - 7 * mm, width - 8 * mm, style(f"title-{number}", 8.2, 9.2, INK, True))
@@ -183,16 +183,8 @@ def build_pdf() -> None:
         y_top = cards_top - row * (card_height + row_gap)
         draw_service_card(canvas, x, y_top, card_width, card_height, service)
 
-    complementary_top = cards_top - 4 * card_height - 3 * row_gap - 4 * mm
-    canvas.setFillColor(SURFACE)
-    canvas.setStrokeColor(LINE)
-    canvas.roundRect(margin, complementary_top - 11 * mm, content_width, 11 * mm, 1.2 * mm, fill=1, stroke=1)
-    canvas.setFillColor(TEAL)
-    canvas.rect(margin, complementary_top - 11 * mm, 1.5 * mm, 11 * mm, fill=1, stroke=0)
-    draw_paragraph(canvas, "<b>Especialización principal:</b> automatización con Python, Excel y SQL. Cuando el proceso necesita una capa web, desarrollo soluciones con Django y Next.js.", margin + 5 * mm, complementary_top - 3.2 * mm, content_width - 10 * mm, style("specialization", 6.5, 8, MUTED))
-
-    contact_y = 22 * mm
-    contact_height = 33 * mm
+    contact_y = 36 * mm
+    contact_height = 35 * mm
     canvas.setFillColor(BLUE_SOFT)
     canvas.setStrokeColor(HexColor("#BCD0EC"))
     canvas.roundRect(margin, contact_y, content_width, contact_height, 1.5 * mm, fill=1, stroke=1)
@@ -200,8 +192,8 @@ def build_pdf() -> None:
     canvas.rect(margin, contact_y + contact_height - 1.8 * mm, content_width, 1.8 * mm, fill=1, stroke=0)
     canvas.setFillColor(BLUE)
     canvas.setFont("Arial-Bold", 6)
-    canvas.drawString(margin + 6 * mm, contact_y + 24 * mm, "PRIMER DIAGNÓSTICO")
-    draw_paragraph(canvas, "Revisamos el problema y buscamos una solución proporcionada.", margin + 6 * mm, contact_y + 21 * mm, 105 * mm, style("contact", 11.2, 12.5, INK, True))
+    canvas.drawString(margin + 6 * mm, contact_y + 26 * mm, "PRIMER DIAGNÓSTICO")
+    draw_paragraph(canvas, "Revisamos el problema y buscamos una solución proporcionada.", margin + 6 * mm, contact_y + 23 * mm, 105 * mm, style("contact", 11.2, 12.5, INK, True))
     canvas.setFillColor(MUTED)
     canvas.setFont("Arial", 6.2)
     canvas.drawString(margin + 6 * mm, contact_y + 8.2 * mm, "Para empezar: un ejemplo, los pasos actuales, el problema y el resultado esperado.")
@@ -211,7 +203,7 @@ def build_pdf() -> None:
 
     qr_size = 21 * mm
     qr_x = page_width - margin - qr_size - 5 * mm
-    qr_y = contact_y + 6 * mm
+    qr_y = contact_y + 7 * mm
     canvas.setFillColor(white)
     canvas.rect(qr_x - 1.5 * mm, qr_y - 1.5 * mm, qr_size + 3 * mm, qr_size + 5 * mm, fill=1, stroke=0)
     qr_drawing(qr_size).drawOn(canvas, qr_x, qr_y)

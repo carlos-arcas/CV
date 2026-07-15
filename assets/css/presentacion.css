@@ -45,16 +45,13 @@ a { color: inherit; }
 .presentation-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; }
 .presentation-service-grid article { position: relative; display: grid; align-content: start; gap: 0.45rem; min-width: 0; min-height: 10.5rem; border: 1px solid var(--line); border-radius: 0.35rem; background: #fff; padding: 1rem; }
 .presentation-service-grid article::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 0.2rem; background: var(--cyan); }
-.presentation-service-grid .service-card--plus { background: #fffbef; border-color: #ead8a4; }
-.presentation-service-grid .service-card--plus::before { background: var(--yellow); }
-.presentation-service-grid .service-card--plus > span { color: #936e0b; }
+.presentation-service-grid .service-card--differential { background: #fffbef; border-color: #ead8a4; }
+.presentation-service-grid .service-card--differential::before { background: var(--yellow); }
+.presentation-service-grid .service-card--differential > span { color: #936e0b; }
 .presentation-service-grid article > span { color: var(--blue); font-size: 0.7rem; font-weight: 800; }
 .presentation-service-grid h3 { margin: 0; font-size: 0.96rem; }
 .presentation-service-grid p { margin: 0; color: var(--muted); font-size: 0.76rem; line-height: 1.42; }
 .presentation-service-grid small { align-self: end; margin-top: auto; color: var(--teal); font-size: 0.68rem; font-weight: 700; line-height: 1.35; }
-.presentation-complementary { margin: 0; border-left: 0.25rem solid var(--teal); background: var(--surface); color: var(--muted); padding: 0.85rem 1rem; font-size: 0.78rem; line-height: 1.45; }
-.presentation-complementary strong { color: var(--ink); }
-
 .presentation-start { background: var(--surface); }
 .presentation-start ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
 .presentation-start li { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0.65rem; min-width: 0; border: 1px solid var(--line); background: #fff; padding: 0.75rem; color: var(--ink); font-size: 0.75rem; font-weight: 700; }
