@@ -17,7 +17,7 @@ from reportlab.platypus import Paragraph
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "output" / "pdf" / "presentacion-carlos-arcas.pdf"
+OUTPUT = ROOT / "output" / "pdf" / "Folleto Automatizaciones-Web Carlos Arcas.pdf"
 QR_SVG = ROOT / "assets" / "img" / "presentacion-qr.svg"
 PORTFOLIO_URL = "https://carlos-arcas.github.io/CV/"
 
