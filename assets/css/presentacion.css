@@ -80,15 +80,32 @@ a { color: inherit; }
   .presentation-header { align-items: flex-start; padding: 1rem; }
   .presentation-header__location { display: none; }
   .presentation-hero, .presentation-services, .presentation-start { padding: 1.35rem; }
-  .presentation-results { grid-template-columns: 1fr; }
-  .presentation-results article + article { border-top: 1px solid var(--line); border-left: 0; }
-  .presentation-service-grid { grid-template-columns: 1fr; }
-  .presentation-service-grid article { min-height: 0; }
-  .presentation-start ol { grid-template-columns: 1fr; }
-  .presentation-contact { grid-template-columns: 1fr; margin: 1.35rem; }
+  .presentation-hero { gap: 1rem; }
+  .presentation-hero h1 { font-size: 2.05rem; line-height: 1.04; }
+  .presentation-hero__summary { gap: 1rem; }
+  .presentation-results { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .presentation-results article { align-content: start; gap: 0.3rem; min-width: 0; padding: 0.9rem 0.65rem; }
+  .presentation-results article + article { border-left: 1px solid var(--line); }
+  .presentation-results strong { font-size: 0.72rem; line-height: 1.25; }
+  .presentation-results span { font-size: 0.64rem; line-height: 1.3; }
+  .presentation-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.55rem; }
+  .presentation-service-grid article { min-height: 10.75rem; padding: 0.85rem; }
+  .presentation-service-grid h3 { font-size: 0.88rem; line-height: 1.2; }
+  .presentation-service-grid p { font-size: 0.7rem; line-height: 1.38; }
+  .presentation-service-grid small { font-size: 0.64rem; }
+  .presentation-start ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .presentation-start li { align-content: center; padding: 0.7rem; }
+  .presentation-contact { grid-template-columns: 1fr; margin: 1rem; padding: 1.25rem; }
+  .presentation-contact h2 { font-size: 1.3rem; }
   .presentation-qr { width: fit-content; }
   .presentation-actions { flex-direction: column; }
   .presentation-actions a { text-align: center; }
+}
+
+@media (max-width: 22rem) {
+  .presentation-service-grid { grid-template-columns: 1fr; }
+  .presentation-service-grid article { min-height: 0; }
+  .presentation-start ol { grid-template-columns: 1fr; }
 }
 
 @media print {
