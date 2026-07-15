@@ -2942,30 +2942,40 @@
     }
 
     .landing-hero {
+      grid-template-columns: minmax(0, 1.12fr) minmax(15.5rem, 0.88fr);
+      align-items: start;
+      gap: var(--space-3);
       min-height: auto;
     }
 
     .hero__content {
-      max-width: 44rem;
+      max-width: none;
     }
 
     .hero__name {
-      font-size: clamp(3rem, 7vw, 4.4rem);
+      font-size: clamp(2.55rem, 5.4vw, 3.25rem);
+      line-height: 1.03;
+    }
+
+    .hero__tagline {
+      font-size: 0.98rem;
+      line-height: 1.48;
     }
 
     .hero-visual {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: stretch;
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: var(--space-2);
+      padding: var(--space-3);
     }
 
     .hero-visual::before {
-      grid-column: 1 / -1;
+      grid-column: auto;
+      padding-bottom: var(--space-2);
     }
 
     .workflow-status {
-      grid-column: 1 / -1;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: start;
+      display: none;
     }
 
     .workflow-arrow {
