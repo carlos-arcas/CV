@@ -3000,15 +3000,15 @@
 
     .cv__main {
       gap: var(--space-4);
-      padding-block: var(--space-4) 6.5rem;
+      padding-block: var(--space-2) 6.5rem;
     }
 
     .site-topbar {
       position: static;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: var(--space-2);
-      padding: var(--space-2);
+      align-items: center;
+      flex-direction: row;
+      gap: 0;
+      padding: 0.65rem 0.75rem;
     }
 
     .brand {
@@ -3026,15 +3026,7 @@
     }
 
     .site-nav {
-      width: 100%;
-      border-radius: 999px;
-      align-self: stretch;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      scroll-snap-type: x proximity;
-      padding: 0.35rem;
-      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 1rem), transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 1rem), transparent 100%);
+      display: none;
     }
 
     .site-nav a {
@@ -3213,13 +3205,11 @@
 
     .trust-strip {
       display: flex;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      overscroll-behavior-inline: contain;
-      scrollbar-width: none;
+      flex-wrap: wrap;
+      overflow: visible;
       padding-block-start: var(--space-2);
-      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 0.8rem, #000 calc(100% - 0.8rem), transparent 100%);
-      mask-image: linear-gradient(90deg, transparent 0, #000 0.8rem, #000 calc(100% - 0.8rem), transparent 100%);
+      -webkit-mask-image: none;
+      mask-image: none;
     }
 
     .trust-strip::-webkit-scrollbar {
@@ -3239,6 +3229,10 @@
     .quick-path-section,
     .quick-path-grid {
       grid-template-columns: 1fr;
+    }
+
+    .quick-path-section {
+      display: none;
     }
 
     .quick-path-grid {
@@ -3451,8 +3445,7 @@
 
     .tech-grid article {
       min-block-size: 8.2rem;
-      padding: var(--space-3);
-      padding-top: var(--space-3);
+      padding: 0.85rem 0.75rem;
     }
 
     .tech-grid article::before {
@@ -3471,8 +3464,11 @@
     }
 
     .tech-grid article h3 {
-      font-size: var(--font-size-0);
-      line-height: 1.16;
+      overflow-wrap: normal;
+      word-break: normal;
+      hyphens: none;
+      font-size: clamp(0.88rem, 3.8vw, var(--font-size-0));
+      line-height: 1.14;
     }
 
     .tech-grid article p {
@@ -3833,6 +3829,23 @@
 
     .mobile-actionbar {
       display: grid;
+    }
+  }
+
+  @media (max-width: 22rem) {
+    .tech-grid,
+    .collab-grid,
+    .proof-grid,
+    .process-grid,
+    .impact-panel .feature-list {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-grid article,
+    .collab-card,
+    .proof-card,
+    .process-card {
+      min-block-size: 0;
     }
   }
 
